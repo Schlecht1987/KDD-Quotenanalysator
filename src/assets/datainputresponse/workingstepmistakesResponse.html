@@ -1,0 +1,47 @@
+<div>
+  <table class='table table-hover '>
+    <caption>{{'_succesfully.saved' | translate}} <i class='icon-ok'></i>
+    </caption>
+    <thead>
+      <tr>
+        <th>{{'_attribute'| translate}}</th>
+        <th>{{'_value'| translate}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{'_workingstepmistake.logistics' | translate}}</td>
+        <td>{{responsedata.logistics}}</td>
+      </tr>
+      <tr>
+        <td>{{'_workingstepmistake.mechanicalconstruction' | translate}}</td>
+        <td>{{responsedata.mechanicalconstruction}}</td>
+      </tr>
+      <tr>
+        <td>{{'_workingstepmistake.assembly' | translate}}</td>
+        <td>{{responsedata.assembly}}</td>
+      </tr>
+      <tr>
+        <td>{{'_workingstepmistake.finalassembly' | translate}}</td>
+        <td>{{responsedata.finalassembly}}</td>
+      </tr>
+      <tr>
+        <td>{{'_workingstepmistake.check' | translate}}</td>
+        <td>{{responsedata.check}}</td>
+      </tr>
+      <tr>
+        <td>{{'_workingstepmistake.rework' | translate}}</td>
+        <td>{{responsedata.rework}}</td>
+      </tr>
+      <tr>
+        <td>{{'_note' | translate}}</td>
+        <td>{{responsedata.note}}</td>
+      </tr>
+      <tr>
+        <td>{{'_calendar.week' | translate}}</td>
+        <td>{{responsedata.calendarWeek}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button class='btn btn-default' ng:click='backToDataInput()'>{{'_back'| translate}}</button>
+</div>

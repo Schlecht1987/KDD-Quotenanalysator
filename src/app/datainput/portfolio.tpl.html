@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="page-header">
+    <h3>{{'_portfolio' | translate}}
+    </h3>
+  </div>
+
+  <div class="form-horizontal" role="form" id="datainputform">
+
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="{{'_portfolio' | translate}}" ng:model="data.portfolio" ng:change="checkPortfolioInput()">
+      <span class="help-inline">{{'_portfolio.input.help' | translate}}</span>
+    </div>
+
+    <div class="form-group">
+      <textarea class="form-control" rows="3" placeholder="{{'_note' | translate}}" ng:model="data.note"></textarea>
+      <span class="help-inline">{{'_note.input.help' | translate}}</span>
+    </div>
+
+    <div class="form-group">
+
+      <button class="{{buttonstate}}" ng:Disabled="submitDisabled" ng:click="submit('POST')">Submit</button>
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          {{dropdownCalendarWeekText}}
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li role="presentation" ng-repeat="value in inputData.calendarWeeks"><a role="menuitem" tabindex="-1" ng:click="setDropdownCalendarWeekValue(value)">{{value}}</a>
+        </ul>
+      </div>
+
+    </div>
+    <div class="form-inline">
+      <div id="smileyGreen-normal"></div>
+      <div id="smileyYellow-normal"></div>
+      <div id="smileyRed-normal"></div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios1" ng-value="1" ng-model="smiley.value" ng:change="changeSmileyValue(1)">{{'_over.target' | translate}}
+        </label>
+      </div>
+      <div class="radio" id="smiley-radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios2" ng-value="2" ng-model="smiley.value" ng:change="changeSmileyValue(2)">{{'_in.target' | translate}}
+        </label>
+      </div>
+      <div class="radio" id="smiley-radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios3" ng-value="3" ng-model="smiley.value" ng:change="changeSmileyValue(3)">{{'_under.target' | translate}}
+        </label>
+      </div>
+    </div>
+  </div>
+  <div ng:include="dataResponseTemplate.url">
+  </div>
+  <div>
+    {{status}}
+  </div>
+  <div ng:include="updateTemplate.url">
+  </div>
+
+</div>

@@ -1,0 +1,155 @@
+#quotenAnalyser-logo {
+  margin-top:5px;
+  margin-right:10px;
+  width: 90px;
+  height: 30px;
+  background-image:url("/assets/img/quotenAnalyser.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 100%; /* Safari 3.0 */
+  -moz-background-size: contain;  /* Gecko 1.9.2 (Firefox 3.6) */
+  -o-background-size: 100% 100%;  /* Opera 9.5 */
+  background-size: contain; /* Gecko 2.0 (Firefox 4.0) and other CSS3-compliant browsers */
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/img/quotenAnalyser.png', sizingMethod='scale')";
+  -moz-border-image: url("/assets/img/quotenAnalyser.png") 0;  /* Gecko 1.9.1 (Firefox 3.5) */
+}
+
+#quotenAnalyser-big {
+  margin-top:5px;
+  margin-right:20px;
+  width: 150px;
+  height: 60px;
+  background-image:url("/assets/img/quotenAnalyser.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 100%; /* Safari 3.0 */
+  -moz-background-size: contain;  /* Gecko 1.9.2 (Firefox 3.6) */
+  -o-background-size: 100% 100%;  /* Opera 9.5 */
+  background-size: contain; /* Gecko 2.0 (Firefox 4.0) and other CSS3-compliant browsers */
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/img/quotenAnalyser.png', sizingMethod='scale')";
+  -moz-border-image: url("/assets/img/quotenAnalyser.png") 0;  /* Gecko 1.9.1 (Firefox 3.5) */
+}
+
+
+
+@media (min-width: 980px) {
+  body {
+    padding-top: 60px;
+  }
+}
+
+body {
+  padding-bottom: 40px;
+}
+
+/* Help catch template errors. */
+.error {
+  border: 3px solid red;
+  background-color: rgba(255,0,0,0.3);
+  padding: 5px;
+}
+
+.brand {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.navbar-brand {
+  height: 50px;
+}
+
+footer {
+  font-size: smaller;
+}
+
+footer div:first-of-type {
+  float: left;
+}
+
+/* Bootstrap overrides ------------------------------------------------------ */
+.brand {
+  padding-left: 40px !important;
+  background: url(/assets/img/quotenAnalyser.png) no-repeat 16px 50%;
+  background-size: 22px;
+
+}
+/* -------------------------------------------------------------------------- */
+
+/* Remove empty p generated from markdown conversion. */
+p:empty {
+  display: none;
+}
+
+a[disabled] {
+  pointer-events: none;
+  color: #ccc;
+}
+
+#content-container {
+  position: relative;
+}
+
+#content {
+  min-height: 400px;
+}
+
+#content img {
+  border-radius: 7px;
+}
+
+#logo-row {
+  width: 110px;
+  text-align: right;
+  -webkit-filter: grayscale(0.8);
+  -moz-filter: grayscale(0.8);
+  -ms-filter: grayscale(0.8);
+  -o-filter: grayscale(0.8);
+  filter: grayscale(0.8);
+  float: right;
+}
+
+#logo-row i {
+  height: 25px;
+  width: auto;
+  margin: 0 2px;
+}
+.centered {
+  text-align: center;
+}
+
+.pagination li {
+  cursor:pointer;
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+//-----CSS Hendrik -------
+
+rect{
+  text-align: center;
+}
+
+#highcharts{
+  width: 100%;
+  height: 400px;
+
+z-index: 2;
+
+}
+html, body {
+    min-height: 500px;
+    background-color: #2ECCFA;
+}
+
+#footer
+{
+  margin-top:250px;
+}
+
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+

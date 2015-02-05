@@ -1,0 +1,44 @@
+<!-- Single button -->
+<div class="container">
+  <div class="form-horizontal" role="form" id="datainputform">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        {{'_data.input' | translate}}
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#/datainput-customersatisfaction">{{'_customer.satisfaction' | translate}}</a>
+        </li>
+        <li><a href="#/datainput-workingstepmistakes">{{'_workingstepmistake' | translate}}</a>
+        </li>
+        <li><a href="#/datainput-remainingpoints">{{'_remainingPoints' | translate}}</a>
+        </li>
+        <li><a href="#/datainput-processingtime">{{'_processing.time' | translate}}</a>
+        </li>
+        <li><a href="#/datainput-upstreamprocessmistakes">{{'_upstream.process.mistakes.headline' | translate}}</a>
+        </li>
+        <li><a href="#/datainput-portfolio">{{'_portfolio' | translate}} / {{'_portfolio.title' | translate}}</a>
+        </li>
+        <!--
+        <li><a href="#/datainput-labourproductivity">{{'_labour.productivity' | translate}}</a>
+        </li>
+      -->
+        <li><a href="#/datainput-scrappedmaterial">{{'_scrapped.material' | translate}}</a>
+        </li>
+        <li><a href="#/datainput-deliveryreliabilitylogistics">{{'_delivery.reliability.logistics' | translate}} / {{'_delivery.reliability.logistics.title' | translate}}</a>
+        </li>
+        <li><a href="#/datainput-capacity">{{'_capacity' | translate}}</a>
+        </li>
+         <li><a href="#/datainput-ideasprocessimprovements">{{'_ideas.process.improvements' | translate}}</a>
+        </li>
+         <li><a href="#/datainput-numberproducedcabinets">{{'_number.produced.cabinets' | translate}}</a>
+        </li>
+        <li><a href="#/datainput-deliveryreliabilityupstreamconstruction">{{'_delivery.reliability.upstream.construction' | translate}}</a>
+        </li>
+
+
+      </ul>
+      <button class='btn btn-default' ng:click='goToDataDelete()'>{{'_data.delete'| translate}}</button>
+    </div>
+  </div>
+</div>

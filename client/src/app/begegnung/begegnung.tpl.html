@@ -1,0 +1,53 @@
+<div>
+ <table class='table table-hover'>
+    <thead>
+      <tr>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Suche" ng:model="data.search">
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="value in begegnungData | filter:data.search| orderBy:['datum']" id='row{{$index}}'>
+        <td>{{value.datum}}</td>
+        <td>{{value.mannschaft_1}}</td>
+        <td>{{value.mannschaft_2}}</td>
+        <td>{{value.spieltyp}}</td>
+        <td>{{value.ergebnis}}</td>
+        <td>
+          <!-- Button trigger modal -->
+          <a data-toggle="modal" data-target='#myModal{{$index}}' class="btn btn-primary btn-lg">Quoten Änderung</a>
+          <!-- Modal -->
+          <div class="modal fade" id='myModal{{$index}}' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title">Achtung</h4>
+                </div>
+                <div class="modal-body">
+                 
+                </div>
+                <div class="modal-footer">
+                  <button type="button" ng:click="deleteById(collectionData.mongoId[value.mongoIndex], Urls.capacity.deleteUrl, $index,value.mongoIndex)" class="btn btn-primary" data-dismiss="modal">ja</button>
+                  <button type="button" ng:click="noClicked()" class="btn btn-primary" data-dismiss="modal">nein</button>
+                </div>
+              </div>
+              <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+          </div>
+          <!-- /.modal -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

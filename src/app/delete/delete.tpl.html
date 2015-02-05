@@ -1,0 +1,52 @@
+<!-- Single button -->
+<div class="container">
+  <div class="form-horizontal" role="form" id="datainputform">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        {{'_data.delete' | translate}}
+
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li role="presentation"><a role="menuitem" tabindex="-1" ng:click="getData(Urls.customerSatisfaction.getUrl, Urls.customerSatisfaction.templateUrl)">{{'_customer.satisfaction' | translate}}</a>
+        </li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" ng:click="getData(Urls.workingstepMistakes.getUrl, Urls.workingstepMistakes.templateUrl)">{{'_workingstepmistake' | translate}}</a>
+        </li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" ng:click="getData(Urls.remainingPoints.getUrl, Urls.remainingPoints.templateUrl)">{{'_remainingPoints' | translate}}</a>
+        </li>
+         <li role="presentation"><a role="menuitem" tabindex="-1" ng:click="getData(Urls.processingTime.getUrl, Urls.processingTime.templateUrl)">{{'_processing.time' | translate}}</a>
+        </li>
+         <li role="presentation"><a role="menuitem" tabindex="-1" ng:click="getData(Urls.upstreamProcessMistakes.getUrl, Urls.upstreamProcessMistakes.templateUrl)">{{'_upstream.process.mistakes.headline' | translate}}</a>
+        </li>
+
+         <li role="presentation"><a role="menuitem" tabindex="-1" ng:click="getData(Urls.portfolio.getUrl, Urls.portfolio.templateUrl)">{{'_portfolio' | translate}}</a>
+        </li>
+
+         <li role="presentation"><a role="menuitem" tabindex="-1" ng:click="getData(Urls.labourProductivity.getUrl, Urls.labourProductivity.templateUrl)">{{'_labour.productivity' | translate}}</a>
+        </li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" ng:click="getData(Urls.scrappedMaterial.getUrl, Urls.scrappedMaterial.templateUrl)">{{'_scrapped.material' | translate}}</a>
+        </li>
+
+        <li role="presentation"><a role="menuitem" tabindex="-1" ng:click="getData(Urls.deliveryReliabilityLogistics.getUrl, Urls.deliveryReliabilityLogistics.templateUrl)">{{'_delivery.reliability.logistics' | translate}}</a>
+        </li>
+
+         <li role="presentation"><a role="menuitem" tabindex="-1" ng:click="getData(Urls.capacity.getUrl, Urls.capacity.templateUrl)">{{'_capacity' | translate}}</a>
+        </li>
+
+         <li role="presentation"><a role="menuitem" tabindex="-1" ng:click="getData(Urls.ideasProcessImprovements.getUrl, Urls.ideasProcessImprovements.templateUrl)">{{'_ideas.process.improvements' | translate}}</a>
+        </li>
+
+        <li role="presentation"><a role="menuitem" tabindex="-1" ng:click="getData(Urls.numberProducedCabinets.getUrl, Urls.numberProducedCabinets.templateUrl)">{{'_number.produced.cabinets' | translate}}</a>
+        </li>
+
+        <li role="presentation"><a role="menuitem" tabindex="-1" ng:click="getData(Urls.deliveryReliabilityUpstreamConstruction.getUrl, Urls.deliveryReliabilityUpstreamConstruction.templateUrl)">{{'_delivery.reliability.upstream.construction' | translate}}</a>
+        </li>
+
+
+
+      </ul>
+    </div>
+  </div>
+  <div ng:include="collection.url" id="templateUrl">
+  </div>
+</div>

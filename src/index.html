@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+  <html
+    class="no-js ie6 oldie"
+    lang="en"
+    xmlns:ng="http://angularjs.org/"
+    ng:controller="AppController">
+<![endif]-->
+<!--[if IE 7]>
+  <html
+    class="no-js ie7 oldie"
+    lang="en"
+    xmlns:ng="http://angularjs.org/"
+    ng:controller="AppController">
+<![endif]-->
+<!--[if IE 8]>
+  <html
+    class="no-js ie8 oldie"
+    lang="en"
+    xmlns:ng="http://angularjs.org/"
+    ng:controller="AppController">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="app">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Operating Numbers</title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" type="image/png" href="/assets/img/glx-operating-numbers-favicon.png">
+
+
+    <link rel="stylesheet" type="text/css" href="/assets/<%= grunt.config.get('pkg.name') %>.css" />
+    <script type="text/javascript" src="/assets/libs.js"></script>
+    <script type="text/javascript" src="/assets/<%= grunt.config.get('pkg.name') %>.js"></script>
+
+
+
+
+
+</head>
+
+<body ng-controller="AppCtrl">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <span class="brand navbar-brand" ng:bind-template="Operating Numbers">Laden...</span>
+        </div>
+        <div class="pull-right" id="bilfinger-logo"></div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <!-- ng:class  css klasse from expression-->
+
+                <li ng:class="getClass('/users')"><a href="#/datainput" ng:click="endRouteChange()"><i class="fa fa-pencil"></i> <span ng:bind-template="{{'_data.input' | translate}}"></span></a>
+                </li>
+
+                <!--   <li><button   >Start Button</button></li>
+              <li><button ng:click="endRouteChange()">End Button</button></li>-->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-align-justify"></i>
+                        <span ng:bind-template="{{'_views' | translate}}"></span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li ng:class="getClass('/remainingPoints')"><a href="#/remainingPoints" ng:click="setOperatingNumberOptionIndex(1)"><i class="fa fa-bar-chart-o"></i> <span ng:bind-template="{{'_remainingPoints' | translate}}"></span></a>
+                        </li>
+                        <li ng:class="getClass('/workingstepmistakes')"><a href="#/workingstepmistakes" ng:click="setOperatingNumberOptionIndex(2)"><i class="fa fa-bar-chart-o"></i> <span ng:bind-template="{{'_workingstepmistake' | translate}}"></span></a>
+                        </li>
+
+                        <li ng:class="getClass('/remainingPoints')">
+                            <a href="#/upstreamprocessmistakes" ng:click="setOperatingNumberOptionIndex(3)"><i class="fa fa-bar-chart-o"></i> <span ng:bind-template="{{'_upstream.process.mistakes.headline' | translate}}"></span></a>
+                        </li>
+                        <li ng:class="getClass('/remainingPoints')"><a href="#/portfolio" ng:click="setOperatingNumberOptionIndex(4)"><i class="fa fa-bar-chart-o"></i> <span ng:bind-template="{{'_portfolio' | translate}} / {{'_portfolio.title' | translate}}"></span></a>
+                        </li>
+                        <!--
+            <li ng:class="getClass('/remainingPoints')"><a href="#/labourproductivity" ng:click="setOperatingNumberOptionIndex(5)"><i class="fa fa-bar-chart-o"></i> <span ng:bind-template="{{'_labour.productivity' | translate}}"></span></a>
+            </li> -->
+                        <li ng:class="getClass('/remainingPoints')"><a href="#/scrappedmaterial" ng:click="setOperatingNumberOptionIndex(6)"><i class="fa fa-bar-chart-o"></i> <span ng:bind-template="{{'_scrapped.material' | translate}}"></span></a>
+                        </li>
+                        <li ng:class="getClass('/remainingPoints')"><a href="#/deliveryreliabilitylogistics" ng:click="setOperatingNumberOptionIndex(7)"><i class="fa fa-bar-chart-o"></i> <span ng:bind-template="{{'_delivery.reliability.logistics' | translate}} / {{'_delivery.reliability.logistics.title' | translate}}"></span></a>
+                        </li>
+                        <li ng:class="getClass('/remainingPoints')"><a href="#/processingtime" ng:click="setOperatingNumberOptionIndex(8)"><i class="fa fa-bar-chart-o"></i> <span ng:bind-template="{{'_processing.time' | translate}}"></span></a>
+                        </li>
+                        <li ng:class="getClass('/remainingPoints')"><a href="#/capacity" ng:click="setOperatingNumberOptionIndex(9)"><i class="fa fa-bar-chart-o"></i> <span ng:bind-template="{{'_capacity' | translate}}"></span></a>
+                        </li>
+                        <li ng:class="getClass('/remainingPoints')"><a href="#/ideasprocessimprovements" ng:click="setOperatingNumberOptionIndex(10)"><i class="fa fa-bar-chart-o"></i> <span ng:bind-template="{{'_ideas.process.improvements' | translate}}"></span></a>
+                        </li>
+                        <li ng:class="getClass('/customersatisfaction')"><a href="#/customersatisfaction" ng:click="setOperatingNumberOptionIndex(11)"><i class="fa fa-bar-chart-o"></i> <span ng:bind-template="{{'_customer.satisfaction' | translate}}"></span></a>
+                        </li>
+                        <li ng:class="getClass('/customersatisfaction')"><a href="#/numberproducedcabinets" ng:click="setOperatingNumberOptionIndex(11)"><i class="fa fa-bar-chart-o"></i> <span ng:bind-template="{{'_number.produced.cabinets' | translate}}"></span></a>
+                        </li>
+                        <li ng:class="getClass('/customersatisfaction')"><a href="#/deliveryreliabilityupstreamconstruction" ng:click="setOperatingNumberOptionIndex(0)"><i class="fa fa-bar-chart-o"></i> <span ng:bind-template="{{'_delivery.reliability.upstream.construction' | translate}}"></span></a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-flag"></i>
+                        <span ng:bind-template="{{'_language' | translate}}"></span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a tabindex="-1" ng:click="changeLang('en')">English</a>
+                        </li>
+                        <li><a tabindex="-1" ng:click="changeLang('de')">Deutsch</a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="startButton" class="{{startButton}}"><a ng:click="startRouteChange()"><i class="fa fa-play"></i> <span >play</span></a>
+                </li>
+                <li><a ng:click="endRouteChange()"><i class="fa fa-stop"></i> <span >stop</span></a>
+                </li>
+                <li><a href="#/options" ng:click="endRouteChange()"><i class="fa fa-wrench"></i> <span >{{'_options' | translate}}</span></a>
+                </li>
+                <li><a data-toggle="modal" data-target="#loginModal" class="{{navLogin}}" ng-click="focusInput=true"><i class="fa fa-user"></i> <span >{{loginText}}</span></a>
+
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="pull-right" id="bilfinger-logo-big"></div>
+    <div class="row">
+
+
+        <div class="col-lg-12" ng:view>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Login</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="{{'_admin.password' | translate}}" ng:model="data.adminPassword" ng:change="checkAdminPassword()" focusme="focusInput">
+                        <span class="help-inline">{{'_admin.password.enter' | translate}}</span>
+                        <br>{{loginstatus}}
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="focusInput=false">Close</button>
+                    <button id="loginbuttonid" type="button" class="btn btn-primary" ng:click="login(data.adminPassword)" 5>{{loginButtonValue}}</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="container">
+                <div id="footer">
+                    <hr id="hr">
+                    <footer>
+                        <div>
+                            <div>© 2013 Bilfinger GreyLogix GmbH</div>
+                        </div>
+                        <div id="logo-row">
+                            <i class="icon-html5 icon-large"></i>
+                            <i class="icon-css3 icon-large"></i>
+                            <i class="icon-linux icon-large"></i>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+    <![endif]-->
+</body>
+
+</html>

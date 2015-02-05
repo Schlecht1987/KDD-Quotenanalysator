@@ -1,0 +1,32 @@
+<div>
+  <div>
+    <table class='table table-hover'>
+      <caption>{{'_succesfully.saved' | translate}} <i class='icon-ok'></i>
+      </caption>
+      <thead>
+        <tr>
+          <th>{{'_attribute'| translate}}</th>
+          <th>{{'_value'| translate}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{'_number.produced.cabinets.actual' | translate}}</td>
+          <td>{{responsedata.actual}}</td>
+        </tr>
+        <tr>
+          <td>{{'_number.produced.cabinets.target' | translate}}</td>
+          <td>{{responsedata.target}}</td>
+        </tr>
+         <tr>
+          <td>{{'_year' | translate}}</td>
+          <td>{{responsedata.year}}</td>
+        </tr>
+        <tr>
+          <td>{{'_note' | translate}}</td>
+          <td>{{responsedata.note}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <button class='btn btn-default' ng:click='backToDataInput()'>{{'_back' | translate}}</button>
+  </div>
