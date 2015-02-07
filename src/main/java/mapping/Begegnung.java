@@ -38,7 +38,7 @@ public class Begegnung {
     private int        id;
 
     /** The datum. */
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date       datum;
     
     /** The spieltyp. */
@@ -47,11 +47,13 @@ public class Begegnung {
     
 
     /** The mannschaft_1. */
-    private String mannschaft_1;
+    @ManyToOne
+    private Mannschaft mannschaft_1;
     
 
     /** The mannschaft_2. */
-    private String mannschaft_2;
+    @ManyToOne
+    private Mannschaft mannschaft_2;
     
     /** The quote. */
     @OneToMany (mappedBy = "begegnung")
@@ -118,44 +120,7 @@ public class Begegnung {
     }
 
     
-    /**
-     * Gets the mannschaft_1.
-     *
-     * @return the mannschaft_1
-     */
-    public String getMannschaft_1() {
-        return mannschaft_1;
-    }
-
-    
-    /**
-     * Sets the mannschaft_1.
-     *
-     * @param mannschaft_1 the new mannschaft_1
-     */
-    public void setMannschaft_1(String mannschaft_1) {
-        this.mannschaft_1 = mannschaft_1;
-    }
-
-    
-    /**
-     * Gets the mannschaft_2.
-     *
-     * @return the mannschaft_2
-     */
-    public String getMannschaft_2() {
-        return mannschaft_2;
-    }
-
-    
-    /**
-     * Sets the mannschaft_2.
-     *
-     * @param mannschaft_2 the new mannschaft_2
-     */
-    public void setMannschaft_2(String mannschaft_2) {
-        this.mannschaft_2 = mannschaft_2;
-    }
+  
 
     
     /**
@@ -177,8 +142,28 @@ public class Begegnung {
         this.quote = quote;
     }
 
-    
-   
 
+    
+    public Mannschaft getMannschaft_1() {
+        return mannschaft_1;
+    }
+
+
+    
+    public void setMannschaft_1(Mannschaft mannschaft_1) {
+        this.mannschaft_1 = mannschaft_1;
+    }
+
+
+    
+    public Mannschaft getMannschaft_2() {
+        return mannschaft_2;
+    }
+
+
+    
+    public void setMannschaft_2(Mannschaft mannschaft_2) {
+        this.mannschaft_2 = mannschaft_2;
+    }
 
 }

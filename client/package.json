@@ -1,11 +1,11 @@
 {
   "author": "Hendrik Froemming",
-  "name": "glx-operating_numbers",
-  "homepage": "http://glx-operating_numbers.greylogix.local/",
+  "name": "kdd-quotenanalysator",
+  "homepage": "http://localhost:11016/",
   "version": "0.0.1-SNAPSHOT",
   "repository": {
     "type": "git",
-    "url": "ssh://gitolite/glx-operating_numbers"
+    "url": "https://github.com/Schlecht1987/KDD-Quotenanalysator.git"
   },
   "engines": {
     "node": ">= 0.10.22"

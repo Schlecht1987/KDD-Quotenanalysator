@@ -6977,3 +6977,1219 @@ INFO  [2015-01-25 20:41:59,342] org.hibernate.engine.jdbc.connections.internal.D
 INFO  [2015-01-25 20:41:59,343] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
 INFO  [2015-01-25 20:41:59,343] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
 INFO  [2015-01-25 20:41:59,344] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+WARN  [2015-02-05 17:53:50,520] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-02-05 17:53:50,639] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-02-05 17:53:50,645] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-02-05 17:53:50,647] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-02-05 17:53:50,648] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-02-05 17:53:50,672] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-02-05 17:53:50,672] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-02-05 17:53:50,781] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-02-05 17:53:50,855] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-02-05 17:53:50,858] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost/fussballquoten]
+INFO  [2015-02-05 17:53:50,859] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-02-05 17:53:50,859] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-02-05 17:53:50,860] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO  [2015-02-05 17:53:51,023] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  [2015-02-05 17:53:51,029] org.hibernate.engine.jdbc.internal.LobCreatorBuilder: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+WARN  [2015-02-05 17:54:25,656] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-02-05 17:54:25,749] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-02-05 17:54:25,754] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-02-05 17:54:25,755] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-02-05 17:54:25,756] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-02-05 17:54:25,771] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-02-05 17:54:25,771] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-02-05 17:54:25,849] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-02-05 17:54:25,903] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-02-05 17:54:25,906] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost/fussballquoten]
+INFO  [2015-02-05 17:54:25,907] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-02-05 17:54:25,907] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-02-05 17:54:25,908] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO  [2015-02-05 17:54:26,038] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  [2015-02-05 17:54:26,043] org.hibernate.engine.jdbc.internal.LobCreatorBuilder: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO  [2015-02-05 17:54:26,173] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  [2015-02-05 17:54:26,176] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+INFO  [2015-02-05 17:54:26,483] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000228: Running hbm2ddl schema update
+INFO  [2015-02-05 17:54:26,483] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000102: Fetching database metadata
+INFO  [2015-02-05 17:54:26,484] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000396: Updating schema
+INFO  [2015-02-05 17:54:26,495] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.BEGEGNUNG
+INFO  [2015-02-05 17:54:26,495] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, spieltyp_id, mannschaft_1_id, datum, mannschaft_2_id]
+INFO  [2015-02-05 17:54:26,495] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-02-05 17:54:26,496] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, primary, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-02-05 17:54:26,499] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.ERGEBNIS
+INFO  [2015-02-05 17:54:26,499] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [m2_tore, id, m2_h_tore, begenung_id, sieger, m1_h_tore, m1_tore]
+INFO  [2015-02-05 17:54:26,499] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_8imdnxkvggxb99gw7cehn003d]
+INFO  [2015-02-05 17:54:26,499] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_8imdnxkvggxb99gw7cehn003d, primary]
+INFO  [2015-02-05 17:54:26,502] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.HISTORY_QUOTE
+INFO  [2015-02-05 17:54:26,502] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, quote2, quote1, quote_id, datum, quotex]
+INFO  [2015-02-05 17:54:26,503] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_46qi15od5xmlqi7tikikcbtm8]
+INFO  [2015-02-05 17:54:26,503] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_46qi15od5xmlqi7tikikcbtm8, primary]
+INFO  [2015-02-05 17:54:26,505] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.MANNSCHAFT
+INFO  [2015-02-05 17:54:26,505] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-05 17:54:26,505] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-05 17:54:26,505] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-05 17:54:26,509] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.QUOTE
+INFO  [2015-02-05 17:54:26,509] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, wettanbieter_id, begegnung_id, quotem1, quotex, quotem2]
+INFO  [2015-02-05 17:54:26,509] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_df8mce9ofcqfn81yswwqqu23g, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-02-05 17:54:26,509] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_df8mce9ofcqfn81yswwqqu23g, primary, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-02-05 17:54:26,512] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.SPIELTYP
+INFO  [2015-02-05 17:54:26,512] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-05 17:54:26,512] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-05 17:54:26,512] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-05 17:54:26,514] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.WETTANBIETER
+INFO  [2015-02-05 17:54:26,515] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-05 17:54:26,515] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-05 17:54:26,515] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-05 17:54:26,516] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000232: Schema update complete
+INFO  [2015-02-05 17:54:26,522] io.dropwizard.server.ServerFactory: Starting AnalyserService
+INFO  [2015-02-05 17:54:26,654] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.18.1 02/19/2014 03:28 AM'
+INFO  [2015-02-05 17:54:26,710] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     / (resources.MainResource)
+    GET     /begegnung (resources.BegegnungResource)
+    POST    /quoten (resources.QuotenResource)
+
+INFO  [2015-02-05 17:54:26,893] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2015-02-05 17:54:26,893] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-02-05 18:23:37,284] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-05 18:23:37,430] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-05 18:34:28,532] resources.QuotenResource: FROM: null UNTIL:  null 0.175 Bundesliga
+INFO  [2015-02-05 18:34:28,535] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-05 18:34:28,997] resources.QuotenResource: FROM: null UNTIL:  null 0.3 Bundesliga
+INFO  [2015-02-05 18:34:28,999] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-05 18:34:29,345] resources.QuotenResource: FROM: null UNTIL:  null 0.475 Bundesliga
+INFO  [2015-02-05 18:34:29,347] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-05 18:34:29,725] resources.QuotenResource: FROM: null UNTIL:  null 0.65 Bundesliga
+INFO  [2015-02-05 18:34:29,727] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-05 18:34:30,020] resources.QuotenResource: FROM: null UNTIL:  null 0.875 Bundesliga
+INFO  [2015-02-05 18:34:30,022] statistics.QuotenStatistik: found 0 quoten
+WARN  [2015-02-05 20:16:15,252] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-02-05 20:16:15,355] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-02-05 20:16:15,360] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-02-05 20:16:15,361] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-02-05 20:16:15,362] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-02-05 20:16:15,376] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-02-05 20:16:15,376] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-02-05 20:16:15,440] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-02-05 20:16:15,518] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-02-05 20:16:15,521] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost/fussballquoten]
+INFO  [2015-02-05 20:16:15,522] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-02-05 20:16:15,522] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-02-05 20:16:15,523] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO  [2015-02-05 20:16:15,649] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  [2015-02-05 20:16:15,655] org.hibernate.engine.jdbc.internal.LobCreatorBuilder: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO  [2015-02-05 20:16:15,773] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  [2015-02-05 20:16:15,776] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+INFO  [2015-02-05 20:16:16,090] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000228: Running hbm2ddl schema update
+INFO  [2015-02-05 20:16:16,090] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000102: Fetching database metadata
+INFO  [2015-02-05 20:16:16,092] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000396: Updating schema
+INFO  [2015-02-05 20:16:16,101] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.BEGEGNUNG
+INFO  [2015-02-05 20:16:16,101] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, spieltyp_id, mannschaft_1_id, datum, mannschaft_2_id]
+INFO  [2015-02-05 20:16:16,101] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-02-05 20:16:16,102] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, primary, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-02-05 20:16:16,105] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.ERGEBNIS
+INFO  [2015-02-05 20:16:16,105] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [m2_tore, id, m2_h_tore, begenung_id, sieger, m1_h_tore, m1_tore]
+INFO  [2015-02-05 20:16:16,105] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_8imdnxkvggxb99gw7cehn003d]
+INFO  [2015-02-05 20:16:16,105] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_8imdnxkvggxb99gw7cehn003d, primary]
+INFO  [2015-02-05 20:16:16,116] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.HISTORY_QUOTE
+INFO  [2015-02-05 20:16:16,117] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, quote2, quote1, quote_id, datum, quotex]
+INFO  [2015-02-05 20:16:16,117] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_46qi15od5xmlqi7tikikcbtm8]
+INFO  [2015-02-05 20:16:16,117] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_46qi15od5xmlqi7tikikcbtm8, primary]
+INFO  [2015-02-05 20:16:16,124] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.MANNSCHAFT
+INFO  [2015-02-05 20:16:16,124] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-05 20:16:16,124] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-05 20:16:16,124] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-05 20:16:16,127] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.QUOTE
+INFO  [2015-02-05 20:16:16,128] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, wettanbieter_id, begegnung_id, quotem1, quotex, quotem2]
+INFO  [2015-02-05 20:16:16,128] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_df8mce9ofcqfn81yswwqqu23g, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-02-05 20:16:16,128] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_df8mce9ofcqfn81yswwqqu23g, primary, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-02-05 20:16:16,130] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.SPIELTYP
+INFO  [2015-02-05 20:16:16,130] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-05 20:16:16,130] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-05 20:16:16,130] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-05 20:16:16,132] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.WETTANBIETER
+INFO  [2015-02-05 20:16:16,132] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-05 20:16:16,133] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-05 20:16:16,133] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-05 20:16:16,133] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000232: Schema update complete
+INFO  [2015-02-05 20:16:16,144] io.dropwizard.server.ServerFactory: Starting AnalyserService
+INFO  [2015-02-05 20:16:16,301] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.18.1 02/19/2014 03:28 AM'
+INFO  [2015-02-05 20:16:16,365] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     / (resources.MainResource)
+    GET     /begegnung (resources.BegegnungResource)
+    POST    /quoten (resources.QuotenResource)
+
+INFO  [2015-02-05 20:16:16,603] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2015-02-05 20:16:16,603] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-02-05 20:16:35,874] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-31 0.1 Bundesliga
+INFO  [2015-02-05 20:16:36,605] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-05 20:16:43,594] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-31 0.175 Bundesliga
+INFO  [2015-02-05 20:16:43,794] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-05 20:16:46,895] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-31 0.075 Bundesliga
+INFO  [2015-02-05 20:16:47,076] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-05 20:17:01,415] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-31 0.1 Bundesliga
+INFO  [2015-02-05 20:17:01,528] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-05 20:17:48,497] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-31 0.25 Bundesliga
+INFO  [2015-02-05 20:17:48,633] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-05 20:18:18,951] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-31 0.1 Bundesliga
+INFO  [2015-02-05 20:18:19,053] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-05 20:19:47,696] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-31 0.025 Bundesliga
+INFO  [2015-02-05 20:19:47,799] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-05 20:20:12,913] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-31 0.1 Bundesliga
+INFO  [2015-02-05 20:20:12,989] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-05 20:20:19,567] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-31 0.05 Bundesliga
+INFO  [2015-02-05 20:20:19,626] statistics.QuotenStatistik: found 480 quoten
+WARN  [2015-02-06 13:39:59,248] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-02-06 13:39:59,433] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-02-06 13:39:59,440] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-02-06 13:39:59,442] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-02-06 13:39:59,444] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-02-06 13:39:59,473] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-02-06 13:39:59,473] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-02-06 13:39:59,585] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-02-06 13:39:59,675] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-02-06 13:39:59,679] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost/fussballquoten]
+INFO  [2015-02-06 13:39:59,680] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-02-06 13:39:59,680] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-02-06 13:39:59,681] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO  [2015-02-06 13:39:59,857] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  [2015-02-06 13:39:59,871] org.hibernate.engine.jdbc.internal.LobCreatorBuilder: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO  [2015-02-06 13:40:00,021] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  [2015-02-06 13:40:00,025] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+INFO  [2015-02-06 13:40:00,366] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000228: Running hbm2ddl schema update
+INFO  [2015-02-06 13:40:00,366] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000102: Fetching database metadata
+INFO  [2015-02-06 13:40:00,367] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000396: Updating schema
+INFO  [2015-02-06 13:40:00,379] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.BEGEGNUNG
+INFO  [2015-02-06 13:40:00,379] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, spieltyp_id, mannschaft_1_id, datum, mannschaft_2_id]
+INFO  [2015-02-06 13:40:00,379] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-02-06 13:40:00,379] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, primary, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-02-06 13:40:00,383] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.ERGEBNIS
+INFO  [2015-02-06 13:40:00,383] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [m2_tore, id, m2_h_tore, begenung_id, sieger, m1_h_tore, m1_tore]
+INFO  [2015-02-06 13:40:00,383] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_8imdnxkvggxb99gw7cehn003d]
+INFO  [2015-02-06 13:40:00,383] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_8imdnxkvggxb99gw7cehn003d, primary]
+INFO  [2015-02-06 13:40:00,386] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.HISTORY_QUOTE
+INFO  [2015-02-06 13:40:00,386] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, quote2, quote1, quote_id, datum, quotex]
+INFO  [2015-02-06 13:40:00,387] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_46qi15od5xmlqi7tikikcbtm8]
+INFO  [2015-02-06 13:40:00,387] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_46qi15od5xmlqi7tikikcbtm8, primary]
+INFO  [2015-02-06 13:40:00,389] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.MANNSCHAFT
+INFO  [2015-02-06 13:40:00,389] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-06 13:40:00,389] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-06 13:40:00,389] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-06 13:40:00,393] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.QUOTE
+INFO  [2015-02-06 13:40:00,394] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, wettanbieter_id, begegnung_id, quotem1, quotex, quotem2]
+INFO  [2015-02-06 13:40:00,394] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_df8mce9ofcqfn81yswwqqu23g, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-02-06 13:40:00,394] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_df8mce9ofcqfn81yswwqqu23g, primary, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-02-06 13:40:00,396] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.SPIELTYP
+INFO  [2015-02-06 13:40:00,396] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-06 13:40:00,397] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-06 13:40:00,397] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-06 13:40:00,400] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.WETTANBIETER
+INFO  [2015-02-06 13:40:00,400] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-06 13:40:00,400] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-06 13:40:00,400] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-06 13:40:00,401] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000232: Schema update complete
+INFO  [2015-02-06 13:40:00,411] io.dropwizard.server.ServerFactory: Starting AnalyserService
+INFO  [2015-02-06 13:40:00,549] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.18.1 02/19/2014 03:28 AM'
+INFO  [2015-02-06 13:40:00,635] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     / (resources.MainResource)
+    GET     /begegnung (resources.BegegnungResource)
+    POST    /quoten (resources.QuotenResource)
+
+INFO  [2015-02-06 13:40:00,832] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2015-02-06 13:40:00,832] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-02-06 13:40:14,972] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-06 13:40:15,112] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 13:40:28,892] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-30 0.1 Bundesliga
+INFO  [2015-02-06 13:40:29,346] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 13:41:28,474] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-30 0.175 Bundesliga
+INFO  [2015-02-06 13:41:28,709] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 13:41:29,140] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-30 0.25 Bundesliga
+INFO  [2015-02-06 13:41:29,368] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 13:41:36,162] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-30 0.575 Bundesliga
+INFO  [2015-02-06 13:41:36,280] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 13:41:36,819] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-30 0.825 Bundesliga
+INFO  [2015-02-06 13:41:36,960] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 13:41:37,368] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-30 1.0 Bundesliga
+INFO  [2015-02-06 13:41:37,493] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 13:41:37,802] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-30 1.275 Bundesliga
+INFO  [2015-02-06 13:41:37,956] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 13:41:38,227] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-30 1.5 Bundesliga
+INFO  [2015-02-06 13:41:38,364] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 13:41:38,681] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-30 1.75 Bundesliga
+INFO  [2015-02-06 13:41:38,994] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 13:41:39,267] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-30 0.75 Bundesliga
+INFO  [2015-02-06 13:41:39,690] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 13:41:39,753] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-30 0.3 Bundesliga
+INFO  [2015-02-06 13:41:39,999] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 13:41:40,677] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-30 0.8 Bundesliga
+INFO  [2015-02-06 13:41:40,871] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 13:41:41,214] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-30 1.175 Bundesliga
+INFO  [2015-02-06 13:41:41,338] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 13:41:41,587] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-30 1.4 Bundesliga
+INFO  [2015-02-06 13:41:41,658] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 13:41:59,491] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-30 0.2 Bundesliga
+INFO  [2015-02-06 13:41:59,529] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 14:49:21,577] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-30 0.3 Bundesliga
+INFO  [2015-02-06 14:49:21,619] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 14:49:26,564] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-30 0.1 Bundesliga
+INFO  [2015-02-06 14:49:26,618] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 14:49:36,609] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-30 0.225 Bundesliga
+INFO  [2015-02-06 14:49:36,649] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 16:37:16,732] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-30 0.075 Bundesliga
+INFO  [2015-02-06 16:37:16,786] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 16:37:19,033] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-30 0.1 Bundesliga
+INFO  [2015-02-06 16:37:19,078] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 19:36:03,454] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-06 19:36:03,485] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:37:22,999] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-06 19:37:23,005] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:38:40,378] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-06 19:38:40,383] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:38:44,118] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-06 19:38:44,125] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:38:44,629] resources.QuotenResource: FROM: null UNTIL:  null 0.525 Bundesliga
+INFO  [2015-02-06 19:38:44,634] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:38:50,268] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-18 0.525 Bundesliga
+INFO  [2015-02-06 19:38:50,322] statistics.QuotenStatistik: found 247 quoten
+INFO  [2015-02-06 19:39:21,231] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-06 19:39:21,236] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:40:41,418] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-06 19:40:41,428] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:41:04,881] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-06 19:41:04,888] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:47:10,711] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-06 19:47:10,716] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:47:16,831] resources.QuotenResource: FROM: 2013-01-01 UNTIL:  2014-12-10 0.1 Bundesliga
+INFO  [2015-02-06 19:47:16,874] statistics.QuotenStatistik: found 189 quoten
+INFO  [2015-02-06 19:47:37,265] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-06 19:47:37,270] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:47:59,246] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-06 19:47:59,251] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:48:08,086] resources.QuotenResource: FROM: 2013-01-03 UNTIL:  2014-12-23 0.1 Bundesliga
+INFO  [2015-02-06 19:48:08,155] statistics.QuotenStatistik: found 293 quoten
+INFO  [2015-02-06 19:48:52,857] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2014-12-16 0.1 Bundesliga
+INFO  [2015-02-06 19:48:52,903] statistics.QuotenStatistik: found 238 quoten
+INFO  [2015-02-06 19:49:32,870] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-06 19:49:32,897] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:50:27,303] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-06 19:50:27,335] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:51:47,004] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-06 19:51:47,009] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:52:14,224] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-06 19:52:14,228] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:52:48,014] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-06 19:52:48,020] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:52:52,957] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-06 19:52:52,963] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:52:54,315] resources.QuotenResource: FROM: null UNTIL:  null 0.275 Bundesliga
+INFO  [2015-02-06 19:52:54,321] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:52:59,654] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2014-12-26 0.275 Bundesliga
+INFO  [2015-02-06 19:52:59,716] statistics.QuotenStatistik: found 293 quoten
+INFO  [2015-02-06 19:54:45,071] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-06 19:54:45,076] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:54:48,694] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-06 19:54:48,699] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:54:56,601] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2014-12-01 0.1 Bundesliga
+INFO  [2015-02-06 19:54:56,639] statistics.QuotenStatistik: found 118 quoten
+INFO  [2015-02-06 19:55:27,731] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-06 19:55:27,755] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:55:29,510] resources.QuotenResource: FROM: null UNTIL:  null 0.1 Bundesliga
+INFO  [2015-02-06 19:55:29,514] statistics.QuotenStatistik: found 0 quoten
+INFO  [2015-02-06 19:56:10,931] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.1 Bundesliga
+INFO  [2015-02-06 19:56:11,052] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-06 20:00:18,964] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.1 Bundesliga
+INFO  [2015-02-06 20:00:19,046] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-06 20:01:59,686] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.1 Bundesliga
+INFO  [2015-02-06 20:01:59,743] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-06 20:05:02,326] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.1 Bundesliga
+INFO  [2015-02-06 20:05:02,389] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-06 20:07:05,948] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.1 Bundesliga
+INFO  [2015-02-06 20:07:06,025] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-06 20:10:02,513] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.1 Bundesliga
+INFO  [2015-02-06 20:10:02,614] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-06 20:11:01,169] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.1 Bundesliga
+INFO  [2015-02-06 20:11:01,227] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-06 20:11:38,628] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.5 Bundesliga
+INFO  [2015-02-06 20:11:38,695] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-06 20:21:02,770] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.1 Bundesliga
+INFO  [2015-02-06 20:21:02,853] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-06 20:21:36,390] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.1 Bundesliga
+INFO  [2015-02-06 20:21:36,455] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-06 20:22:14,356] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.1 Bundesliga
+INFO  [2015-02-06 20:22:14,434] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-06 20:23:25,263] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.1 Bundesliga
+INFO  [2015-02-06 20:23:25,331] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-06 20:23:33,933] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.8 Bundesliga
+INFO  [2015-02-06 20:23:33,988] statistics.QuotenStatistik: found 480 quoten
+WARN  [2015-02-06 20:38:41,906] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-02-06 20:38:42,037] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-02-06 20:38:42,043] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-02-06 20:38:42,045] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-02-06 20:38:42,047] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-02-06 20:38:42,069] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-02-06 20:38:42,069] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-02-06 20:38:42,171] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-02-06 20:38:42,257] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-02-06 20:38:42,264] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost/fussballquoten]
+INFO  [2015-02-06 20:38:42,265] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-02-06 20:38:42,265] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-02-06 20:38:42,266] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO  [2015-02-06 20:38:42,439] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  [2015-02-06 20:38:42,444] org.hibernate.engine.jdbc.internal.LobCreatorBuilder: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO  [2015-02-06 20:38:42,566] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  [2015-02-06 20:38:42,570] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+INFO  [2015-02-06 20:38:42,901] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000228: Running hbm2ddl schema update
+INFO  [2015-02-06 20:38:42,901] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000102: Fetching database metadata
+INFO  [2015-02-06 20:38:42,902] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000396: Updating schema
+INFO  [2015-02-06 20:38:42,928] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.BEGEGNUNG
+INFO  [2015-02-06 20:38:42,928] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, spieltyp_id, mannschaft_1_id, datum, mannschaft_2_id]
+INFO  [2015-02-06 20:38:42,928] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-02-06 20:38:42,928] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, primary, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-02-06 20:38:42,932] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.ERGEBNIS
+INFO  [2015-02-06 20:38:42,932] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [m2_tore, id, m2_h_tore, begenung_id, sieger, m1_h_tore, m1_tore]
+INFO  [2015-02-06 20:38:42,932] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_8imdnxkvggxb99gw7cehn003d]
+INFO  [2015-02-06 20:38:42,932] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_8imdnxkvggxb99gw7cehn003d, primary]
+INFO  [2015-02-06 20:38:42,941] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.HISTORY_QUOTE
+INFO  [2015-02-06 20:38:42,941] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, quote2, quote1, quote_id, datum, quotex]
+INFO  [2015-02-06 20:38:42,941] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_46qi15od5xmlqi7tikikcbtm8]
+INFO  [2015-02-06 20:38:42,941] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_46qi15od5xmlqi7tikikcbtm8, primary]
+INFO  [2015-02-06 20:38:42,948] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.MANNSCHAFT
+INFO  [2015-02-06 20:38:42,948] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-06 20:38:42,948] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-06 20:38:42,948] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-06 20:38:42,952] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.QUOTE
+INFO  [2015-02-06 20:38:42,952] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, wettanbieter_id, begegnung_id, quotem1, quotex, quotem2]
+INFO  [2015-02-06 20:38:42,952] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_df8mce9ofcqfn81yswwqqu23g, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-02-06 20:38:42,952] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_df8mce9ofcqfn81yswwqqu23g, primary, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-02-06 20:38:42,955] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.SPIELTYP
+INFO  [2015-02-06 20:38:42,955] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-06 20:38:42,955] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-06 20:38:42,955] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-06 20:38:42,958] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.WETTANBIETER
+INFO  [2015-02-06 20:38:42,958] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-06 20:38:42,958] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-06 20:38:42,958] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-06 20:38:42,959] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000232: Schema update complete
+INFO  [2015-02-06 20:38:42,968] io.dropwizard.server.ServerFactory: Starting AnalyserService
+INFO  [2015-02-06 20:38:43,186] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.18.1 02/19/2014 03:28 AM'
+INFO  [2015-02-06 20:38:43,239] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     / (resources.MainResource)
+    GET     /begegnung (resources.BegegnungResource)
+    POST    /quoten (resources.QuotenResource)
+
+INFO  [2015-02-06 20:38:43,454] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2015-02-06 20:38:43,455] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-02-06 20:38:46,299] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.1 Bundesliga
+ERROR [2015-02-06 20:38:46,408] org.hibernate.hql.internal.ast.ErrorCounter: <AST>:1:245: unexpected AST node: .
+ERROR [2015-02-06 20:38:46,414] org.hibernate.hql.internal.ast.ErrorCounter: <AST>:1:245: unexpected AST node: .
+! antlr.NoViableAltException: unexpected AST node: .
+! at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.logicalExpr(HqlSqlBaseWalker.java:2112) [hibernate-core-4.3.7.Final.jar:4.3.7.Final]
+! at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.logicalExpr(HqlSqlBaseWalker.java:2032) [hibernate-core-4.3.7.Final.jar:4.3.7.Final]
+! at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.whereClause(HqlSqlBaseWalker.java:796) [hibernate-core-4.3.7.Final.jar:4.3.7.Final]
+! at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:597) [hibernate-core-4.3.7.Final.jar:4.3.7.Final]
+! at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectStatement(HqlSqlBaseWalker.java:301) [hibernate-core-4.3.7.Final.jar:4.3.7.Final]
+! at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.statement(HqlSqlBaseWalker.java:249) [hibernate-core-4.3.7.Final.jar:4.3.7.Final]
+! at org.hibernate.hql.internal.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:278) [hibernate-core-4.3.7.Final.jar:4.3.7.Final]
+! at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:206) [hibernate-core-4.3.7.Final.jar:4.3.7.Final]
+! at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:158) [hibernate-core-4.3.7.Final.jar:4.3.7.Final]
+! at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:131) [hibernate-core-4.3.7.Final.jar:4.3.7.Final]
+! at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:93) [hibernate-core-4.3.7.Final.jar:4.3.7.Final]
+! at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:167) [hibernate-core-4.3.7.Final.jar:4.3.7.Final]
+! at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:301) [hibernate-core-4.3.7.Final.jar:4.3.7.Final]
+! at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:236) [hibernate-core-4.3.7.Final.jar:4.3.7.Final]
+! at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1800) [hibernate-core-4.3.7.Final.jar:4.3.7.Final]
+! at analyser.DbManage.getQuery(DbManage.java:108) [classes/:na]
+! at statistics.QuotenStatistik.quotenOverview(QuotenStatistik.java:73) [classes/:na]
+! at statistics.QuotenStatistik.<init>(QuotenStatistik.java:29) [classes/:na]
+! at resources.QuotenResource.gibBegegnung(QuotenResource.java:38) [classes/:na]
+! at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.7.0_65]
+! at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) ~[na:1.7.0_65]
+! at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.7.0_65]
+! at java.lang.reflect.Method.invoke(Method.java:606) ~[na:1.7.0_65]
+! at com.sun.jersey.spi.container.JavaMethodInvokerFactory$1.invoke(JavaMethodInvokerFactory.java:60) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$TypeOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:185) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75) [jersey-server-1.18.1.jar:1.18.1]
+! at io.dropwizard.jersey.guava.OptionalResourceMethodDispatchAdapter$OptionalRequestDispatcher.dispatch(OptionalResourceMethodDispatchAdapter.java:37) [dropwizard-jersey-0.7.0.jar:0.7.0]
+! at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.uri.rules.ResourceObjectRule.accept(ResourceObjectRule.java:100) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1542) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1473) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1419) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1409) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:409) [jersey-servlet-1.18.1.jar:1.18.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:540) [jersey-servlet-1.18.1.jar:1.18.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:715) [jersey-servlet-1.18.1.jar:1.18.1]
+! at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) [javax.servlet-3.0.0.v201112011016.jar:na]
+! at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49) [dropwizard-jetty-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1515) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:83) [jetty-servlets-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:295) [jetty-servlets-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at io.dropwizard.jetty.BiDiGzipFilter.doFilter(BiDiGzipFilter.java:127) [dropwizard-jetty-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1486) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [dropwizard-servlets-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1486) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:519) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1097) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:448) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1031) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:136) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:173) [metrics-jetty9-3.0.1.jar:3.0.1]
+! at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51) [dropwizard-jetty-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:92) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:162) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.Server.handle(Server.java:446) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:271) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:246) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.io.AbstractConnection$ReadCallback.run(AbstractConnection.java:358) [jetty-io-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:601) [jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:532) [jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at java.lang.Thread.run(Thread.java:745) [na:1.7.0_65]
+INFO  [2015-02-06 20:38:46,424] analyser.DbManage: Error in getQuery: query fail: select distinct q from Quote q, Begegnung b, Ergebnis e, Spieltyp s where b.id = q.begegnung AND b.id = e.begegnung AND b.datum >= '2013-01-02' AND b.datum <= '2015-12-01' AND q.quoteM1 < 6 AND q.quoteX < 6 AND q.quoteM2
+ERROR [2015-02-06 20:38:46,444] io.dropwizard.jersey.errors.LoggingExceptionMapper: Error handling a request: ddcd39e6b3cb5569
+! java.lang.NullPointerException: null
+! at statistics.QuotenStatistik.quotenOverview(QuotenStatistik.java:74) ~[classes/:na]
+! at statistics.QuotenStatistik.<init>(QuotenStatistik.java:29) ~[classes/:na]
+! at resources.QuotenResource.gibBegegnung(QuotenResource.java:38) ~[classes/:na]
+! at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.7.0_65]
+! at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) ~[na:1.7.0_65]
+! at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.7.0_65]
+! at java.lang.reflect.Method.invoke(Method.java:606) ~[na:1.7.0_65]
+! at com.sun.jersey.spi.container.JavaMethodInvokerFactory$1.invoke(JavaMethodInvokerFactory.java:60) ~[jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$TypeOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:185) ~[jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75) ~[jersey-server-1.18.1.jar:1.18.1]
+! at io.dropwizard.jersey.guava.OptionalResourceMethodDispatchAdapter$OptionalRequestDispatcher.dispatch(OptionalResourceMethodDispatchAdapter.java:37) ~[dropwizard-jersey-0.7.0.jar:0.7.0]
+! at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302) ~[jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.uri.rules.ResourceObjectRule.accept(ResourceObjectRule.java:100) ~[jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) ~[jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84) ~[jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1542) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1473) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1419) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1409) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:409) [jersey-servlet-1.18.1.jar:1.18.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:540) [jersey-servlet-1.18.1.jar:1.18.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:715) [jersey-servlet-1.18.1.jar:1.18.1]
+! at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) [javax.servlet-3.0.0.v201112011016.jar:na]
+! at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49) [dropwizard-jetty-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1515) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:83) [jetty-servlets-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:295) [jetty-servlets-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at io.dropwizard.jetty.BiDiGzipFilter.doFilter(BiDiGzipFilter.java:127) [dropwizard-jetty-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1486) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [dropwizard-servlets-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1486) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:519) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1097) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:448) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1031) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:136) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:173) [metrics-jetty9-3.0.1.jar:3.0.1]
+! at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51) [dropwizard-jetty-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:92) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:162) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.Server.handle(Server.java:446) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:271) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:246) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.io.AbstractConnection$ReadCallback.run(AbstractConnection.java:358) [jetty-io-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:601) [jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:532) [jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at java.lang.Thread.run(Thread.java:745) [na:1.7.0_65]
+WARN  [2015-02-06 20:40:25,131] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-02-06 20:40:25,225] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-02-06 20:40:25,230] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-02-06 20:40:25,231] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-02-06 20:40:25,232] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-02-06 20:40:25,246] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-02-06 20:40:25,246] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-02-06 20:40:25,296] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-02-06 20:40:25,359] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-02-06 20:40:25,361] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost/fussballquoten]
+INFO  [2015-02-06 20:40:25,362] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-02-06 20:40:25,362] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-02-06 20:40:25,363] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO  [2015-02-06 20:40:25,516] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  [2015-02-06 20:40:25,522] org.hibernate.engine.jdbc.internal.LobCreatorBuilder: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO  [2015-02-06 20:40:25,662] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  [2015-02-06 20:40:25,665] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+INFO  [2015-02-06 20:40:25,946] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000228: Running hbm2ddl schema update
+INFO  [2015-02-06 20:40:25,946] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000102: Fetching database metadata
+INFO  [2015-02-06 20:40:25,947] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000396: Updating schema
+INFO  [2015-02-06 20:40:25,959] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.BEGEGNUNG
+INFO  [2015-02-06 20:40:25,959] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, spieltyp_id, mannschaft_1_id, datum, mannschaft_2_id]
+INFO  [2015-02-06 20:40:25,959] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-02-06 20:40:25,959] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, primary, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-02-06 20:40:25,963] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.ERGEBNIS
+INFO  [2015-02-06 20:40:25,963] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [m2_tore, id, m2_h_tore, begenung_id, sieger, m1_h_tore, m1_tore]
+INFO  [2015-02-06 20:40:25,963] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_8imdnxkvggxb99gw7cehn003d]
+INFO  [2015-02-06 20:40:25,963] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_8imdnxkvggxb99gw7cehn003d, primary]
+INFO  [2015-02-06 20:40:25,972] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.HISTORY_QUOTE
+INFO  [2015-02-06 20:40:25,973] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, quote2, quote1, quote_id, datum, quotex]
+INFO  [2015-02-06 20:40:25,974] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_46qi15od5xmlqi7tikikcbtm8]
+INFO  [2015-02-06 20:40:25,974] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_46qi15od5xmlqi7tikikcbtm8, primary]
+INFO  [2015-02-06 20:40:25,976] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.MANNSCHAFT
+INFO  [2015-02-06 20:40:25,976] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-06 20:40:25,976] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-06 20:40:25,976] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-06 20:40:25,979] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.QUOTE
+INFO  [2015-02-06 20:40:25,979] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, wettanbieter_id, begegnung_id, quotem1, quotex, quotem2]
+INFO  [2015-02-06 20:40:25,979] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_df8mce9ofcqfn81yswwqqu23g, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-02-06 20:40:25,980] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_df8mce9ofcqfn81yswwqqu23g, primary, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-02-06 20:40:25,982] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.SPIELTYP
+INFO  [2015-02-06 20:40:25,982] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-06 20:40:25,982] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-06 20:40:25,982] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-06 20:40:25,984] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.WETTANBIETER
+INFO  [2015-02-06 20:40:25,984] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-06 20:40:25,984] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-06 20:40:25,985] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-06 20:40:25,985] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000232: Schema update complete
+INFO  [2015-02-06 20:40:25,992] io.dropwizard.server.ServerFactory: Starting AnalyserService
+INFO  [2015-02-06 20:40:26,105] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.18.1 02/19/2014 03:28 AM'
+INFO  [2015-02-06 20:40:26,157] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     / (resources.MainResource)
+    GET     /begegnung (resources.BegegnungResource)
+    POST    /quoten (resources.QuotenResource)
+
+INFO  [2015-02-06 20:40:26,365] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2015-02-06 20:40:26,365] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-02-06 20:40:28,400] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.1 Bundesliga
+INFO  [2015-02-06 20:40:29,023] statistics.QuotenStatistik: found 373 quoten
+INFO  [2015-02-06 20:40:45,375] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.05 Bundesliga
+INFO  [2015-02-06 20:40:45,588] statistics.QuotenStatistik: found 373 quoten
+INFO  [2015-02-06 20:40:53,421] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.025 Bundesliga
+INFO  [2015-02-06 20:40:53,670] statistics.QuotenStatistik: found 373 quoten
+WARN  [2015-02-06 20:49:59,453] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-02-06 20:49:59,579] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-02-06 20:49:59,590] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-02-06 20:49:59,592] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-02-06 20:49:59,593] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-02-06 20:49:59,610] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-02-06 20:49:59,610] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-02-06 20:49:59,750] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-02-06 20:49:59,856] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-02-06 20:49:59,859] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost/fussballquoten]
+INFO  [2015-02-06 20:49:59,859] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-02-06 20:49:59,860] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-02-06 20:49:59,865] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO  [2015-02-06 20:50:00,066] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  [2015-02-06 20:50:00,072] org.hibernate.engine.jdbc.internal.LobCreatorBuilder: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO  [2015-02-06 20:50:00,206] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  [2015-02-06 20:50:00,209] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+INFO  [2015-02-06 20:50:00,532] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000228: Running hbm2ddl schema update
+INFO  [2015-02-06 20:50:00,533] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000102: Fetching database metadata
+INFO  [2015-02-06 20:50:00,534] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000396: Updating schema
+INFO  [2015-02-06 20:50:00,544] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.BEGEGNUNG
+INFO  [2015-02-06 20:50:00,544] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, spieltyp_id, mannschaft_1_id, datum, mannschaft_2_id]
+INFO  [2015-02-06 20:50:00,544] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-02-06 20:50:00,544] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, primary, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-02-06 20:50:00,548] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.ERGEBNIS
+INFO  [2015-02-06 20:50:00,548] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [m2_tore, id, m2_h_tore, begenung_id, sieger, m1_h_tore, m1_tore]
+INFO  [2015-02-06 20:50:00,548] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_8imdnxkvggxb99gw7cehn003d]
+INFO  [2015-02-06 20:50:00,548] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_8imdnxkvggxb99gw7cehn003d, primary]
+INFO  [2015-02-06 20:50:00,551] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.HISTORY_QUOTE
+INFO  [2015-02-06 20:50:00,552] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, quote2, quote1, quote_id, datum, quotex]
+INFO  [2015-02-06 20:50:00,552] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_46qi15od5xmlqi7tikikcbtm8]
+INFO  [2015-02-06 20:50:00,552] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_46qi15od5xmlqi7tikikcbtm8, primary]
+INFO  [2015-02-06 20:50:00,554] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.MANNSCHAFT
+INFO  [2015-02-06 20:50:00,554] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-06 20:50:00,554] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-06 20:50:00,554] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-06 20:50:00,557] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.QUOTE
+INFO  [2015-02-06 20:50:00,557] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, wettanbieter_id, begegnung_id, quotem1, quotex, quotem2]
+INFO  [2015-02-06 20:50:00,558] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_df8mce9ofcqfn81yswwqqu23g, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-02-06 20:50:00,558] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_df8mce9ofcqfn81yswwqqu23g, primary, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-02-06 20:50:00,560] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.SPIELTYP
+INFO  [2015-02-06 20:50:00,560] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-06 20:50:00,560] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-06 20:50:00,560] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-06 20:50:00,562] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.WETTANBIETER
+INFO  [2015-02-06 20:50:00,563] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-06 20:50:00,563] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-06 20:50:00,563] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-06 20:50:00,564] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000232: Schema update complete
+INFO  [2015-02-06 20:50:00,572] io.dropwizard.server.ServerFactory: Starting AnalyserService
+INFO  [2015-02-06 20:50:00,705] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.18.1 02/19/2014 03:28 AM'
+INFO  [2015-02-06 20:50:00,775] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     / (resources.MainResource)
+    GET     /begegnung (resources.BegegnungResource)
+    POST    /quoten (resources.QuotenResource)
+
+INFO  [2015-02-06 20:50:00,982] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2015-02-06 20:50:00,983] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-02-06 20:50:02,450] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.025 Bundesliga
+INFO  [2015-02-06 20:50:03,191] statistics.QuotenStatistik: found 480 quoten
+ERROR [2015-02-06 20:50:03,219] io.dropwizard.jersey.errors.LoggingExceptionMapper: Error handling a request: 67d6cb37ff512291
+! java.lang.ArrayIndexOutOfBoundsException: -1
+! at java.util.ArrayList.elementData(ArrayList.java:400) ~[na:1.7.0_65]
+! at java.util.ArrayList.get(ArrayList.java:413) ~[na:1.7.0_65]
+! at statistics.QuotenStatistik.addValue(QuotenStatistik.java:141) ~[classes/:na]
+! at statistics.QuotenStatistik.addQuote(QuotenStatistik.java:116) ~[classes/:na]
+! at statistics.QuotenStatistik.quotenOverview(QuotenStatistik.java:77) ~[classes/:na]
+! at statistics.QuotenStatistik.<init>(QuotenStatistik.java:29) ~[classes/:na]
+! at resources.QuotenResource.gibBegegnung(QuotenResource.java:38) ~[classes/:na]
+! at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.7.0_65]
+! at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) ~[na:1.7.0_65]
+! at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.7.0_65]
+! at java.lang.reflect.Method.invoke(Method.java:606) ~[na:1.7.0_65]
+! at com.sun.jersey.spi.container.JavaMethodInvokerFactory$1.invoke(JavaMethodInvokerFactory.java:60) ~[jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$TypeOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:185) ~[jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75) ~[jersey-server-1.18.1.jar:1.18.1]
+! at io.dropwizard.jersey.guava.OptionalResourceMethodDispatchAdapter$OptionalRequestDispatcher.dispatch(OptionalResourceMethodDispatchAdapter.java:37) ~[dropwizard-jersey-0.7.0.jar:0.7.0]
+! at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302) ~[jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.uri.rules.ResourceObjectRule.accept(ResourceObjectRule.java:100) ~[jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) ~[jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84) ~[jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1542) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1473) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1419) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1409) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:409) [jersey-servlet-1.18.1.jar:1.18.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:540) [jersey-servlet-1.18.1.jar:1.18.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:715) [jersey-servlet-1.18.1.jar:1.18.1]
+! at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) [javax.servlet-3.0.0.v201112011016.jar:na]
+! at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49) [dropwizard-jetty-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1515) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:83) [jetty-servlets-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:295) [jetty-servlets-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at io.dropwizard.jetty.BiDiGzipFilter.doFilter(BiDiGzipFilter.java:127) [dropwizard-jetty-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1486) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [dropwizard-servlets-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1486) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:519) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1097) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:448) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1031) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:136) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:173) [metrics-jetty9-3.0.1.jar:3.0.1]
+! at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51) [dropwizard-jetty-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:92) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:162) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.Server.handle(Server.java:446) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:271) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:246) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.io.AbstractConnection$ReadCallback.run(AbstractConnection.java:358) [jetty-io-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:601) [jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:532) [jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at java.lang.Thread.run(Thread.java:745) [na:1.7.0_65]
+WARN  [2015-02-06 21:02:32,916] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-02-06 21:02:33,016] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-02-06 21:02:33,021] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-02-06 21:02:33,022] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-02-06 21:02:33,023] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-02-06 21:02:33,038] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-02-06 21:02:33,038] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-02-06 21:02:33,108] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-02-06 21:02:33,180] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-02-06 21:02:33,183] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost/fussballquoten]
+INFO  [2015-02-06 21:02:33,184] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-02-06 21:02:33,184] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-02-06 21:02:33,185] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO  [2015-02-06 21:02:33,319] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  [2015-02-06 21:02:33,325] org.hibernate.engine.jdbc.internal.LobCreatorBuilder: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO  [2015-02-06 21:02:33,452] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  [2015-02-06 21:02:33,456] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+INFO  [2015-02-06 21:02:33,786] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000228: Running hbm2ddl schema update
+INFO  [2015-02-06 21:02:33,786] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000102: Fetching database metadata
+INFO  [2015-02-06 21:02:33,787] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000396: Updating schema
+INFO  [2015-02-06 21:02:33,797] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.BEGEGNUNG
+INFO  [2015-02-06 21:02:33,797] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, spieltyp_id, mannschaft_1_id, datum, mannschaft_2_id]
+INFO  [2015-02-06 21:02:33,797] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-02-06 21:02:33,797] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, primary, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-02-06 21:02:33,801] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.ERGEBNIS
+INFO  [2015-02-06 21:02:33,801] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [m2_tore, id, m2_h_tore, begenung_id, sieger, m1_h_tore, m1_tore]
+INFO  [2015-02-06 21:02:33,801] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_8imdnxkvggxb99gw7cehn003d]
+INFO  [2015-02-06 21:02:33,801] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_8imdnxkvggxb99gw7cehn003d, primary]
+INFO  [2015-02-06 21:02:33,812] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.HISTORY_QUOTE
+INFO  [2015-02-06 21:02:33,812] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, quote2, quote1, quote_id, datum, quotex]
+INFO  [2015-02-06 21:02:33,812] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_46qi15od5xmlqi7tikikcbtm8]
+INFO  [2015-02-06 21:02:33,813] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_46qi15od5xmlqi7tikikcbtm8, primary]
+INFO  [2015-02-06 21:02:33,816] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.MANNSCHAFT
+INFO  [2015-02-06 21:02:33,816] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-06 21:02:33,816] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-06 21:02:33,816] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-06 21:02:33,819] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.QUOTE
+INFO  [2015-02-06 21:02:33,820] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, wettanbieter_id, begegnung_id, quotem1, quotex, quotem2]
+INFO  [2015-02-06 21:02:33,820] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_df8mce9ofcqfn81yswwqqu23g, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-02-06 21:02:33,820] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_df8mce9ofcqfn81yswwqqu23g, primary, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-02-06 21:02:33,822] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.SPIELTYP
+INFO  [2015-02-06 21:02:33,822] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-06 21:02:33,822] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-06 21:02:33,822] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-06 21:02:33,824] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.WETTANBIETER
+INFO  [2015-02-06 21:02:33,826] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-06 21:02:33,827] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-06 21:02:33,827] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-06 21:02:33,828] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000232: Schema update complete
+INFO  [2015-02-06 21:02:33,835] io.dropwizard.server.ServerFactory: Starting AnalyserService
+INFO  [2015-02-06 21:02:33,959] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.18.1 02/19/2014 03:28 AM'
+INFO  [2015-02-06 21:02:34,012] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     / (resources.MainResource)
+    GET     /begegnung (resources.BegegnungResource)
+    POST    /quoten (resources.QuotenResource)
+
+INFO  [2015-02-06 21:02:34,208] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2015-02-06 21:02:34,209] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-02-06 21:15:24,244] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.1 Bundesliga
+INFO  [2015-02-06 21:15:25,054] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-06 21:15:36,941] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.875 Bundesliga
+INFO  [2015-02-06 21:15:37,204] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-06 21:51:47,959] resources.QuotenResource: FROM: 2013-01-06 UNTIL:  2014-12-31 0.15 Bundesliga
+INFO  [2015-02-06 21:51:48,139] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 21:51:48,429] resources.QuotenResource: FROM: 2013-01-06 UNTIL:  2014-12-31 0.275 Bundesliga
+INFO  [2015-02-06 21:51:48,631] statistics.QuotenStatistik: found 313 quoten
+INFO  [2015-02-06 21:51:50,311] resources.QuotenResource: FROM: 2013-01-06 UNTIL:  2014-12-31 0.175 Bundesliga
+INFO  [2015-02-06 21:51:50,479] statistics.QuotenStatistik: found 313 quoten
+WARN  [2015-02-07 12:15:15,989] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-02-07 12:15:16,225] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-02-07 12:15:16,233] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-02-07 12:15:16,237] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-02-07 12:15:16,242] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-02-07 12:15:16,292] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-02-07 12:15:16,293] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-02-07 12:15:16,502] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-02-07 12:15:16,583] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-02-07 12:15:16,588] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost/fussballquoten]
+INFO  [2015-02-07 12:15:16,589] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-02-07 12:15:16,589] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-02-07 12:15:16,594] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO  [2015-02-07 12:15:16,839] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  [2015-02-07 12:15:16,849] org.hibernate.engine.jdbc.internal.LobCreatorBuilder: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO  [2015-02-07 12:15:17,266] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  [2015-02-07 12:15:17,281] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+INFO  [2015-02-07 12:15:17,947] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000228: Running hbm2ddl schema update
+INFO  [2015-02-07 12:15:17,947] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000102: Fetching database metadata
+INFO  [2015-02-07 12:15:17,948] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000396: Updating schema
+INFO  [2015-02-07 12:15:17,999] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.BEGEGNUNG
+INFO  [2015-02-07 12:15:18,000] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, spieltyp_id, mannschaft_1_id, datum, mannschaft_2_id]
+INFO  [2015-02-07 12:15:18,001] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-02-07 12:15:18,005] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, primary, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-02-07 12:15:18,027] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.ERGEBNIS
+INFO  [2015-02-07 12:15:18,029] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [m2_tore, id, m2_h_tore, begenung_id, sieger, m1_h_tore, m1_tore]
+INFO  [2015-02-07 12:15:18,030] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_8imdnxkvggxb99gw7cehn003d]
+INFO  [2015-02-07 12:15:18,031] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_8imdnxkvggxb99gw7cehn003d, primary]
+INFO  [2015-02-07 12:15:18,048] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.HISTORY_QUOTE
+INFO  [2015-02-07 12:15:18,050] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, quote2, quote1, quote_id, datum, quotex]
+INFO  [2015-02-07 12:15:18,050] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_46qi15od5xmlqi7tikikcbtm8]
+INFO  [2015-02-07 12:15:18,050] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_46qi15od5xmlqi7tikikcbtm8, primary]
+INFO  [2015-02-07 12:15:18,059] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.MANNSCHAFT
+INFO  [2015-02-07 12:15:18,059] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-07 12:15:18,059] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-07 12:15:18,059] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-07 12:15:18,062] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.QUOTE
+INFO  [2015-02-07 12:15:18,083] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, wettanbieter_id, begegnung_id, quotem1, quotex, quotem2]
+INFO  [2015-02-07 12:15:18,083] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_df8mce9ofcqfn81yswwqqu23g, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-02-07 12:15:18,084] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_df8mce9ofcqfn81yswwqqu23g, primary, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-02-07 12:15:18,087] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.SPIELTYP
+INFO  [2015-02-07 12:15:18,088] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-07 12:15:18,088] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-07 12:15:18,088] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-07 12:15:18,091] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.WETTANBIETER
+INFO  [2015-02-07 12:15:18,091] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-07 12:15:18,091] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-07 12:15:18,091] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-07 12:15:18,092] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000232: Schema update complete
+INFO  [2015-02-07 12:15:18,125] io.dropwizard.server.ServerFactory: Starting AnalyserService
+INFO  [2015-02-07 12:15:18,964] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.18.1 02/19/2014 03:28 AM'
+INFO  [2015-02-07 12:15:19,237] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     / (resources.MainResource)
+    GET     /begegnung (resources.BegegnungResource)
+    POST    /quoten (resources.QuotenResource)
+
+INFO  [2015-02-07 12:15:19,967] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2015-02-07 12:15:19,968] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-02-07 19:15:42,833] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.1 Bundesliga
+INFO  [2015-02-07 19:15:43,174] statistics.QuotenStatistik: found 480 quoten
+INFO  [2015-02-07 19:34:31,122] resources.QuotenResource: FROM: 2013-01-02 UNTIL:  2015-12-01 0.1 Bundesliga
+INFO  [2015-02-07 19:34:31,410] statistics.QuotenStatistik: found 480 quoten
+ERROR [2015-02-07 20:19:31,483] resources.MainResource: client/dist/index.html (Datei oder Verzeichnis nicht gefunden)
+! java.io.FileNotFoundException: client/dist/index.html (Datei oder Verzeichnis nicht gefunden)
+! at java.io.FileInputStream.open(Native Method) ~[na:1.7.0_65]
+! at java.io.FileInputStream.<init>(FileInputStream.java:146) ~[na:1.7.0_65]
+! at java.io.FileInputStream.<init>(FileInputStream.java:101) ~[na:1.7.0_65]
+! at resources.MainResource.getMainView(MainResource.java:35) ~[classes/:na]
+! at sun.reflect.GeneratedMethodAccessor15.invoke(Unknown Source) ~[na:na]
+! at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.7.0_65]
+! at java.lang.reflect.Method.invoke(Method.java:606) ~[na:1.7.0_65]
+! at com.sun.jersey.spi.container.JavaMethodInvokerFactory$1.invoke(JavaMethodInvokerFactory.java:60) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$ResponseOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:205) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75) [jersey-server-1.18.1.jar:1.18.1]
+! at io.dropwizard.jersey.guava.OptionalResourceMethodDispatchAdapter$OptionalRequestDispatcher.dispatch(OptionalResourceMethodDispatchAdapter.java:37) [dropwizard-jersey-0.7.0.jar:0.7.0]
+! at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.uri.rules.ResourceObjectRule.accept(ResourceObjectRule.java:100) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1542) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1473) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1419) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1409) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:409) [jersey-servlet-1.18.1.jar:1.18.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:540) [jersey-servlet-1.18.1.jar:1.18.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:715) [jersey-servlet-1.18.1.jar:1.18.1]
+! at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) [javax.servlet-3.0.0.v201112011016.jar:na]
+! at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49) [dropwizard-jetty-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1515) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:83) [jetty-servlets-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:348) [jetty-servlets-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at io.dropwizard.jetty.BiDiGzipFilter.doFilter(BiDiGzipFilter.java:127) [dropwizard-jetty-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1486) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [dropwizard-servlets-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1486) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:519) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1097) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:448) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1031) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:136) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:173) [metrics-jetty9-3.0.1.jar:3.0.1]
+! at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51) [dropwizard-jetty-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:92) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:162) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.Server.handle(Server.java:446) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:271) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:246) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.io.AbstractConnection$ReadCallback.run(AbstractConnection.java:358) [jetty-io-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:601) [jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:532) [jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at java.lang.Thread.run(Thread.java:745) [na:1.7.0_65]
+ERROR [2015-02-07 20:19:34,419] resources.MainResource: client/dist/index.html (Datei oder Verzeichnis nicht gefunden)
+! java.io.FileNotFoundException: client/dist/index.html (Datei oder Verzeichnis nicht gefunden)
+! at java.io.FileInputStream.open(Native Method) ~[na:1.7.0_65]
+! at java.io.FileInputStream.<init>(FileInputStream.java:146) ~[na:1.7.0_65]
+! at java.io.FileInputStream.<init>(FileInputStream.java:101) ~[na:1.7.0_65]
+! at resources.MainResource.getMainView(MainResource.java:35) ~[classes/:na]
+! at sun.reflect.GeneratedMethodAccessor15.invoke(Unknown Source) ~[na:na]
+! at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.7.0_65]
+! at java.lang.reflect.Method.invoke(Method.java:606) ~[na:1.7.0_65]
+! at com.sun.jersey.spi.container.JavaMethodInvokerFactory$1.invoke(JavaMethodInvokerFactory.java:60) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$ResponseOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:205) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75) [jersey-server-1.18.1.jar:1.18.1]
+! at io.dropwizard.jersey.guava.OptionalResourceMethodDispatchAdapter$OptionalRequestDispatcher.dispatch(OptionalResourceMethodDispatchAdapter.java:37) [dropwizard-jersey-0.7.0.jar:0.7.0]
+! at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.uri.rules.ResourceObjectRule.accept(ResourceObjectRule.java:100) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1542) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1473) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1419) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1409) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:409) [jersey-servlet-1.18.1.jar:1.18.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:540) [jersey-servlet-1.18.1.jar:1.18.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:715) [jersey-servlet-1.18.1.jar:1.18.1]
+! at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) [javax.servlet-3.0.0.v201112011016.jar:na]
+! at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49) [dropwizard-jetty-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1515) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:83) [jetty-servlets-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:348) [jetty-servlets-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at io.dropwizard.jetty.BiDiGzipFilter.doFilter(BiDiGzipFilter.java:127) [dropwizard-jetty-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1486) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [dropwizard-servlets-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1486) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:519) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1097) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:448) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1031) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:136) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:173) [metrics-jetty9-3.0.1.jar:3.0.1]
+! at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51) [dropwizard-jetty-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:92) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:162) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.Server.handle(Server.java:446) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:271) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:246) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.io.AbstractConnection$ReadCallback.run(AbstractConnection.java:358) [jetty-io-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:601) [jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:532) [jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at java.lang.Thread.run(Thread.java:745) [na:1.7.0_65]
+ERROR [2015-02-07 20:19:40,158] resources.MainResource: client/dist/index.html (Datei oder Verzeichnis nicht gefunden)
+! java.io.FileNotFoundException: client/dist/index.html (Datei oder Verzeichnis nicht gefunden)
+! at java.io.FileInputStream.open(Native Method) ~[na:1.7.0_65]
+! at java.io.FileInputStream.<init>(FileInputStream.java:146) ~[na:1.7.0_65]
+! at java.io.FileInputStream.<init>(FileInputStream.java:101) ~[na:1.7.0_65]
+! at resources.MainResource.getMainView(MainResource.java:35) ~[classes/:na]
+! at sun.reflect.GeneratedMethodAccessor15.invoke(Unknown Source) ~[na:na]
+! at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.7.0_65]
+! at java.lang.reflect.Method.invoke(Method.java:606) ~[na:1.7.0_65]
+! at com.sun.jersey.spi.container.JavaMethodInvokerFactory$1.invoke(JavaMethodInvokerFactory.java:60) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$ResponseOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:205) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75) [jersey-server-1.18.1.jar:1.18.1]
+! at io.dropwizard.jersey.guava.OptionalResourceMethodDispatchAdapter$OptionalRequestDispatcher.dispatch(OptionalResourceMethodDispatchAdapter.java:37) [dropwizard-jersey-0.7.0.jar:0.7.0]
+! at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.uri.rules.ResourceObjectRule.accept(ResourceObjectRule.java:100) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1542) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1473) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1419) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1409) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:409) [jersey-servlet-1.18.1.jar:1.18.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:540) [jersey-servlet-1.18.1.jar:1.18.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:715) [jersey-servlet-1.18.1.jar:1.18.1]
+! at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) [javax.servlet-3.0.0.v201112011016.jar:na]
+! at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49) [dropwizard-jetty-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1515) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:83) [jetty-servlets-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:348) [jetty-servlets-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at io.dropwizard.jetty.BiDiGzipFilter.doFilter(BiDiGzipFilter.java:127) [dropwizard-jetty-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1486) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [dropwizard-servlets-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1486) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:519) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1097) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:448) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1031) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:136) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:173) [metrics-jetty9-3.0.1.jar:3.0.1]
+! at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51) [dropwizard-jetty-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:92) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:162) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.Server.handle(Server.java:446) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:271) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:246) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.io.AbstractConnection$ReadCallback.run(AbstractConnection.java:358) [jetty-io-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:601) [jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:532) [jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at java.lang.Thread.run(Thread.java:745) [na:1.7.0_65]
+WARN  [2015-02-07 20:19:53,534] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-02-07 20:19:53,663] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-02-07 20:19:53,669] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-02-07 20:19:53,670] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-02-07 20:19:53,672] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-02-07 20:19:53,694] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-02-07 20:19:53,694] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-02-07 20:19:53,815] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-02-07 20:19:53,898] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-02-07 20:19:53,901] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost/fussballquoten]
+INFO  [2015-02-07 20:19:53,902] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-02-07 20:19:53,902] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-02-07 20:19:53,906] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO  [2015-02-07 20:19:54,109] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  [2015-02-07 20:19:54,115] org.hibernate.engine.jdbc.internal.LobCreatorBuilder: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO  [2015-02-07 20:19:54,259] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  [2015-02-07 20:19:54,263] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+INFO  [2015-02-07 20:19:54,567] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000228: Running hbm2ddl schema update
+INFO  [2015-02-07 20:19:54,567] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000102: Fetching database metadata
+INFO  [2015-02-07 20:19:54,568] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000396: Updating schema
+INFO  [2015-02-07 20:19:54,578] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.BEGEGNUNG
+INFO  [2015-02-07 20:19:54,579] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, spieltyp_id, mannschaft_1_id, datum, mannschaft_2_id]
+INFO  [2015-02-07 20:19:54,579] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-02-07 20:19:54,579] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, primary, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-02-07 20:19:54,584] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.ERGEBNIS
+INFO  [2015-02-07 20:19:54,585] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [m2_tore, id, m2_h_tore, begenung_id, sieger, m1_h_tore, m1_tore]
+INFO  [2015-02-07 20:19:54,585] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_8imdnxkvggxb99gw7cehn003d]
+INFO  [2015-02-07 20:19:54,585] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_8imdnxkvggxb99gw7cehn003d, primary]
+INFO  [2015-02-07 20:19:54,588] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.HISTORY_QUOTE
+INFO  [2015-02-07 20:19:54,588] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, quote2, quote1, quote_id, datum, quotex]
+INFO  [2015-02-07 20:19:54,588] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_46qi15od5xmlqi7tikikcbtm8]
+INFO  [2015-02-07 20:19:54,588] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_46qi15od5xmlqi7tikikcbtm8, primary]
+INFO  [2015-02-07 20:19:54,590] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.MANNSCHAFT
+INFO  [2015-02-07 20:19:54,590] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-07 20:19:54,591] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-07 20:19:54,591] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-07 20:19:54,594] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.QUOTE
+INFO  [2015-02-07 20:19:54,594] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, wettanbieter_id, begegnung_id, quotem1, quotex, quotem2]
+INFO  [2015-02-07 20:19:54,594] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_df8mce9ofcqfn81yswwqqu23g, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-02-07 20:19:54,594] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_df8mce9ofcqfn81yswwqqu23g, primary, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-02-07 20:19:54,596] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.SPIELTYP
+INFO  [2015-02-07 20:19:54,596] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-07 20:19:54,596] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-07 20:19:54,597] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-07 20:19:54,599] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.WETTANBIETER
+INFO  [2015-02-07 20:19:54,599] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-02-07 20:19:54,599] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-02-07 20:19:54,599] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-02-07 20:19:54,600] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000232: Schema update complete
+INFO  [2015-02-07 20:19:54,606] io.dropwizard.server.ServerFactory: Starting AnalyserService
+INFO  [2015-02-07 20:19:54,742] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.18.1 02/19/2014 03:28 AM'
+INFO  [2015-02-07 20:19:54,792] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     / (resources.MainResource)
+    GET     /begegnung (resources.BegegnungResource)
+    POST    /quoten (resources.QuotenResource)
+
+INFO  [2015-02-07 20:19:54,994] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2015-02-07 20:19:54,994] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ERROR [2015-02-07 20:19:55,968] resources.MainResource: client/dist/index.html (Datei oder Verzeichnis nicht gefunden)
+! java.io.FileNotFoundException: client/dist/index.html (Datei oder Verzeichnis nicht gefunden)
+! at java.io.FileInputStream.open(Native Method) ~[na:1.7.0_65]
+! at java.io.FileInputStream.<init>(FileInputStream.java:146) ~[na:1.7.0_65]
+! at java.io.FileInputStream.<init>(FileInputStream.java:101) ~[na:1.7.0_65]
+! at resources.MainResource.getMainView(MainResource.java:35) ~[classes/:na]
+! at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.7.0_65]
+! at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) ~[na:1.7.0_65]
+! at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.7.0_65]
+! at java.lang.reflect.Method.invoke(Method.java:606) ~[na:1.7.0_65]
+! at com.sun.jersey.spi.container.JavaMethodInvokerFactory$1.invoke(JavaMethodInvokerFactory.java:60) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$ResponseOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:205) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75) [jersey-server-1.18.1.jar:1.18.1]
+! at io.dropwizard.jersey.guava.OptionalResourceMethodDispatchAdapter$OptionalRequestDispatcher.dispatch(OptionalResourceMethodDispatchAdapter.java:37) [dropwizard-jersey-0.7.0.jar:0.7.0]
+! at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.uri.rules.ResourceObjectRule.accept(ResourceObjectRule.java:100) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1542) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1473) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1419) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1409) [jersey-server-1.18.1.jar:1.18.1]
+! at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:409) [jersey-servlet-1.18.1.jar:1.18.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:540) [jersey-servlet-1.18.1.jar:1.18.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:715) [jersey-servlet-1.18.1.jar:1.18.1]
+! at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) [javax.servlet-3.0.0.v201112011016.jar:na]
+! at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49) [dropwizard-jetty-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1515) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:83) [jetty-servlets-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:348) [jetty-servlets-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at io.dropwizard.jetty.BiDiGzipFilter.doFilter(BiDiGzipFilter.java:127) [dropwizard-jetty-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1486) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [dropwizard-servlets-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1486) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:519) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1097) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:448) [jetty-servlet-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1031) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:136) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:173) [metrics-jetty9-3.0.1.jar:3.0.1]
+! at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:51) [dropwizard-jetty-0.7.0.jar:0.7.0]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:92) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:162) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.Server.handle(Server.java:446) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:271) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:246) [jetty-server-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.io.AbstractConnection$ReadCallback.run(AbstractConnection.java:358) [jetty-io-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:601) [jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:532) [jetty-util-9.0.7.v20131107.jar:9.0.7.v20131107]
+! at java.lang.Thread.run(Thread.java:745) [na:1.7.0_65]

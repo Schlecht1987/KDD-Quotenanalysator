@@ -29,8 +29,8 @@ angular.module('quoten', [])
         ) {
             Console.group("QuotenController entered.");
             $scope.getData = null;
-            $scope.from = null;
-            $scope.until = null;
+            $scope.from = "2013-01-02";
+            $scope.until = "2015-12-01";
             $scope.slider = null;
             $scope.item = {
                 cost: 0.1
@@ -61,6 +61,10 @@ angular.module('quoten', [])
                         console.log(start.toISOString(), end.toISOString(), label);
                     });
             });
+            //Bootstrap -slider open
+            $("#ex2").slider({});
+            //bootstrap datepicker
+            $('.datepicker').datepicker();
 
 
             $scope.getChart = function() {
@@ -84,9 +88,15 @@ angular.module('quoten', [])
                         $scope.getData = data;
                         console.debug("data", data);
                         $scope.infos = [];
+                        $scope.anzahlSpiele = [];
                         for (var i = 0; i < data.prozent.length; i++) {
                             $scope.infos[i] = {
                                 y: data.prozent[i],
+                                siege: data.siege[i],
+                                niederlagen: data.niederlagen[i]
+                            };
+                            $scope.anzahlSpiele[i] = {
+                                y: data.siege[i] + data.niederlagen[i],
                                 siege: data.siege[i],
                                 niederlagen: data.niederlagen[i]
                             };
@@ -114,13 +124,21 @@ angular.module('quoten', [])
                                         }
                                     }
                                 },
-                                yAxis: {
-                                    min: 0,
-                                    max: 100,
-                                    title: {
-                                        text: '%'
+                                yAxis: [{
+                                        min: 0,
+                                        max: 100,
+                                        title: {
+                                            text: '%'
+                                        }
+                                    }, {
+                                        min: 0,
+                                        title: {
+                                            text: 'Anzahl Spiele'
+                                        },
+                                        opposite: true
                                     }
-                                },
+
+                                ],
                                 legend: {
                                     enabled: false
                                 },
@@ -145,8 +163,19 @@ angular.module('quoten', [])
                                 }
                             },
                             series: [{
-                                name: 'Population',
+                                name: '%',
                                 data: $scope.infos
+                            }, {
+                                name: '%',
+                                data: $scope.anzahlSpiele,
+                                yAxis: 1,
+                                tooltip: {
+                                    valueSuffix: ''
+                                },
+                                dataLabels: {
+                                    enabled: true,
+                                    format: '{point.y}'
+                                }
                             }]
                         };
                     }

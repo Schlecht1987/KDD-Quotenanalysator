@@ -60,33 +60,47 @@ angular.module("begegnung/begegnung.tpl.html", []).run(["$templateCache", functi
 angular.module("quoten/quoten.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("quoten/quoten.tpl.html",
     "<div>\n" +
+    "    <div class='wrapper text-center'>\n" +
+    "        <div class=\"btn-group btn-group-lg\" role=\"group\" aria-label=\"...\">\n" +
+    "            <button type=\"button\" class=\"btn btn-default\">Alle</button>\n" +
+    "            <button type=\"button\" class=\"btn btn-default\">Heim</button>\n" +
+    "            <button type=\"button\" class=\"btn btn-default\">Unentschieden</button>\n" +
+    "            <button type=\"button\" class=\"btn btn-default\">Gast</button>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
     "    <highchart id=\"chart1\" config=\"chartConfig\"></highchart>\n" +
     "\n" +
-    "    <div class=\"row\">\n" +
-    "        <div class=\"col-lg-2\">\n" +
-    "            <div class=\"input-group\">\n" +
-    "                <button ng-click=\"neumalen()\">\n" +
-    "                    EIN BUTTON\n" +
-    "                </button>\n" +
-    "            </div>\n" +
-    "        </div>\n" +
+    "    <div class='wrapper text-center'>\n" +
+    "\n" +
+    "        <button type=\"button\" class=\"btn-success btn-lg\" ng-click=\"neumalen()\">\n" +
+    "            GO\n" +
+    "        </button>\n" +
+    "\n" +
     "    </div>\n" +
     "\n" +
     "    <div class=\"row\">\n" +
     "        <div class=\"col-lg-2\">\n" +
     "            <div class=\"input-group\">\n" +
-    "                <span class=\"input-group-addon\">@</span>\n" +
     "                <input id=\"reservationtime\" type=\"text\" class=\"form-control\" placeholder=\"Datum\">\n" +
     "            </div>\n" +
     "        </div>\n" +
+    "        <div class=\"col-lg-2\">\n" +
+    "            <input type=\"range\" min=\"0.025\" max=\"2\" value=\"0.1\" step=\"0.025\" ng-model=\"item.cost\" ng-mouseup=\"sliderChange()\" /> {{item.cost}}\n" +
+    "        </div>\n" +
     "    </div>\n" +
     "\n" +
     "    <div class=\"row\">\n" +
-    "        <div class=\"col-lg-2\">\n" +
-    "            <input type=\"range\" min=\"0.025\" max=\"2\" value=\"0.1\" step=\"0.025\" ng-model=\"item.cost\" ng-mouseup=\"sliderChange()\"/>\n" +
-    "            {{item.cost}}\n" +
-    "        </div>\n" +
+    "        Filter by price interval: <b>€ 10</b>\n" +
+    "        <input id=\"ex2\" type=\"text\" class=\"span2\" value=\"\" data-slider-min=\"10\" data-slider-max=\"1000\" data-slider-step=\"5\" data-slider-value=\"[250,450]\" /> <b>€ 1000</b>\n" +
     "    </div>\n" +
+    "    <div class=\"row\">\n" +
+    "       <input data-provide=\"datepicker\">\n" +
+    "\n" +
+    "    </div>\n" +
+    "\n" +
+    "\n" +
+    "</div>\n" +
+    "\n" +
     "</div>\n" +
     "");
 }]);

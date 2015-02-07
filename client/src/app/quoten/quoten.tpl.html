@@ -1,29 +1,43 @@
 <div>
+    <div class='wrapper text-center'>
+        <div class="btn-group btn-group-lg" role="group" aria-label="...">
+            <button type="button" class="btn btn-default">Alle</button>
+            <button type="button" class="btn btn-default">Heim</button>
+            <button type="button" class="btn btn-default">Unentschieden</button>
+            <button type="button" class="btn btn-default">Gast</button>
+        </div>
+    </div>
     <highchart id="chart1" config="chartConfig"></highchart>
 
-    <div class="row">
-        <div class="col-lg-2">
-            <div class="input-group">
-                <button ng-click="neumalen()">
-                    EIN BUTTON
-                </button>
-            </div>
-        </div>
+    <div class='wrapper text-center'>
+
+        <button type="button" class="btn-success btn-lg" ng-click="neumalen()">
+            GO
+        </button>
+
     </div>
 
     <div class="row">
         <div class="col-lg-2">
             <div class="input-group">
-                <span class="input-group-addon">@</span>
                 <input id="reservationtime" type="text" class="form-control" placeholder="Datum">
             </div>
         </div>
+        <div class="col-lg-2">
+            <input type="range" min="0.025" max="2" value="0.1" step="0.025" ng-model="item.cost" ng-mouseup="sliderChange()" /> {{item.cost}}
+        </div>
     </div>
 
     <div class="row">
-        <div class="col-lg-2">
-            <input type="range" min="0.025" max="2" value="0.1" step="0.025" ng-model="item.cost" ng-mouseup="sliderChange()"/>
-            {{item.cost}}
-        </div>
+        Filter by price interval: <b>€ 10</b>
+        <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]" /> <b>€ 1000</b>
     </div>
+    <div class="row">
+       <input data-provide="datepicker">
+
+    </div>
+
+
+</div>
+
 </div>

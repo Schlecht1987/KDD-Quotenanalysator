@@ -39,6 +39,7 @@
 		<mapping class="mapping.Quote" />
 		<mapping class="mapping.Wettanbieter" />
 		<mapping class="mapping.HistoryQuote" />
+		<mapping class="mapping.Mannschaft" />
 
 
 	</session-factory>

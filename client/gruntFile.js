@@ -65,6 +65,8 @@ module.exports = function(grunt) {
       less: [
         'vendor/bootstrap/css/bootstrap.css',
         'vendor/daterange/daterangepicker.css',
+        'vendor/bootstrap-slider/css/bootstrap-slider.css',
+        'vendor/bootstrap-datepicker/css/datepicker.css',
      //   'vendor/font-awesome/less/font-awesome.less',
         'src/less/*.less'
       ],
@@ -153,13 +155,15 @@ module.exports = function(grunt) {
           'vendor/angular/angular-websocket.js',
           'vendor/angular/angular-translate/*.js',
           'vendor/underscore/*.js',
-          'vendor/bootstrap/*.js',
+          'vendor/bootstrap/js/bootstrap.min.js',
           'vendor/ng-grid/*.js',
           'vendor/ng-grid/plugins/*.js',
           'vendor/console/*.js',
           'vendor/highcharts/highcharts-all.js', 
           'vendor/moment/moment.js', 
-          'vendor/daterange/daterangepicker.js'
+          'vendor/daterange/daterangepicker.js',
+          'vendor/bootstrap-slider/js/bootstrap-slider.js',
+          'vendor/bootstrap-datepicker/js/bootstrap-datepicker.js'
         ],
         dest: '<%= distdir %>/libs.js'
       }

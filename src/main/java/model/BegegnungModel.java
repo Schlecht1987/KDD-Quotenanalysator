@@ -23,8 +23,8 @@ public class BegegnungModel {
         m.setDatum(b.getDatum().toString());
         m.setErgebnis(findBegegnungErgebnis(b.getId()));
         m.setId(b.getId());
-        m.setMannschaft_1(b.getMannschaft_1());
-        m.setMannschaft_2(b.getMannschaft_2());
+        m.setMannschaft_1(b.getMannschaft_1().getName());
+        m.setMannschaft_2(b.getMannschaft_2().getName());
         m.setSpieltyp(b.getSpieltyp().getName());           
         return m;
     }

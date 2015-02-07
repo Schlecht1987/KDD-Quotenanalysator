@@ -125,7 +125,7 @@ public class QuotenStatistik {
 
     public void addValue(float q, Boolean b) {
         int index = checkIfQuoteExists(q);
-        if (index == -1) {
+        if (index == -1 ) {
             QuotenInfo value = new QuotenInfo();
             value.setQuote(q);
             if (b) {
