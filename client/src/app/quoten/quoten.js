@@ -28,54 +28,113 @@ angular.module('quoten', [])
 
         ) {
             Console.group("QuotenController entered.");
-            $scope.getData = null;
-            $scope.from = "2013-01-02";
+            //-------------------------Filter---------------------------------------
+            //1= Alle   2= Heim   3 = Unentschieden   4= Gast
+            $scope.quotenTyp = 1;
+            $scope.from = "2013-12-01";
             $scope.until = "2015-12-01";
-            $scope.slider = null;
-            $scope.item = {
-                cost: 0.1
-            };
+            //Quotengenauigkeit
+            $scope.accuracy = 0.1;
+            $scope.myRangeSliderValue = [1.0, 6.0];
+
+            //Jquery für range slider init
+            $scope.myRangeSlider = $("#ex2").slider({
+                value: $scope.myRangeSliderValue
+            });
+            //on change funktion call
+            $('#ex2').on('change', function() {
+                $scope.rangesliderChange();
+            });
+
 
 
             $scope.sliderChange = function() {
-                console.debug("Slider changed");
                 $scope.getChart();
             };
 
-            $(document).ready(function() {
-                $('#reservationtime').daterangepicker({
-                        showDropdowns: true,
-                        showWeekNumbers: true,
-                        format: 'YYYY-MM-DD',
-                        startDate: '2013-01-01',
-                        endDate: '2014-12-31'
-                    },
-                    function(start, end, label) {
+            $scope.rangesliderChange = function() {
+                $scope.myRangeSliderValue = $scope.myRangeSlider.slider('getValue');
+                //Wichtig
+                $scope.$apply();
+            };
 
-                        $scope.from = start.format('YYYY-MM-DD');
-                        $scope.until = end.format('YYYY-MM-DD');
-                        console.debug($scope.from);
-                        console.debug($scope.until);
-                    },
-                    function(start, end, label) {
-                        console.log(start.toISOString(), end.toISOString(), label);
-                    });
-            });
-            //Bootstrap -slider open
-            $("#ex2").slider({});
-            //bootstrap datepicker
-            $('.datepicker').datepicker();
+            $scope.changeQuotentyp = function(value) {
+                if (value <= 4 && value >= 1) {
+                    $scope.quotenTyp = value;
+                    console.log("Quotentyp changed to "+value);
+                }
+            };
 
+            //----------------Erweiterter Filter -----------------------------------------
+            //Boolean für den erweiterten filter content
+            $scope.extendedSearch = true;
+            $scope.spieltyp = ["Bundesliga", "Primera Division", "Liga 1", "Liga Italia"];
+            //Kopie des arrays erzeugen
+            $scope.spieltyptemp = $scope.spieltyp.slice();
+            $scope.selectedSpieltyp = [];
+            $scope.mannschaften = ["Bayern München", "Mönchengladbach", "Hamburger SV", "Werder Bremen", "FC Augsburg", "1. FC Köln", "VfL Wolfsburg"];
+            //Kopie des arrays erzeugen
+            $scope.mannschaftentemp = $scope.mannschaften.slice();
+            $scope.selectedMannschaften = [];
+
+            //Filter Input Feld
+            $scope.searchMannschaft = "";
+
+            $scope.resetTeam = function() {
+                $scope.selectedMannschaften = null;
+                $scope.selectedMannschaften = [];
+                $scope.mannschaften = null;
+                $scope.mannschaften = $scope.mannschaftentemp.slice();
+            };
+
+            $scope.resetSpieltyp = function() {
+                $scope.selectedSpieltyp = null;
+                $scope.selectedSpieltyp = [];
+                $scope.spieltyp = null;
+                $scope.spieltyp = $scope.spieltyptemp.slice();
+            };
+
+            $scope.takeTeam = function(name) {
+                $scope.resetSpieltyp();
+                $scope.selectedMannschaften.push(name);
+                $scope.mannschaften.splice($scope.mannschaften.indexOf(name), 1);
+            };
+
+            $scope.removeTeam = function(name) {
+                $scope.mannschaften.push(name);
+                $scope.selectedMannschaften.splice($scope.selectedMannschaften.indexOf(name), 1);
+            };
+
+
+
+            $scope.takeSpieltyp = function(name) {
+                $scope.resetTeam();
+                $scope.selectedSpieltyp.push(name);
+                $scope.spieltyp.splice($scope.spieltyp.indexOf(name), 1);
+            };
+
+            $scope.removeSpieltyp = function(name) {
+                $scope.spieltyp.push(name);
+                $scope.selectedSpieltyp.splice($scope.selectedSpieltyp.indexOf(name), 1);
+            };
 
             $scope.getChart = function() {
 
                 var postObject = {
-                    "from": $scope.from,
-                    "until": $scope.until,
-                    "spieltyp": "Bundesliga",
-                    "wettanbieter": "bwin",
-                    "quotenRange": $scope.item.cost
+                    quotenTyp: $scope.quotenTyp,
+                    dateFrom: $scope.from,
+                    dateUntil: $scope.until,
+                    quotengenauigkeit: $scope.accuracy,
+                    quotenRangemin: $scope.myRangeSliderValue[0],
+                    quotenRangeMax: $scope.myRangeSliderValue[1],
+                    extendedFilter: $scope.extendedSearch,
+                    spieltyp: $scope.selectedSpieltyp,
+                    mannschaft: $scope.selectedMannschaften
                 };
+
+
+
+
                 //get the data from the server and creates the chart
                 $http({
                     method: "POST",
@@ -85,7 +144,6 @@ angular.module('quoten', [])
                 success(function(data) {
 
                     if (!data.error) {
-                        $scope.getData = data;
                         console.debug("data", data);
                         $scope.infos = [];
                         $scope.anzahlSpiele = [];

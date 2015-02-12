@@ -64,10 +64,9 @@ module.exports = function(grunt) {
       },
       less: [
         'vendor/bootstrap/css/bootstrap.css',
-        'vendor/daterange/daterangepicker.css',
-        'vendor/bootstrap-slider/css/bootstrap-slider.css',
         'vendor/bootstrap-datepicker/css/datepicker.css',
-     //   'vendor/font-awesome/less/font-awesome.less',
+        'vendor/bootstrap-slider/bootstrap-slider.css',
+        'vendor/helper/test.css',
         'src/less/*.less'
       ],
       lessWatch: ['src/less/**/*.less']
@@ -160,10 +159,11 @@ module.exports = function(grunt) {
           'vendor/ng-grid/plugins/*.js',
           'vendor/console/*.js',
           'vendor/highcharts/highcharts-all.js', 
-          'vendor/moment/moment.js', 
-          'vendor/daterange/daterangepicker.js',
-          'vendor/bootstrap-slider/js/bootstrap-slider.js',
-          'vendor/bootstrap-datepicker/js/bootstrap-datepicker.js'
+          'vendor/moment/moment.js',
+          'vendor/bootstrap-datepicker/js/bootstrap-datepicker.js',
+          'vendor/helper/datepicker-helper.js',
+          'vendor/helper/test.js',
+          'vendor/bootstrap-slider/bootstrap-slider.js'
         ],
         dest: '<%= distdir %>/libs.js'
       }

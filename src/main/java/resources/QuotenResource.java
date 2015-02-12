@@ -34,8 +34,9 @@ public class QuotenResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public QuotenOverviewRepresentation gibBegegnung(QuotenFilter qF) {
-      logger.info("FROM: "+qF.getFrom()+" UNTIL:  "+qF.getUntil()+" "+qF.getQuotenRange()+" "+qF.getSpieltyp());
-      QuotenStatistik q = new QuotenStatistik(qF.getFrom(),qF.getUntil(),qF.getQuotenRange());
+        qF.print();
+        
+      QuotenStatistik q = new QuotenStatistik(qF.getDateFrom(),qF.getDateUntil(),qF.getQuotengenauigkeit());
    //   HQLTest hql = new HQLTest();
    //   hql.quotenOverview();
      return q.generateQuotenOverviewRepresentation();

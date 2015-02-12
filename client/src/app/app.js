@@ -11,7 +11,10 @@ angular.module('app', [
     'templates.app',
     'templates.common',
     'ui.bootstrap',
-    'highcharts-ng'
+    'highcharts-ng',
+    'myDatepicker',
+    'bootstrapSlider'
+
 ]);
 
 angular.module('app').config(['$routeProvider', '$locationProvider', '$translateProvider',

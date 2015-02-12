@@ -59,48 +59,136 @@ angular.module("begegnung/begegnung.tpl.html", []).run(["$templateCache", functi
 
 angular.module("quoten/quoten.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("quoten/quoten.tpl.html",
-    "<div>\n" +
-    "    <div class='wrapper text-center'>\n" +
-    "        <div class=\"btn-group btn-group-lg\" role=\"group\" aria-label=\"...\">\n" +
-    "            <button type=\"button\" class=\"btn btn-default\">Alle</button>\n" +
-    "            <button type=\"button\" class=\"btn btn-default\">Heim</button>\n" +
-    "            <button type=\"button\" class=\"btn btn-default\">Unentschieden</button>\n" +
-    "            <button type=\"button\" class=\"btn btn-default\">Gast</button>\n" +
-    "        </div>\n" +
+    "<div class='wrapper text-center'>\n" +
+    "    <div class=\"btn-group btn-group-lg\" role=\"group\" aria-label=\"...\">\n" +
+    "        <button type=\"button\" class=\"btn btn-default\" ng-click=\"changeQuotentyp(1)\">Alle</button>\n" +
+    "        <button type=\"button\" class=\"btn btn-default\" ng-click=\"changeQuotentyp(2)\">Heim</button>\n" +
+    "        <button type=\"button\" class=\"btn btn-default\" ng-click=\"changeQuotentyp(3)\">Unentschieden</button>\n" +
+    "        <button type=\"button\" class=\"btn btn-default\" ng-click=\"changeQuotentyp(4)\">Gast</button>\n" +
     "    </div>\n" +
-    "    <highchart id=\"chart1\" config=\"chartConfig\"></highchart>\n" +
-    "\n" +
-    "    <div class='wrapper text-center'>\n" +
-    "\n" +
-    "        <button type=\"button\" class=\"btn-success btn-lg\" ng-click=\"neumalen()\">\n" +
-    "            GO\n" +
-    "        </button>\n" +
-    "\n" +
-    "    </div>\n" +
-    "\n" +
-    "    <div class=\"row\">\n" +
-    "        <div class=\"col-lg-2\">\n" +
-    "            <div class=\"input-group\">\n" +
-    "                <input id=\"reservationtime\" type=\"text\" class=\"form-control\" placeholder=\"Datum\">\n" +
-    "            </div>\n" +
-    "        </div>\n" +
-    "        <div class=\"col-lg-2\">\n" +
-    "            <input type=\"range\" min=\"0.025\" max=\"2\" value=\"0.1\" step=\"0.025\" ng-model=\"item.cost\" ng-mouseup=\"sliderChange()\" /> {{item.cost}}\n" +
-    "        </div>\n" +
-    "    </div>\n" +
-    "\n" +
-    "    <div class=\"row\">\n" +
-    "        Filter by price interval: <b>€ 10</b>\n" +
-    "        <input id=\"ex2\" type=\"text\" class=\"span2\" value=\"\" data-slider-min=\"10\" data-slider-max=\"1000\" data-slider-step=\"5\" data-slider-value=\"[250,450]\" /> <b>€ 1000</b>\n" +
-    "    </div>\n" +
-    "    <div class=\"row\">\n" +
-    "       <input data-provide=\"datepicker\">\n" +
-    "\n" +
-    "    </div>\n" +
-    "\n" +
-    "\n" +
     "</div>\n" +
     "\n" +
+    "<highchart id=\"chart1\" config=\"chartConfig\"></highchart>\n" +
+    "\n" +
+    "<div class='wrapper text-center'>\n" +
+    "    <button type=\"button\" class=\"btn-success btn-lg\" ng-click=\"neumalen()\">\n" +
+    "        GO\n" +
+    "    </button>\n" +
+    "</div>\n" +
+    "\n" +
+    "<div class=\"row\">\n" +
+    "    <div class=\"col-lg-2 col-lg-offset-2\">\n" +
+    "        <p class=\"text-center\"><b>Quotengenauigkeit</b></p>\n" +
+    "        <div class=\"row\">\n" +
+    "            <div class=\"col-md-12 \">\n" +
+    "                <div class=\"vcenter\" id=\"floatleftid\">\n" +
+    "                    <b> 0.025 </b>\n" +
+    "                </div>\n" +
+    "                <input id=\"customSlider\" type=\"range\" min=\"0.01\" max=\"2\" value=\"0.1\" step=\"0.01\" ng-model=\"accuracy\" ng-mouseup=\"sliderChange()\" />\n" +
+    "                <div class=\"vcenter\" id=\"floatleftid\">\n" +
+    "                    <b> 2 </b>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "        <p class=\"text-center\"><b>{{accuracy}}</b>\n" +
+    "        </p>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-lg-2\">\n" +
+    "        <p class=\"text-center\"><b>Datum von</b></p>\n" +
+    "        <div class=\"input-group\">\n" +
+    "            <span class=\"input-group-addon\" id=\"basic-addon1\">von</span>\n" +
+    "            <my-datepicker ng-model=\"from\"></my-datepicker>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-lg-2\">\n" +
+    "        <p class=\"text-center\"><b>Datum bis</b></p>\n" +
+    "        <div class=\"input-group\">\n" +
+    "            <span class=\"input-group-addon\" id=\"basic-addon1\">bis</span>\n" +
+    "            <my-datepicker ng-model=\"until\"></my-datepicker>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-lg-2\">\n" +
+    "        <p class=\"text-center\"><b>Quotenbereich</b></p>\n" +
+    "        <div class=\"row\">\n" +
+    "            <div class=\"col-md-12 \">\n" +
+    "\n" +
+    "                <b>1.0 &nbsp&nbsp</b>\n" +
+    "                <input id=\"ex2\" type=\"text\" class=\"span2\" value=\"\" data-slider-min=\"1.0\" data-slider-max=\"30.0\" data-slider-step=\"0.1\" /> &nbsp&nbsp<b>30</b>\n" +
+    "\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "        <p class=\"text-center\"><b>{{myRangeSliderValue[0]}}-{{myRangeSliderValue[1]}}</b></p>\n" +
+    "    </div>\n" +
+    "</div>\n" +
+    "<div class=\"row\">\n" +
+    "    <div class=\"col-lg-2 \">\n" +
+    "        <div class=\"checkbox\">\n" +
+    "            <label>\n" +
+    "                <input type=\"checkbox\" ng-model=\"extendedSearch\"> Erweiterer Filter\n" +
+    "            </label>\n" +
+    "\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</div>\n" +
+    "\n" +
+    "<div class=\"row\" ng-hide=\"!extendedSearch\">\n" +
+    "    <div class=\"col-lg-2 col-lg-offset-2\" ng-hide=\"boolFilterSpieltyp\">\n" +
+    "        <div class=\"panel panel-info\">\n" +
+    "            <div class=\"panel-heading\">\n" +
+    "\n" +
+    "                <h3 class=\"panel-title\">Spieltypen</h3>\n" +
+    "\n" +
+    "                <div class=\"list-group listoverflow\">\n" +
+    "                    <a ng-repeat=\"item in spieltyp \" class=\"list-group-item\" ng-click=\"takeSpieltyp(item)\">\n" +
+    "                        {{item}}\n" +
+    "                     </a>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-lg-2 \" ng-hide=\"boolFilterSpieltyp\">\n" +
+    "        <div class=\"panel panel-info\">\n" +
+    "            <div class=\"panel-heading\">\n" +
+    "                <h3 class=\"panel-title\">Ausgewählte Spieltypen</h3>\n" +
+    "                <div class=\"list-group listoverflow\">\n" +
+    "                    <a ng-repeat=\"item in selectedSpieltyp \" class=\"list-group-item\" ng-click=\"removeSpieltyp(item)\">\n" +
+    "                {{item}}\n" +
+    "                    </a>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "\n" +
+    "    <div class=\"col-lg-2 \">\n" +
+    "        <div class=\"panel panel-info\">\n" +
+    "            <div class=\"panel-heading\">\n" +
+    "                <h3 class=\"panel-title\">Ausgewählte Mannschften</h3>\n" +
+    "                <div class=\"list-group listoverflow\">\n" +
+    "                    <a ng-repeat=\"item in selectedMannschaften\" class=\"list-group-item\" ng-click=\"removeTeam(item)\">\n" +
+    "                {{item}}\n" +
+    "            </a>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-lg-2 \">\n" +
+    "        <div class=\"panel panel-info\">\n" +
+    "            <div class=\"panel-heading\">\n" +
+    "                <h3 class=\"panel-title\">Mannschaften</h3>\n" +
+    "                <input type=\"text\" ng-model=\"searchMannschaft\" value=\"\" placeholder=\"Name einer Mannschaft\" class=\"form-control\"> </input>\n" +
+    "                <div class=\"list-group speciallistoverflow\">\n" +
+    "                    <a ng-repeat=\"item in mannschaften | filter:searchMannschaft\" class=\"list-group-item\" ng-click=\"takeTeam(item)\">\n" +
+    "                {{item}}\n" +
+    "            </a>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</div>\n" +
+    "<div class=\" row\">\n" +
+    "    <div class=\"col-lg-4 col-lg-offset-1\">\n" +
+    "\n" +
+    "    </div>\n" +
     "</div>\n" +
     "");
 }]);

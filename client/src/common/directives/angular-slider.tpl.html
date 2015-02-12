@@ -1,0 +1,39 @@
+<div ng-show="index.valid">
+  <div ng-init  ="">
+
+  <div class="row-fluid">
+    <div class="span2" style="margin:0">
+      <div class="well well-small min-max" >
+          <strong>Min</strong><br/>{{index.min}}
+      </div>
+    </div>
+    <div class="span8" style="margin:0">
+        <!--<ul  class="scale" style="">
+          <li ng-repeat="stepper in index.stepper" >
+            {{!stepper.value}}s
+          </li>
+        </ul> -->
+       <div class="angular-slider">
+       </div>
+    </div>
+    <div class="span2" >
+       <div class="well well-small min-max" >
+          <strong>Max</strong><br/>{{index.max}}
+       </div>
+    </div>
+
+    Lower Bound:
+    <input type="text" name="input"  ng-trim="true" >
+    <br/>
+    Higher Bound:
+    <input type="text" name="input"  ng-trim="true">
+
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="alert alert-error span6 alertBox" ng-show="index.alert" style="float:left;width:50%;">
+
+    {{index.alert}}
+  </div>
+</div>
