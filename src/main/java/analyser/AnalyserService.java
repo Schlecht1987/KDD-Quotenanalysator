@@ -15,6 +15,7 @@ import resources.MainResource;
 import resources.BegegnungResource;
 import resources.QuotenResource;
 import statistics.QuotenStatistik;
+import test.HQLTest;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
@@ -54,6 +55,7 @@ public class AnalyserService extends Application<AnalyserConfiguration> {
         environment.jersey().register(new MainResource());
         environment.jersey().register(new BegegnungResource());
         environment.jersey().register(new QuotenResource());
+      
     }
 
     /* (non-Javadoc)

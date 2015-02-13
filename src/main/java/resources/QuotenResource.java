@@ -36,7 +36,8 @@ public class QuotenResource {
     public QuotenOverviewRepresentation gibBegegnung(QuotenFilter qF) {
         qF.print();
         
-      QuotenStatistik q = new QuotenStatistik(qF.getDateFrom(),qF.getDateUntil(),qF.getQuotengenauigkeit());
+      QuotenStatistik q = new QuotenStatistik(qF);
+      
    //   HQLTest hql = new HQLTest();
    //   hql.quotenOverview();
      return q.generateQuotenOverviewRepresentation();

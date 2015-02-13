@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 public class QuotenFilter {
 
     /**
-     * 1= Alle 2= Heim 3 = Unentschieden 4= Gast
+     * 1= Alle| 2= Heim   3 = Unentschieden 4= Gast
      */
     @JsonProperty
     private int      quotenTyp;

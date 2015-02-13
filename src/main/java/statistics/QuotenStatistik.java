@@ -2,6 +2,7 @@ package statistics;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 import analyser.DbManage;
@@ -14,26 +15,86 @@ import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import representation.QuotenFilter;
 import representation.QuotenOverviewRepresentation;
 
 public class QuotenStatistik {
 
-    private List<QuotenInfo>       list;
-    private final org.slf4j.Logger logger = LoggerFactory.getLogger(QuotenStatistik.class);
-    private float range;
+    private List<QuotenInfo>       list                     = new ArrayList<QuotenInfo>();
+    private final org.slf4j.Logger logger                   = LoggerFactory.getLogger(QuotenStatistik.class);
+    private QuotenFilter           filter;
+    private final String           HEIM                     = "q.quoteM1";
+    private final String           UNENTSCHIEDEN            = "q.quoteX";
+    private final String           GAST                     = "q.quoteM2";
+    private final String           SIEG_NICHT_HEIM          = " != '1' ";
+    private final String           SIEG_HEIM                = " = '1' ";
+    private final String           SIEG_NICHT_UNENTSCHIEDEN = " != 'x' ";
+    private final String           SIEG_UNENTSCHIEDEN       = " = 'x' ";
+    private final String           SIEG_NICHT_GAST          = " != '2' ";
+    private final String           SIEG_GAST                = " = '2' ";
 
-    public QuotenStatistik(String from , String until, float range) {
-        this.range = range;
-        list = new ArrayList<QuotenInfo>();
-       // logger.info("Starting Statisik.....");
-        quotenOverview(from, until);
-        Collections.sort(list);
-        for (int i = 0; i < list.size(); i++) {
-            int niederlangen = list.get(i).getNiederlagen();
-            int siege = list.get(i).getSiege();
-            double prozent = 100 * (double) siege / ((double) niederlangen + (double) siege);
-          //  logger.info(list.get(i).printQuotenInfo() + "  " + prozent + "%");
+    public QuotenStatistik(QuotenFilter filter) {
+        this.filter = filter;
+        init();
+        getQuoten();
+    }
+
+    public void getQuoten() {
+        int qTyp = filter.getQuotenTyp();
+        if (qTyp == 1 || qTyp == 2) {
+            queryQuoten(HEIM, SIEG_NICHT_HEIM, false);
+            queryQuoten(HEIM, SIEG_HEIM, true);
         }
+        if (qTyp == 1 || qTyp == 3) {
+        queryQuoten(UNENTSCHIEDEN, SIEG_NICHT_UNENTSCHIEDEN, false);
+        queryQuoten(UNENTSCHIEDEN, SIEG_UNENTSCHIEDEN, true);
+        }
+        if (qTyp == 1 || qTyp == 4) {
+        queryQuoten(GAST, SIEG_NICHT_GAST, false);
+        queryQuoten(GAST, SIEG_GAST, true);
+        }
+    }
+
+    /**
+     * Erzeug Liste mit allen Quoten im Bereich mit Quotengenauigkeit
+     */
+    public void init() {
+
+        for (float i = filter.getQuotenRangemin(); i < filter.getQuotenRangeMax(); i = i + filter.getQuotengenauigkeit()) {
+            list.add(new QuotenInfo((Math.round(i * 100f) / 100f)));
+            //  logger.info("Neue Quote hinzugefügt: " + (Math.round(i * 100f) / 100f));
+        }
+    }
+
+    public void insertQuote(float quote, boolean sieg) {
+        int index = 0;
+        float min = Float.MAX_VALUE;
+        for (int i = 0; i < list.size(); i++) {
+            float temp = list.get(i).getQuote();
+            if (Math.abs(temp - quote) < min) {
+                index = i;
+                min = Math.abs(temp - quote);
+            }
+            //  logger.info("min: "+min+" betrag: "+Math.abs(temp-quote));
+        }
+        if (sieg) {
+            list.get(index).setSiege(list.get(index).getSiege() + 1);
+        } else {
+            list.get(index).setNiederlagen(list.get(index).getNiederlagen() + 1);
+        }
+        //     logger.info("Sotierung der Quote: " + quote + " in die Quote: " + list.get(index).getQuote());
+    }
+
+    public void queryQuoten(String quotenTyp, String sieg, boolean siege) {
+        String query = "select " + quotenTyp + " " + "from Quote q, Begegnung b, Ergebnis e " + "where q.begegnung = b.id "
+                + "and b.id = e.begegnung " + "and e.sieger " + sieg + " " + "and q.quoteM1 between " + filter.getQuotenRangemin()
+                + " and " + filter.getQuotenRangeMax() + " ";
+
+        List<Float> result = (List<Float>) DbManage.getQuery(query);
+        for (Float float1 : result) {
+            insertQuote(float1, siege);
+        }
+
     }
 
     public QuotenOverviewRepresentation generateQuotenOverviewRepresentation() {
@@ -44,14 +105,16 @@ public class QuotenStatistik {
         List<Integer> niederlagen = new ArrayList<Integer>();
 
         for (int i = 0; i < list.size(); i++) {
-            int n = list.get(i).getNiederlagen();
-            int s = list.get(i).getSiege();
-            float  prz = 100 * (float) s / ((float) n + (float) s);
-            prz = roundQuote(prz);
-            quoten.add(new Float(list.get(i).getQuote()));
-            prozent.add(new Float(prz));
-            siege.add(new Integer(s));
-            niederlagen.add(new Integer(n));
+            if (list.get(i).isHasValues()) {
+                int n = list.get(i).getNiederlagen();
+                int s = list.get(i).getSiege();
+                float prz = 100 * (float) s / ((float) n + (float) s);
+                prz = roundQuote(prz);
+                quoten.add(new Float(list.get(i).getQuote()));
+                prozent.add(new Float(prz));
+                siege.add(new Integer(s));
+                niederlagen.add(new Integer(n));
+            }
         }
         qOR.setNiederlagen(niederlagen);
         qOR.setProzent(prozent);
@@ -61,95 +124,9 @@ public class QuotenStatistik {
         return qOR;
     }
 
-
-    public void quotenOverview(String from , String until) {
-        String query1 = "select distinct q "
-                +"from Quote q, Begegnung b, Ergebnis e, Spieltyp s "
-                +"where b.id = q.begegnung "
-                +"AND b.id = e.begegnung "
-                +"AND b.datum >= '"+from+"' AND b.datum <= '"+until+"' ";
-
-        List<Quote> l = (List<Quote>) DbManage.getQuery(query1);
-        logger.info("found " + l.size() + " quoten");
-        for (int i = 0; i < l.size(); i++) {
-            int id = l.get(i).getBegegnung().getId();
-            if (getErgebnis(id) != null) {
-                addQuote(l.get(i), getErgebnis(id));
-            }
-        }
-
-    }
-
-    public Ergebnis getErgebnis(int begegnungsId) {
-        List<Ergebnis> erg = (List<Ergebnis>) DbManage.getQuery("from Ergebnis where begegnung = " + begegnungsId);
-        if (erg.size() == 1) {
-            return erg.get(0);
-        } else if (erg.size() > 1) {
-            logger.error("Found more than one Ergebnis for match");
-            return null;
-        }
-
-        return null;
-    }
-
-    public boolean findBegegnungErgebnis(int begegnungsID) {
-        List<Ergebnis> erg = (List<Ergebnis>) DbManage.getQuery("from Ergebnis where begegnung = " + begegnungsID);
-        if (erg.size() > 0) {
-            return true;
-        }
-        return false;
-    }
-
-    public void addQuote(mapping.Quote q, Ergebnis e) {
-
-        if (e.getSieger().equals("1")) {
-            addValue(roundQuote(q.getQuoteM1()), true);
-            addValue(roundQuote(q.getQuoteM2()), false);
-            addValue(roundQuote(q.getQuoteX()), false);
-        } else if (e.getSieger().equals("2")) {
-            addValue(roundQuote(q.getQuoteX()), true);
-            addValue(roundQuote(q.getQuoteM1()), false);
-            addValue(roundQuote(q.getQuoteM2()), false);
-        } else if (e.getSieger().equals("x")) {
-            addValue(roundQuote(q.getQuoteM2()), true);
-            addValue(roundQuote(q.getQuoteX()), false);
-            addValue(roundQuote(q.getQuoteM1()), false);
-        }
-
-    }
-
     public float roundQuote(float f) {
 
         return (float) Math.round(f * 10) / 10;
-    }
-
-    public void addValue(float q, Boolean b) {
-        int index = checkIfQuoteExists(q);
-        if (index == -1 ) {
-            QuotenInfo value = new QuotenInfo();
-            value.setQuote(q);
-            if (b) {
-                value.setSiege(value.getSiege() + 1);
-            } else {
-                value.setNiederlagen(value.getNiederlagen() + 1);
-            }
-            list.add(value);
-        } else {
-            if (b) {
-                list.get(index).setSiege(list.get(index).getSiege() + 1);
-            } else {
-                list.get(index).setNiederlagen(list.get(index).getNiederlagen() + 1);
-            }
-        }
-    }
-
-    public int checkIfQuoteExists(float quote) {
-        for (int i = 0; i < list.size(); i++) {
-            if (Math.abs(list.get(i).getQuote() - quote) < range) {
-                return i;
-            }
-        }
-        return -1;
     }
 
     public List<QuotenInfo> getList() {

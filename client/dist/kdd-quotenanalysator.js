@@ -1,4 +1,4 @@
-/*! kdd-quotenanalysator - v0.0.1-SNAPSHOT - 2015-02-12
+/*! kdd-quotenanalysator - v0.0.1-SNAPSHOT - 2015-02-13
  * http://localhost:11016/
  * Copyright (c) 2015 Hendrik Froemming;
  * Licensed 
@@ -150,7 +150,8 @@ angular.module('quoten', [])
 
         ) {
             Console.group("QuotenController entered.");
-            //Filter
+            //-------------------------Filter---------------------------------------
+            //1= Alle   2= Heim   3 = Unentschieden   4= Gast
             $scope.quotenTyp = 1;
             $scope.from = "2013-12-01";
             $scope.until = "2015-12-01";
@@ -182,7 +183,7 @@ angular.module('quoten', [])
             $scope.changeQuotentyp = function(value) {
                 if (value <= 4 && value >= 1) {
                     $scope.quotenTyp = value;
-                    console.log("Quotentyp changed to "+value);
+                    console.log("Quotentyp changed to " + value);
                 }
             };
 
@@ -272,7 +273,8 @@ angular.module('quoten', [])
                             $scope.infos[i] = {
                                 y: data.prozent[i],
                                 siege: data.siege[i],
-                                niederlagen: data.niederlagen[i]
+                                niederlagen: data.niederlagen[i],
+                                anzahl: data.siege[i] + data.niederlagen[i]
                             };
                             $scope.anzahlSpiele[i] = {
                                 y: data.siege[i] + data.niederlagen[i],
@@ -303,21 +305,13 @@ angular.module('quoten', [])
                                         }
                                     }
                                 },
-                                yAxis: [{
-                                        min: 0,
-                                        max: 100,
-                                        title: {
-                                            text: '%'
-                                        }
-                                    }, {
-                                        min: 0,
-                                        title: {
-                                            text: 'Anzahl Spiele'
-                                        },
-                                        opposite: true
+                                yAxis: {
+                                    min: 0,
+                                    max: 120,
+                                    title: {
+                                        text: '%'
                                     }
-
-                                ],
+                                },
                                 legend: {
                                     enabled: false
                                 },
@@ -326,7 +320,7 @@ angular.module('quoten', [])
                                         borderWidth: 0,
                                         dataLabels: {
                                             enabled: true,
-                                            format: '{point.y:.1f}%'
+                                            format: '{point.y:.1f}%<br/> S: {point.anzahl}'
                                         }
                                     },
                                     column: {
@@ -344,17 +338,6 @@ angular.module('quoten', [])
                             series: [{
                                 name: '%',
                                 data: $scope.infos
-                            }, {
-                                name: '%',
-                                data: $scope.anzahlSpiele,
-                                yAxis: 1,
-                                tooltip: {
-                                    valueSuffix: ''
-                                },
-                                dataLabels: {
-                                    enabled: true,
-                                    format: '{point.y}'
-                                }
                             }]
                         };
                     }
