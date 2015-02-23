@@ -1,4 +1,4 @@
-/*! kdd-quotenanalysator - v0.0.1-SNAPSHOT - 2015-02-13
+/*! kdd-quotenanalysator - v0.0.1-SNAPSHOT - 2015-02-22
  * http://localhost:11016/
  * Copyright (c) 2015 Hendrik Froemming;
  * Licensed 
@@ -171,7 +171,7 @@ angular.module('quoten', [])
 
 
             $scope.sliderChange = function() {
-                $scope.getChart();
+                $scope.neumalen();
             };
 
             $scope.rangesliderChange = function() {
@@ -184,19 +184,37 @@ angular.module('quoten', [])
                 if (value <= 4 && value >= 1) {
                     $scope.quotenTyp = value;
                     console.log("Quotentyp changed to " + value);
+                    $scope.pushChart();
+                }
+            };
+
+            $scope.getLegendName = function() {
+                if ($scope.quotenTyp === 1) {
+                    return "Alle";
+                }
+
+                if ($scope.quotenTyp === 2) {
+                    return "Heim";
+                }
+
+                if ($scope.quotenTyp === 3) {
+                    return "Unentschieden";
+                }
+                if ($scope.quotenTyp === 4) {
+                    return "Gast";
                 }
             };
 
             //----------------Erweiterter Filter -----------------------------------------
             //Boolean für den erweiterten filter content
             $scope.extendedSearch = true;
-            $scope.spieltyp = ["Bundesliga", "Primera Division", "Liga 1", "Liga Italia"];
+            $scope.spieltyp = [];
             //Kopie des arrays erzeugen
-            $scope.spieltyptemp = $scope.spieltyp.slice();
+            $scope.spieltyptemp = [];
             $scope.selectedSpieltyp = [];
-            $scope.mannschaften = ["Bayern München", "Mönchengladbach", "Hamburger SV", "Werder Bremen", "FC Augsburg", "1. FC Köln", "VfL Wolfsburg"];
+            $scope.mannschaften = [];
             //Kopie des arrays erzeugen
-            $scope.mannschaftentemp = $scope.mannschaften.slice();
+            $scope.mannschaftentemp = [];
             $scope.selectedMannschaften = [];
 
             //Filter Input Feld
@@ -240,7 +258,7 @@ angular.module('quoten', [])
                 $scope.selectedSpieltyp.splice($scope.selectedSpieltyp.indexOf(name), 1);
             };
 
-            $scope.getChart = function() {
+            $scope.creatPostObject = function() {
 
                 var postObject = {
                     quotenTyp: $scope.quotenTyp,
@@ -254,38 +272,58 @@ angular.module('quoten', [])
                     mannschaft: $scope.selectedMannschaften
                 };
 
+                return postObject;
+            };
+
+            //---------------------------Initial Data--------------------------------
+
+            $http({
+                method: "GET",
+                url: '/quoten/inputdata/'
+            }).
+            success(function(data) {
+                if (!data.error) {
+                    Console.debug("data", data);
+                    $scope.mannschaftentemp = data.mannschaft.slice();
+                    $scope.spieltyptemp = data.spieltyp.slice();
+                    $scope.resetTeam();
+                    $scope.resetSpieltyp();
+
+                }
+            });
 
 
+            //----------------------Highcharts-----------------------------------
 
+            $scope.drawChart = function() {
                 //get the data from the server and creates the chart
                 $http({
                     method: "POST",
                     url: '/quoten/',
-                    data: postObject
+                    data: $scope.creatPostObject()
                 }).
                 success(function(data) {
 
                     if (!data.error) {
                         console.debug("data", data);
                         $scope.infos = [];
-                        $scope.anzahlSpiele = [];
                         for (var i = 0; i < data.prozent.length; i++) {
-                            $scope.infos[i] = {
-                                y: data.prozent[i],
-                                siege: data.siege[i],
-                                niederlagen: data.niederlagen[i],
-                                anzahl: data.siege[i] + data.niederlagen[i]
-                            };
-                            $scope.anzahlSpiele[i] = {
-                                y: data.siege[i] + data.niederlagen[i],
-                                siege: data.siege[i],
-                                niederlagen: data.niederlagen[i]
-                            };
-
+                            if (data.prozent[i] > -1) {
+                                $scope.infos[i] = {
+                                    y: data.prozent[i],
+                                    siege: data.siege[i],
+                                    niederlagen: data.niederlagen[i],
+                                    anzahl: data.siege[i] + data.niederlagen[i]
+                                };
+                            } else {
+                                $scope.infos[i] = {
+                                    y: 0,
+                                    siege: 0,
+                                    niederlagen: 0,
+                                    anzahl: 0
+                                };
+                            }
                         }
-                        console.debug($scope.infos);
-
-
                         $scope.chartConfig = {
                             options: {
                                 chart: {
@@ -313,14 +351,14 @@ angular.module('quoten', [])
                                     }
                                 },
                                 legend: {
-                                    enabled: false
+                                    enabled: true
                                 },
                                 plotOptions: {
                                     series: {
                                         borderWidth: 0,
                                         dataLabels: {
                                             enabled: true,
-                                            format: '{point.y:.1f}%<br/> S: {point.anzahl}'
+                                            format: '{point.y:.1f}%<br/>  S:{point.anzahl}'
                                         }
                                     },
                                     column: {
@@ -336,7 +374,7 @@ angular.module('quoten', [])
                                 }
                             },
                             series: [{
-                                name: '%',
+                                name: $scope.getLegendName(),
                                 data: $scope.infos
                             }]
                         };
@@ -345,8 +383,7 @@ angular.module('quoten', [])
             };
 
             $scope.neumalen = function() {
-                console.debug("lalala");
-                $scope.getChart();
+                $scope.drawChart();
                 //$scope.chartConfig.options.xAxis.categories.pop(1);
                 /*     var rnd = [];
                      for (var i = 0; i < 10; i++) {
@@ -356,8 +393,45 @@ angular.module('quoten', [])
                          data: rnd
                      });*/
 
+            };
+
+            $scope.pushChart = function() {
+                $http({
+                    method: "POST",
+                    url: '/quoten/',
+                    data: $scope.creatPostObject()
+                }).
+                success(function(data) {
+
+                    if (!data.error) {
+                        console.debug("data", data);
+                        var infos = [];
+                        for (var i = 0; i < data.prozent.length; i++) {
+                            if (data.prozent[i] > -1) {
+                                infos[i] = {
+                                    y: data.prozent[i],
+                                    siege: data.siege[i],
+                                    niederlagen: data.niederlagen[i],
+                                    anzahl: data.siege[i] + data.niederlagen[i]
+                                };
+                            } else {
+                                infos[i] = {
+                                    y: 0,
+                                    siege: 0,
+                                    niederlagen: 0,
+                                    anzahl: 0
+                                };
+                            }
+                        }
+                        $scope.chartConfig.series.push({
+                            name: $scope.getLegendName(),
+                            data: infos
+                        });
+                    }
 
 
+
+                });
             };
 
 

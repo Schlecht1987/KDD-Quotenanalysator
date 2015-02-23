@@ -32,11 +32,54 @@ public class QuotenStatistik {
     private final String           SIEG_UNENTSCHIEDEN       = " = 'x' ";
     private final String           SIEG_NICHT_GAST          = " != '2' ";
     private final String           SIEG_GAST                = " = '2' ";
+    private final String           MANNSCHAFT               = " and (m.id = b.mannschaft_1 or m.id = b.mannschaft_2) and ( ";
+    private final String           SPIELTYP                 = " and s.id = b.spieltyp and ( ";
+
+    private String                 queryMannschaft          = "";
+    private String                 fromMannschaft           ="";
+    private String                 querySpieltyp            = "";
+    private String                 fromSpieltyp             ="";
 
     public QuotenStatistik(QuotenFilter filter) {
         this.filter = filter;
         init();
+        if (filter.isExtendedFilter()) {
+            manageExtendedFilter();
+        }
+
         getQuoten();
+    }
+
+    public void manageExtendedFilter() {
+        if (filter.getMannschaft().length > 0) {
+            createMannschaftQueryString();
+        } else if (filter.getSpieltyp().length > 0) {
+            createSpieltypQueryString();
+        }
+
+    }
+
+    public void createSpieltypQueryString() {
+        String[] spieltypen = filter.getSpieltyp();
+        querySpieltyp += SPIELTYP;
+        for (int i = 0; i < spieltypen.length; i++) {
+            querySpieltyp += " s.name =  '" + spieltypen[i] + "' or";
+        }
+        querySpieltyp = querySpieltyp.substring(0, querySpieltyp.length() - 2);
+        querySpieltyp += ")";
+        fromSpieltyp = ", Spieltyp s ";
+     
+    }
+
+    public void createMannschaftQueryString() {
+        String[] mannschaften = filter.getMannschaft();
+        queryMannschaft += MANNSCHAFT;
+        for (int i = 0; i < mannschaften.length; i++) {
+            queryMannschaft += " m.name =  '" + mannschaften[i] + "' or";
+        }
+        queryMannschaft = queryMannschaft.substring(0, queryMannschaft.length() - 2);
+        queryMannschaft += ")";
+        fromMannschaft = ", Mannschaft m ";
     }
 
     public void getQuoten() {
@@ -46,12 +89,12 @@ public class QuotenStatistik {
             queryQuoten(HEIM, SIEG_HEIM, true);
         }
         if (qTyp == 1 || qTyp == 3) {
-        queryQuoten(UNENTSCHIEDEN, SIEG_NICHT_UNENTSCHIEDEN, false);
-        queryQuoten(UNENTSCHIEDEN, SIEG_UNENTSCHIEDEN, true);
+            queryQuoten(UNENTSCHIEDEN, SIEG_NICHT_UNENTSCHIEDEN, false);
+            queryQuoten(UNENTSCHIEDEN, SIEG_UNENTSCHIEDEN, true);
         }
         if (qTyp == 1 || qTyp == 4) {
-        queryQuoten(GAST, SIEG_NICHT_GAST, false);
-        queryQuoten(GAST, SIEG_GAST, true);
+            queryQuoten(GAST, SIEG_NICHT_GAST, false);
+            queryQuoten(GAST, SIEG_GAST, true);
         }
     }
 
@@ -86,16 +129,29 @@ public class QuotenStatistik {
     }
 
     public void queryQuoten(String quotenTyp, String sieg, boolean siege) {
-        String query = "select " + quotenTyp + " " + "from Quote q, Begegnung b, Ergebnis e " + "where q.begegnung = b.id "
-                + "and b.id = e.begegnung " + "and e.sieger " + sieg + " " + "and q.quoteM1 between " + filter.getQuotenRangemin()
-                + " and " + filter.getQuotenRangeMax() + " ";
-
+        String query = "select " + quotenTyp + " " + "from Quote q, Begegnung b, Ergebnis e "+fromMannschaft +fromSpieltyp+ " where q.begegnung = b.id "
+                + "and b.id = e.begegnung " + "and e.sieger " + sieg + " " + "and " + quotenTyp + " between " + filter.getQuotenRangemin()
+                + " and " + filter.getQuotenRangeMax() + " " + queryMannschaft + " " + querySpieltyp;
+        logger.info("QUERY: " + query);
         List<Float> result = (List<Float>) DbManage.getQuery(query);
         for (Float float1 : result) {
             insertQuote(float1, siege);
         }
 
     }
+
+    /*  
+      public void queryQuoten(String quotenTyp, String sieg, boolean siege) {
+          String query = "select " + quotenTyp + " " + "from Quote q, Begegnung b, Ergebnis e " + "where q.begegnung = b.id "
+                  + "and b.id = e.begegnung " + "and e.sieger " + sieg + " " + "and q.quoteM1 between " + filter.getQuotenRangemin()
+                  + " and " + filter.getQuotenRangeMax() + " ";
+
+          List<Float> result = (List<Float>) DbManage.getQuery(query);
+          for (Float float1 : result) {
+              insertQuote(float1, siege);
+          }
+
+      }*/
 
     public QuotenOverviewRepresentation generateQuotenOverviewRepresentation() {
         QuotenOverviewRepresentation qOR = new QuotenOverviewRepresentation();
@@ -114,6 +170,11 @@ public class QuotenStatistik {
                 prozent.add(new Float(prz));
                 siege.add(new Integer(s));
                 niederlagen.add(new Integer(n));
+            } else {
+                quoten.add(new Float(list.get(i).getQuote()));
+                prozent.add(new Float(-1));
+                siege.add(new Integer(0));
+                niederlagen.add(new Integer(0));
             }
         }
         qOR.setNiederlagen(niederlagen);
