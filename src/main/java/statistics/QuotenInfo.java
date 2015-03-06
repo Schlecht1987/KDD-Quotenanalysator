@@ -6,10 +6,11 @@ public class QuotenInfo implements Comparable<QuotenInfo> {
 
     private float quote;
     private int   siege       = 0;
-    private int   niederlagen = 0;
-    
+    private int   niederlagen = 0;   
     private boolean hasValues = false;
-
+    
+    
+    
     public QuotenInfo(float quote) {
         this.quote = quote;
     }

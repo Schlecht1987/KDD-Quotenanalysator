@@ -1,4 +1,4 @@
-/*! kdd-quotenanalysator - v0.0.1-SNAPSHOT - 2015-02-22
+/*! kdd-quotenanalysator - v0.0.1-SNAPSHOT - 2015-03-06
  * http://localhost:11016/
  * Copyright (c) 2015 Hendrik Froemming;
  * Licensed 
@@ -104,18 +104,100 @@ angular.module('begegnung', [])
         ) {
             Console.group("BegegnungController entered.");
 
+            $scope.showpanel = [];
+
+            $scope.charConfig = [];
+
+            $scope.eineZahl = 5;
+
+            $scope.togglePanel = function(index) {
+                $scope.showpanel[index] = !$scope.showpanel[index];
+            };
+
+            $scope.buildHighcharts = function(index, data) {
+// value.historyDate, value.historyQM1, value.historyQM2, value.historyQX, value.mannschaft_1,value.mannschaft_2
+
+                if(data.historyDate == null){
+                     data.historyDate = [];
+                     data.historyQM1 = [];
+                     data.historyQM2 = [];
+                     data.historyQX = [];
+                }
+                data.historyDate.push("Aktuell");
+                data.historyQM1.push(data.quoteM1);
+                data.historyQM2.push(data.quoteM2);
+                data.historyQX.push(data.quoteX);
+
+
+                var chartObject = {
+                    options: {
+                        chart: {
+                            type: 'line',
+                            zoomType: 'x'
+                        },
+                        plotOptions: {
+                            line: {
+                                dataLabels: {
+                                    enabled: true,
+                                    style: {
+                                        fontWeight: 'bold',
+                                        fontSize: '15px'
+                                    }
+                                },
+                                enableMouseTracking: false
+                            }
+                        }
+                    },
+
+                    series: [{
+                        name: data.mannschaft_1,
+                        data:  data.historyQM1
+                    }, {
+                        name: 'X',
+                        data: data.historyQX
+                    }, {
+                        name: data.mannschaft_2,
+                        data:  data.historyQM2
+                    }],
+                    title: {
+                        text: 'Quotenänderung ' + data.mannschaft_1 + ' vs ' + data.mannschaft_2
+                    },
+                    xAxis: {
+                        categories: data.historyDate
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Quote'
+                        }
+                    }
+
+
+                };
+                $scope.charConfig[index] = chartObject;
+            };
+
+
+
             $http({
                 method: "GET",
                 url: '/begegnung/'
             }).
             success(function(data) {
                 if (!data.error) {
-                   $scope.begegnungData = data;
-                  console.debug(data);
-        
+                    $scope.begegnungData = data;
+                    console.debug(data);
+
                 }
             });
+            $scope.test = function() {
+                return "hat geklappt";
+            };
 
+            //schneidet sekunden vom timestamp string ab
+            $scope.cutTimestamp = function(date) {
+
+                return date.substring(0, (date.length - 5));
+            };
             Console.groupEnd();
         }
     ]);
@@ -138,6 +220,7 @@ angular.module('quoten', [])
         '$cookieStore',
         '$compile',
         '$location',
+        '$timeout',
         function(
             Console,
             $translate,
@@ -146,7 +229,8 @@ angular.module('quoten', [])
             $filter,
             $cookieStore,
             $compile,
-            $location
+            $location,
+            $timeout
 
         ) {
             Console.group("QuotenController entered.");
@@ -158,6 +242,8 @@ angular.module('quoten', [])
             //Quotengenauigkeit
             $scope.accuracy = 0.1;
             $scope.myRangeSliderValue = [1.0, 6.0];
+
+            $scope.isLoading = false;
 
             //Jquery für range slider init
             $scope.myRangeSlider = $("#ex2").slider({
@@ -277,22 +363,27 @@ angular.module('quoten', [])
 
             //---------------------------Initial Data--------------------------------
 
-            $http({
-                method: "GET",
-                url: '/quoten/inputdata/'
-            }).
-            success(function(data) {
-                if (!data.error) {
+            $scope.getInitialData = function() {
+
+                $http.get('/quoten/inputdata/').
+                success(function(data, status, headers, config) {
+
                     Console.debug("data", data);
                     $scope.mannschaftentemp = data.mannschaft.slice();
                     $scope.spieltyptemp = data.spieltyp.slice();
                     $scope.resetTeam();
                     $scope.resetSpieltyp();
 
-                }
-            });
 
+                }).
+                error(function(data, status, headers, config) {
+                    // called asynchronously if an error occurs
+                    // or server returns response with an error status.
 
+                });
+
+            };
+            $scope.getInitialData();
             //----------------------Highcharts-----------------------------------
 
             $scope.drawChart = function() {
@@ -306,28 +397,14 @@ angular.module('quoten', [])
 
                     if (!data.error) {
                         console.debug("data", data);
-                        $scope.infos = [];
-                        for (var i = 0; i < data.prozent.length; i++) {
-                            if (data.prozent[i] > -1) {
-                                $scope.infos[i] = {
-                                    y: data.prozent[i],
-                                    siege: data.siege[i],
-                                    niederlagen: data.niederlagen[i],
-                                    anzahl: data.siege[i] + data.niederlagen[i]
-                                };
-                            } else {
-                                $scope.infos[i] = {
-                                    y: 0,
-                                    siege: 0,
-                                    niederlagen: 0,
-                                    anzahl: 0
-                                };
-                            }
-                        }
+                        var infos = [];
+                        infos = $scope.createChartInfos(data);
+
                         $scope.chartConfig = {
                             options: {
                                 chart: {
-                                    type: 'column'
+                                    type: 'column',
+                                    zoomType: 'x'
                                 },
                                 title: {
                                     text: 'Quoten Analyse'
@@ -358,7 +435,7 @@ angular.module('quoten', [])
                                         borderWidth: 0,
                                         dataLabels: {
                                             enabled: true,
-                                            format: '{point.y:.1f}%<br/>  S:{point.anzahl}'
+                                            format: '{point.y:.1f}%<br/>  S:{point.anzahl} <br/> <span style="color:{point.erwartungswertColor}"> E:{point.erwartungswert}</span>'
                                         }
                                     },
                                     column: {
@@ -375,63 +452,92 @@ angular.module('quoten', [])
                             },
                             series: [{
                                 name: $scope.getLegendName(),
-                                data: $scope.infos
+                                data: infos
                             }]
                         };
                     }
                 });
             };
 
+            $scope.createChartInfos = function(data) {
+                var infos = [];
+                for (var i = 0; i < data.prozent.length; i++) {
+                    if (data.prozent[i] > -1) {
+                        infos[i] = {
+                            y: data.prozent[i],
+                            siege: data.siege[i],
+                            niederlagen: data.niederlagen[i],
+                            anzahl: data.siege[i] + data.niederlagen[i],
+                            erwartungswert: data.erwartungswert[i]
+                        };
+                    } else {
+                        infos[i] = {
+                            y: 0,
+                            siege: 0,
+                            niederlagen: 0,
+                            anzahl: 0,
+                            erwartungswert: 0
+                        };
+                    }
+                    if (infos[i].erwartungswert > 0) {
+                        infos[i].erwartungswertColor = "#007A29";
+                    } else if (infos[i].erwartungswert < 0) {
+                        infos[i].erwartungswertColor = "#FF0000";
+                    } else {
+                        infos[i].erwartungswertColor = "#000000";
+                    }
+                }
+                return infos;
+            };
+
             $scope.neumalen = function() {
+                $scope.startLoading();
                 $scope.drawChart();
-                //$scope.chartConfig.options.xAxis.categories.pop(1);
-                /*     var rnd = [];
-                     for (var i = 0; i < 10; i++) {
-                         rnd.push(Math.floor(Math.random() * 20) + 1);
-                     }
-                     $scope.chartConfig.series.push({
-                         data: rnd
-                     });*/
+                $scope.finishLoading();
+            };
+            $scope.startLoading = function() {
+                $scope.isLoading = true;
+            };
+
+            $scope.finishLoading = function() {
+                $timeout(function() {
+                    $scope.isLoading = false;
+                }, 10);
+
 
             };
 
             $scope.pushChart = function() {
-                $http({
-                    method: "POST",
-                    url: '/quoten/',
-                    data: $scope.creatPostObject()
-                }).
-                success(function(data) {
+                if (typeof $scope.chartConfig === "undefined") {
+                    $scope.neumalen();
+                } else {
 
-                    if (!data.error) {
-                        console.debug("data", data);
-                        var infos = [];
-                        for (var i = 0; i < data.prozent.length; i++) {
-                            if (data.prozent[i] > -1) {
-                                infos[i] = {
-                                    y: data.prozent[i],
-                                    siege: data.siege[i],
-                                    niederlagen: data.niederlagen[i],
-                                    anzahl: data.siege[i] + data.niederlagen[i]
-                                };
-                            } else {
-                                infos[i] = {
-                                    y: 0,
-                                    siege: 0,
-                                    niederlagen: 0,
-                                    anzahl: 0
-                                };
-                            }
+
+                    $scope.startLoading();
+                    $http({
+                        method: "POST",
+                        url: '/quoten/',
+                        data: $scope.creatPostObject()
+                    }).
+                    success(function(data) {
+
+                        if (!data.error) {
+                            console.debug("data", data);
+                            var infos = [];
+                            infos = $scope.createChartInfos(data);
+
+
+                            $scope.chartConfig.series.push({
+                                name: $scope.getLegendName(),
+                                data: infos
+                            });
                         }
-                        $scope.chartConfig.series.push({
-                            name: $scope.getLegendName(),
-                            data: infos
-                        });
-                    }
 
 
 
-                });
+                    });
+                    $scope.finishLoading();
+                }
             };
 
 
@@ -479,6 +585,427 @@ angular.module('start', [])
       Console.groupEnd();
     }
   ]);
+if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.exports === exports) {
+    module.exports = 'highcharts-ng';
+}
+(function() {
+    'use strict';
+    /*global angular: false, Highcharts: false */
+
+
+
+    function highchartsNGUtils() {
+
+        return {
+
+            //IE8 support
+            indexOf: function(arr, find, i /*opt*/ ) {
+                if (i === undefined) {
+                    i = 0;
+                }
+                if (i < 0) {
+                    i += arr.length;
+                }
+                if (i < 0) {
+                    i = 0;
+                }
+                for (var n = arr.length; i < n; i++) {
+                    if (i in arr && arr[i] === find) {
+                        return i;
+                    }
+                    return -1;
+                }
+            },
+
+            prependMethod: function(obj, method, func) {
+                var original = obj[method];
+                obj[method] = function() {
+                    var args = Array.prototype.slice.call(arguments);
+                    func.apply(this, args);
+                    if (original) {
+                        return original.apply(this, args);
+                    } else {
+                        return;
+                    }
+
+                };
+            },
+
+            deepExtend: function deepExtend(destination, source) {
+                //Slightly strange behaviour in edge cases (e.g. passing in non objects)
+                //But does the job for current use cases.
+                if (angular.isArray(source)) {
+                    destination = angular.isArray(destination) ? destination : [];
+                    for (var i = 0; i < source.length; i++) {
+                        destination[i] = deepExtend(destination[i] || {}, source[i]);
+                    }
+                } else if (angular.isObject(source)) {
+                    for (var property in source) {
+                        destination[property] = deepExtend(destination[property] || {}, source[property]);
+                    }
+                } else {
+                    destination = source;
+                }
+                return destination;
+            }
+        };
+    }
+
+    function highchart(highchartsNGUtils, $timeout) {
+
+        // acceptable shared state
+        var seriesId = 0;
+        var ensureIds = function(series) {
+            var changed = false;
+            angular.forEach(series, function(s) {
+                if (!angular.isDefined(s.id)) {
+                    s.id = 'series-' + seriesId++;
+                    changed = true;
+                }
+            });
+            return changed;
+        };
+
+        // immutable
+        var axisNames = ['xAxis', 'yAxis'];
+        var chartTypeMap = {
+            'stock': 'StockChart',
+            'map': 'Map',
+            'chart': 'Chart'
+        };
+
+        var getMergedOptions = function(scope, element, config) {
+            var mergedOptions = {};
+
+            var defaultOptions = {
+                chart: {
+                    events: {}
+                },
+                title: {},
+                subtitle: {},
+                series: [],
+                credits: {},
+                plotOptions: {},
+                navigator: {
+                    enabled: false
+                }
+            };
+
+            if (config.options) {
+                mergedOptions = highchartsNGUtils.deepExtend(defaultOptions, config.options);
+            } else {
+                mergedOptions = defaultOptions;
+            }
+            mergedOptions.chart.renderTo = element[0];
+
+            angular.forEach(axisNames, function(axisName) {
+                if (angular.isDefined(config[axisName])) {
+                    mergedOptions[axisName] = angular.copy(config[axisName]);
+
+                    if (angular.isDefined(config[axisName].currentMin) ||
+                        angular.isDefined(config[axisName].currentMax)) {
+
+                        highchartsNGUtils.prependMethod(mergedOptions.chart.events, 'selection', function(e) {
+                            var thisChart = this;
+                            if (e[axisName]) {
+                                scope.$apply(function() {
+                                    scope.config[axisName].currentMin = e[axisName][0].min;
+                                    scope.config[axisName].currentMax = e[axisName][0].max;
+                                });
+                            } else {
+                                //handle reset button - zoom out to all
+                                scope.$apply(function() {
+                                    scope.config[axisName].currentMin = thisChart[axisName][0].dataMin;
+                                    scope.config[axisName].currentMax = thisChart[axisName][0].dataMax;
+                                });
+                            }
+                        });
+
+                        highchartsNGUtils.prependMethod(mergedOptions.chart.events, 'addSeries', function(e) {
+                            scope.config[axisName].currentMin = this[axisName][0].min || scope.config[axisName].currentMin;
+                            scope.config[axisName].currentMax = this[axisName][0].max || scope.config[axisName].currentMax;
+                        });
+                    }
+                }
+            });
+
+            if (config.title) {
+                mergedOptions.title = config.title;
+            }
+            if (config.subtitle) {
+                mergedOptions.subtitle = config.subtitle;
+            }
+            if (config.credits) {
+                mergedOptions.credits = config.credits;
+            }
+            if (config.size) {
+                if (config.size.width) {
+                    mergedOptions.chart.width = config.size.width;
+                }
+                if (config.size.height) {
+                    mergedOptions.chart.height = config.size.height;
+                }
+            }
+            return mergedOptions;
+        };
+
+        var updateZoom = function(axis, modelAxis) {
+            var extremes = axis.getExtremes();
+            if (modelAxis.currentMin !== extremes.dataMin || modelAxis.currentMax !== extremes.dataMax) {
+                axis.setExtremes(modelAxis.currentMin, modelAxis.currentMax, false);
+            }
+        };
+
+        var processExtremes = function(chart, axis, axisName) {
+            if (axis.currentMin || axis.currentMax) {
+                chart[axisName][0].setExtremes(axis.currentMin, axis.currentMax, true);
+            }
+        };
+
+        var chartOptionsWithoutEasyOptions = function(options) {
+            return highchartsNGUtils.deepExtend({}, options, {
+                data: null,
+                visible: null
+            });
+        };
+
+        var getChartType = function(scope) {
+            if (scope.config === undefined) {
+                return 'Chart';
+            }
+            return chartTypeMap[('' + scope.config.chartType).toLowerCase()] ||
+                (scope.config.useHighStocks ? 'StockChart' : 'Chart');
+        };
+
+        return {
+            restrict: 'EAC',
+            replace: true,
+            template: '<div></div>',
+            scope: {
+                config: '=',
+                disableDataWatch: '='
+            },
+            link: function(scope, element, attrs) {
+                // We keep some chart-specific variables here as a closure
+                // instead of storing them on 'scope'.
+
+                // prevSeriesOptions is maintained by processSeries
+                var prevSeriesOptions = {};
+
+                var processSeries = function(series) {
+                    var i;
+                    var ids = [];
+
+                    if (series) {
+                        var setIds = ensureIds(series);
+                        if (setIds) {
+                            //If we have set some ids this will trigger another digest cycle.
+                            //In this scenario just return early and let the next cycle take care of changes
+                            return false;
+                        }
+
+                        //Find series to add or update
+                        angular.forEach(series, function(s) {
+                            ids.push(s.id);
+                            var chartSeries = chart.get(s.id);
+                            if (chartSeries) {
+                                if (!angular.equals(prevSeriesOptions[s.id], chartOptionsWithoutEasyOptions(s))) {
+                                    chartSeries.update(angular.copy(s), false);
+                                } else {
+                                    if (s.visible !== undefined && chartSeries.visible !== s.visible) {
+                                        chartSeries.setVisible(s.visible, false);
+                                    }
+                                    chartSeries.setData(angular.copy(s.data), false);
+                                }
+                            } else {
+                                chart.addSeries(angular.copy(s), false);
+                            }
+                            prevSeriesOptions[s.id] = chartOptionsWithoutEasyOptions(s);
+                        });
+
+                        //  Shows no data text if all series are empty
+                        if (scope.config.noData) {
+                            var chartContainsData = false;
+
+                            for (i = 0; i < series.length; i++) {
+                                if (series[i].data && series[i].data.length > 0) {
+                                    chartContainsData = true;
+
+                                    break;
+                                }
+                            }
+
+                            if (!chartContainsData) {
+                                chart.showLoading(scope.config.noData);
+                            } else {
+                                chart.hideLoading();
+                            }
+                        }
+                    }
+
+                    //Now remove any missing series
+                    for (i = chart.series.length - 1; i >= 0; i--) {
+                        var s = chart.series[i];
+                        if (s.options.id !== 'highcharts-navigator-series' && highchartsNGUtils.indexOf(ids, s.options.id) < 0) {
+                            s.remove(false);
+                        }
+                    }
+
+                    return true;
+                };
+
+                // chart is maintained by initChart
+                var chart = false;
+                var initChart = function() {
+                    if (chart) {
+                        chart.destroy();
+                    }
+                    prevSeriesOptions = {};
+                    var config = scope.config || {};
+                    var mergedOptions = getMergedOptions(scope, element, config);
+                    var func = config.func || undefined;
+                    var chartType = getChartType(scope);
+
+                    chart = new Highcharts[chartType](mergedOptions, func);
+
+                    for (var i = 0; i < axisNames.length; i++) {
+                        if (config[axisNames[i]]) {
+                            processExtremes(chart, config[axisNames[i]], axisNames[i]);
+                        }
+                    }
+                    if (config.loading) {
+                        chart.showLoading();
+                    }
+                    config.getHighcharts = function() {
+                        return chart;
+                    };
+
+                };
+                initChart();
+
+
+                if (scope.disableDataWatch) {
+                    scope.$watchCollection('config.series', function(newSeries, oldSeries) {
+                        processSeries(newSeries);
+                        chart.redraw();
+                    });
+                } else {
+                    scope.$watch('config.series', function(newSeries, oldSeries) {
+                        var needsRedraw = processSeries(newSeries);
+                        if (needsRedraw) {
+                            chart.redraw();
+                        }
+                    }, true);
+                }
+
+                scope.$watch('config.title', function(newTitle) {
+                    chart.setTitle(newTitle, true);
+                }, true);
+
+                scope.$watch('config.subtitle', function(newSubtitle) {
+                    chart.setTitle(true, newSubtitle);
+                }, true);
+
+                scope.$watch('config.loading', function(loading) {
+                    if (loading) {
+                        chart.showLoading(loading === true ? null : loading);
+                    } else {
+                        chart.hideLoading();
+                    }
+                });
+                scope.$watch('config.noData', function(noData) {
+                    if (scope.config && scope.config.loading) {
+                        chart.showLoading(noData);
+                    }
+                }, true);
+
+                scope.$watch('config.credits.enabled', function(enabled) {
+                    if (enabled) {
+                        chart.credits.show();
+                    } else if (chart.credits) {
+                        chart.credits.hide();
+                    }
+                });
+
+                scope.$watch(getChartType, function(chartType, oldChartType) {
+                    if (chartType === oldChartType) {
+                        return;
+                    }
+                    initChart();
+                });
+
+                angular.forEach(axisNames, function(axisName) {
+                    scope.$watch('config.' + axisName, function(newAxes, oldAxes) {
+                        if (newAxes === oldAxes || !newAxes) {
+                            return;
+                        }
+
+                        if (angular.isArray(newAxes)) {
+
+                            for (var axisIndex = 0; axisIndex < newAxes.length; axisIndex++) {
+                                var axis = newAxes[axisIndex];
+
+                                if (axisIndex < chart[axisName].length) {
+                                    chart[axisName][axisIndex].update(axis, false);
+                                    updateZoom(chart[axisName][axisIndex], angular.copy(axis));
+                                }
+
+                            }
+
+                        } else {
+                            // update single axis
+                            chart[axisName][0].update(newAxes, false);
+                            updateZoom(chart[axisName][0], angular.copy(newAxes));
+                        }
+
+                        chart.redraw();
+                    }, true);
+                });
+                scope.$watch('config.options', function(newOptions, oldOptions, scope) {
+                    //do nothing when called on registration
+                    if (newOptions === oldOptions) {
+                        return;
+                    }
+                    initChart();
+                    processSeries(scope.config.series);
+                    chart.redraw();
+                }, true);
+
+                scope.$watch('config.size', function(newSize, oldSize) {
+                    if (newSize === oldSize) {
+                        return;
+                    }
+                    if (newSize) {
+                        chart.setSize(newSize.width || chart.chartWidth, newSize.height || chart.chartHeight);
+                    }
+                }, true);
+
+                scope.$on('highchartsng.reflow', function() {
+                    chart.reflow();
+                });
+
+                scope.$on('$destroy', function() {
+                    if (chart) {
+                        try {
+                            chart.destroy();
+                        } catch (ex) {
+                            // fail silently as highcharts will throw exception if element doesn't exist
+                        }
+
+                        $timeout(function() {
+                            element.remove();
+                        }, 0);
+                    }
+                });
+
+            }
+        };
+    }
+    angular.module('highcharts-ng', [])
+        .factory('highchartsNGUtils', highchartsNGUtils)
+        .directive('highchart', ['highchartsNGUtils', '$timeout', highchart]);
+}());
+
     /* jshint ignore:start */
 if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.exports === exports) {
     module.exports = 'highcharts-ng';
@@ -1080,122 +1607,186 @@ angular.module('templates.app', ['begegnung/begegnung.tpl.html', 'quoten/quoten.
 
 angular.module("begegnung/begegnung.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("begegnung/begegnung.tpl.html",
-    "<div>\n" +
-    " <table class='table table-hover'>\n" +
-    "    <thead>\n" +
-    "      <tr>\n" +
-    "        <th>1</th>\n" +
-    "        <th>2</th>\n" +
-    "        <th>3</th>\n" +
-    "        <th>4</th>\n" +
-    "        <th>5</th>\n" +
-    "        <th>6</th>\n" +
-    "        <th>\n" +
-    "          <div class=\"input-group\">\n" +
-    "            <input type=\"text\" class=\"form-control\" placeholder=\"Suche\" ng:model=\"data.search\">\n" +
-    "          </div>\n" +
-    "        </th>\n" +
-    "      </tr>\n" +
-    "    </thead>\n" +
-    "    <tbody>\n" +
-    "      <tr ng-repeat=\"value in begegnungData | filter:data.search| orderBy:['datum']\" id='row{{$index}}'>\n" +
-    "        <td>{{value.datum}}</td>\n" +
-    "        <td>{{value.mannschaft_1}}</td>\n" +
-    "        <td>{{value.mannschaft_2}}</td>\n" +
-    "        <td>{{value.spieltyp}}</td>\n" +
-    "        <td>{{value.ergebnis}}</td>\n" +
-    "        <td>\n" +
-    "          <!-- Button trigger modal -->\n" +
-    "          <a data-toggle=\"modal\" data-target='#myModal{{$index}}' class=\"btn btn-primary btn-lg\">Quoten Änderung</a>\n" +
-    "          <!-- Modal -->\n" +
-    "          <div class=\"modal fade\" id='myModal{{$index}}' tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\n" +
-    "            <div class=\"modal-dialog\">\n" +
-    "              <div class=\"modal-content\">\n" +
-    "                <div class=\"modal-header\">\n" +
-    "                  <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\n" +
-    "                  <h4 class=\"modal-title\">Achtung</h4>\n" +
+    "<div class=\"col-lg-3 col-lg-offset-9\">\n" +
+    "\n" +
+    "    <input type=\"text\" class=\"form-control\" placeholder=\"Suche\" ng:model=\"data.search\">\n" +
+    "\n" +
+    "</div>\n" +
+    "\n" +
+    "\n" +
+    "<div class=\"col-lg-12\">\n" +
+    "    <div class=\"panel panel-default \" ng-repeat=\"value in begegnungData | filter:data.search| orderBy:['datum']\">\n" +
+    "        <div class=\"panel-heading panel-custom\">\n" +
+    "            <div class=\"row\">\n" +
+    "                <div class=\"col-lg-3\">\n" +
+    "                    <div class=\"row row-border\">\n" +
+    "                        <div class=\"col-lg-9\">\n" +
+    "                            {{value.mannschaft_1}}\n" +
+    "                        </div>\n" +
+    "                        <div class=\"col-lg-3\">\n" +
+    "                            {{value.quoteM1}}\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
     "                </div>\n" +
-    "                <div class=\"modal-body\">\n" +
-    "                 \n" +
+    "\n" +
+    "                <div class=\"col-lg-2\">\n" +
+    "                    <div class=\"row row-border\">\n" +
+    "                        <div class=\"col-lg-9\">\n" +
+    "                            X\n" +
+    "                        </div>\n" +
+    "                        <div class=\"col-lg-3\">\n" +
+    "                            {{value.quoteX}}\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
     "                </div>\n" +
-    "                <div class=\"modal-footer\">\n" +
-    "                  <button type=\"button\" ng:click=\"deleteById(collectionData.mongoId[value.mongoIndex], Urls.capacity.deleteUrl, $index,value.mongoIndex)\" class=\"btn btn-primary\" data-dismiss=\"modal\">ja</button>\n" +
-    "                  <button type=\"button\" ng:click=\"noClicked()\" class=\"btn btn-primary\" data-dismiss=\"modal\">nein</button>\n" +
+    "\n" +
+    "                <div class=\"col-lg-3\">\n" +
+    "                    <div class=\"row row-border\">\n" +
+    "                        <div class=\"col-lg-9\">\n" +
+    "                            {{value.mannschaft_2}}\n" +
+    "                        </div>\n" +
+    "                        <div class=\"col-lg-3\">\n" +
+    "                            {{value.quoteM2}}\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
     "                </div>\n" +
-    "              </div>\n" +
-    "              <!-- /.modal-content -->\n" +
+    "\n" +
+    "                <div class=\"col-lg-2\">\n" +
+    "                    {{value.spieltyp}}\n" +
+    "                </div>\n" +
+    "                <div class=\"col-lg-2\">\n" +
+    "                    {{cutTimestamp(value.datum)}}\n" +
+    "                </div>\n" +
     "            </div>\n" +
-    "            <!-- /.modal-dialog -->\n" +
-    "          </div>\n" +
-    "          <!-- /.modal -->\n" +
-    "        </td>\n" +
-    "      </tr>\n" +
-    "    </tbody>\n" +
-    "  </table>\n" +
-    "</div>");
+    "\n" +
+    "            <div class=\"row\">\n" +
+    "                <div class=\"col-lg-2\">\n" +
+    "                    Quotenschlüssel: 12\n" +
+    "                </div>\n" +
+    "                <div class=\"col-lg-2\">\n" +
+    "                    Quotenwarscheinlichkeit\n" +
+    "                </div>\n" +
+    "                <div class=\"col-lg-2\">\n" +
+    "                    {{value.spieltyp}}\n" +
+    "                </div>\n" +
+    "                <div class=\"col-lg-2\">\n" +
+    "                    {{value.spieltyp}}\n" +
+    "                </div>\n" +
+    "                <div class=\"col-lg-2\">\n" +
+    "                    {{value.spieltyp}}\n" +
+    "                </div>\n" +
+    "                <div class=\"col-lg-2\">\n" +
+    "\n" +
+    "                    <button type=\"button\" class=\"btn btn-default\" aria-label=\"Left Align\" ng-click=\"togglePanel($index);buildHighcharts($index, value)\">\n" +
+    "                        <span class=\"glyphicon glyphicon-menu-down\" aria-hidden=\"true\"></span>\n" +
+    "                    </button>\n" +
+    "                </div>\n" +
+    "\n" +
+    "            </div>\n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "        </div>\n" +
+    "        <div class=\"panel-body\" ng-show=\"showpanel[$index] == true\">\n" +
+    "            <div class=\"row\">\n" +
+    "                <div class=\"col-lg-9 col-lg-offset-3\">\n" +
+    "                    <highchart id=\"chart1\" config=\"charConfig[$index]\"></highchart>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</div>\n" +
+    "");
 }]);
 
 angular.module("quoten/quoten.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("quoten/quoten.tpl.html",
-    "<div class='wrapper text-center'>\n" +
-    "    <div class=\"btn-group btn-group-lg\" role=\"group\" aria-label=\"...\">\n" +
-    "        <button type=\"button\" class=\"btn btn-default\" ng-click=\"changeQuotentyp(1)\">Alle</button>\n" +
-    "        <button type=\"button\" class=\"btn btn-default\" ng-click=\"changeQuotentyp(2)\">Heim</button>\n" +
-    "        <button type=\"button\" class=\"btn btn-default\" ng-click=\"changeQuotentyp(3)\">Unentschieden</button>\n" +
-    "        <button type=\"button\" class=\"btn btn-default\" ng-click=\"changeQuotentyp(4)\">Gast</button>\n" +
+    "<div class=\"panel panel-default\">\n" +
+    "    <div class=\"panel-heading\">\n" +
+    "        <div class='wrapper text-center'>\n" +
+    "            <div class=\"btn-group btn-group-lg\" role=\"group\" aria-label=\"...\">\n" +
+    "                <button type=\"button\" class=\"btn btn-default\" ng-click=\"changeQuotentyp(1)\">Alle</button>\n" +
+    "                <button type=\"button\" class=\"btn btn-default\" ng-click=\"changeQuotentyp(2)\">Heim</button>\n" +
+    "                <button type=\"button\" class=\"btn btn-default\" ng-click=\"changeQuotentyp(3)\">Unentschieden</button>\n" +
+    "                <button type=\"button\" class=\"btn btn-default\" ng-click=\"changeQuotentyp(4)\">Gast</button>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"panel-body\">\n" +
+    "        <highchart id=\"chart1\" config=\"chartConfig\"></highchart>\n" +
     "    </div>\n" +
     "</div>\n" +
-    "\n" +
-    "<highchart id=\"chart1\" config=\"chartConfig\"></highchart>\n" +
-    "\n" +
     "<div class='wrapper text-center'>\n" +
-    "    <button type=\"button\" class=\"btn-success btn-lg\" ng-click=\"neumalen()\">\n" +
+    "    <button type=\"button\" class=\"btn-success btn-lg\" ng-click=\"neumalen()\" ng-hide=\"isLoading\">\n" +
     "        GO\n" +
     "    </button>\n" +
+    "    <div class=\"loader\" ng-hide=\"!isLoading\">\n" +
+    "        <svg version=\"1.1\" id=\"loader-1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" width=\"50px\" height=\"50px\" viewBox=\"0 0 50 50\" style=\"enable-background:new 0 0 50 50;\" xml:space=\"preserve\">\n" +
+    "            <path fill=\"#000\" d=\"M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z\">\n" +
+    "                <animateTransform attributeType=\"xml\" attributeName=\"transform\" type=\"rotate\" from=\"0 25 25\" to=\"360 25 25\" dur=\"0.6s\" repeatCount=\"indefinite\" />\n" +
+    "            </path>\n" +
+    "        </svg>\n" +
+    "    </div>\n" +
     "</div>\n" +
     "\n" +
     "<div class=\"row\">\n" +
-    "    <div class=\"col-lg-2 col-lg-offset-2\">\n" +
-    "        <p class=\"text-center\"><b>Quotengenauigkeit</b></p>\n" +
-    "        <div class=\"row\">\n" +
-    "            <div class=\"col-md-12 \">\n" +
-    "                <div class=\"vcenter\" id=\"floatleftid\">\n" +
-    "                    <b> 0.025 </b>\n" +
+    "    <div class=\"col-lg-3 \">\n" +
+    "        <div class=\"panel panel-default\">\n" +
+    "            <div class=\"panel-heading\">\n" +
+    "                <h3 class=\"panel-title\">Quotengenauigkeit</h3>\n" +
+    "            </div>\n" +
+    "            <div class=\"panel-body\">\n" +
+    "                <div class=\"row\">\n" +
+    "                    <div class=\"col-md-12 \">\n" +
+    "                        <div class=\"vcenter\" id=\"floatleftid\">\n" +
+    "                            <b> 0.01 </b>\n" +
+    "                        </div>\n" +
+    "                        <input id=\"customSlider\" type=\"range\" min=\"0.01\" max=\"2\" value=\"0.1\" step=\"0.01\" ng-model=\"accuracy\" ng-mouseup=\"sliderChange()\" />\n" +
+    "                        <div class=\"vcenter\" id=\"floatleftid\">\n" +
+    "                            <b> 2 </b>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
     "                </div>\n" +
-    "                <input id=\"customSlider\" type=\"range\" min=\"0.01\" max=\"2\" value=\"0.1\" step=\"0.01\" ng-model=\"accuracy\" ng-mouseup=\"sliderChange()\" />\n" +
-    "                <div class=\"vcenter\" id=\"floatleftid\">\n" +
-    "                    <b> 2 </b>\n" +
-    "                </div>\n" +
+    "                <p class=\"text-center\"><b>{{accuracy}}</b>\n" +
+    "                </p>\n" +
     "            </div>\n" +
     "        </div>\n" +
-    "        <p class=\"text-center\"><b>{{accuracy}}</b>\n" +
-    "        </p>\n" +
+    "\n" +
     "    </div>\n" +
-    "    <div class=\"col-lg-2\">\n" +
-    "        <p class=\"text-center\"><b>Datum von</b></p>\n" +
+    "    <div class=\"col-lg-3\">\n" +
+    "        <p class=\"text-center\"><b>Datum von</b>\n" +
+    "        </p>\n" +
     "        <div class=\"input-group\">\n" +
     "            <span class=\"input-group-addon\" id=\"basic-addon1\">von</span>\n" +
     "            <my-datepicker ng-model=\"from\"></my-datepicker>\n" +
     "        </div>\n" +
     "    </div>\n" +
-    "    <div class=\"col-lg-2\">\n" +
-    "        <p class=\"text-center\"><b>Datum bis</b></p>\n" +
+    "    <div class=\"col-lg-3\">\n" +
+    "        <p class=\"text-center\"><b>Datum bis</b>\n" +
+    "        </p>\n" +
     "        <div class=\"input-group\">\n" +
     "            <span class=\"input-group-addon\" id=\"basic-addon1\">bis</span>\n" +
     "            <my-datepicker ng-model=\"until\"></my-datepicker>\n" +
     "        </div>\n" +
     "    </div>\n" +
-    "    <div class=\"col-lg-2\">\n" +
-    "        <p class=\"text-center\"><b>Quotenbereich</b></p>\n" +
-    "        <div class=\"row\">\n" +
-    "            <div class=\"col-md-12 \">\n" +
+    "    <div class=\"col-lg-3\">\n" +
+    "        <div class=\"panel panel-default\">\n" +
+    "            <div class=\"panel-heading\">\n" +
+    "                <h3 class=\"panel-title\">Quotenbereich</h3>\n" +
+    "            </div>\n" +
+    "            <div class=\"panel-body\">\n" +
+    "                <div class=\"row\">\n" +
+    "                    <div class=\"col-md-12 \">\n" +
     "\n" +
-    "                <b>1.0 &nbsp&nbsp</b>\n" +
-    "                <input id=\"ex2\" type=\"text\" class=\"span2\" value=\"\" data-slider-min=\"1.0\" data-slider-max=\"30.0\" data-slider-step=\"0.1\" /> &nbsp&nbsp<b>30</b>\n" +
+    "                        <b>1.0 &nbsp&nbsp</b>\n" +
+    "                        <input id=\"ex2\" type=\"text\" class=\"span2\" value=\"\" data-slider-min=\"1.0\" data-slider-max=\"30.0\" data-slider-step=\"0.1\" ng-mouseup=\"sliderChange()\"/> &nbsp&nbsp<b>30</b>\n" +
     "\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "                <p class=\"text-center\"><b>{{myRangeSliderValue[0]}}-{{myRangeSliderValue[1]}}</b>\n" +
+    "                </p>\n" +
     "            </div>\n" +
     "        </div>\n" +
-    "        <p class=\"text-center\"><b>{{myRangeSliderValue[0]}}-{{myRangeSliderValue[1]}}</b></p>\n" +
     "    </div>\n" +
     "</div>\n" +
     "<div class=\"row\">\n" +
@@ -1210,12 +1801,12 @@ angular.module("quoten/quoten.tpl.html", []).run(["$templateCache", function($te
     "</div>\n" +
     "\n" +
     "<div class=\"row\" ng-hide=\"!extendedSearch\">\n" +
-    "    <div class=\"col-lg-2 col-lg-offset-2\" ng-hide=\"boolFilterSpieltyp\">\n" +
-    "        <div class=\"panel panel-info\">\n" +
+    "    <div class=\"col-lg-3 \" ng-hide=\"boolFilterSpieltyp\">\n" +
+    "        <div class=\"panel panel-default\">\n" +
     "            <div class=\"panel-heading\">\n" +
-    "\n" +
     "                <h3 class=\"panel-title\">Spieltypen</h3>\n" +
-    "\n" +
+    "            </div>\n" +
+    "            <div class=\"panel-body\">\n" +
     "                <div class=\"list-group listoverflow\">\n" +
     "                    <a ng-repeat=\"item in spieltyp \" class=\"list-group-item\" ng-click=\"takeSpieltyp(item)\">\n" +
     "                        {{item}}\n" +
@@ -1224,10 +1815,12 @@ angular.module("quoten/quoten.tpl.html", []).run(["$templateCache", function($te
     "            </div>\n" +
     "        </div>\n" +
     "    </div>\n" +
-    "    <div class=\"col-lg-2 \" ng-hide=\"boolFilterSpieltyp\">\n" +
-    "        <div class=\"panel panel-info\">\n" +
+    "    <div class=\"col-lg-3 \" ng-hide=\"boolFilterSpieltyp\">\n" +
+    "        <div class=\"panel panel-default\">\n" +
     "            <div class=\"panel-heading\">\n" +
     "                <h3 class=\"panel-title\">Ausgewählte Spieltypen</h3>\n" +
+    "            </div>\n" +
+    "            <div class=\"panel-body\">\n" +
     "                <div class=\"list-group listoverflow\">\n" +
     "                    <a ng-repeat=\"item in selectedSpieltyp \" class=\"list-group-item\" ng-click=\"removeSpieltyp(item)\">\n" +
     "                {{item}}\n" +
@@ -1237,10 +1830,12 @@ angular.module("quoten/quoten.tpl.html", []).run(["$templateCache", function($te
     "        </div>\n" +
     "    </div>\n" +
     "\n" +
-    "    <div class=\"col-lg-2 \">\n" +
-    "        <div class=\"panel panel-info\">\n" +
+    "    <div class=\"col-lg-3 \">\n" +
+    "        <div class=\"panel panel-default\">\n" +
     "            <div class=\"panel-heading\">\n" +
     "                <h3 class=\"panel-title\">Ausgewählte Mannschften</h3>\n" +
+    "            </div>\n" +
+    "            <div class=\"panel-body\">\n" +
     "                <div class=\"list-group listoverflow\">\n" +
     "                    <a ng-repeat=\"item in selectedMannschaften\" class=\"list-group-item\" ng-click=\"removeTeam(item)\">\n" +
     "                {{item}}\n" +
@@ -1249,10 +1844,12 @@ angular.module("quoten/quoten.tpl.html", []).run(["$templateCache", function($te
     "            </div>\n" +
     "        </div>\n" +
     "    </div>\n" +
-    "    <div class=\"col-lg-2 \">\n" +
-    "        <div class=\"panel panel-info\">\n" +
+    "    <div class=\"col-lg-3 \">\n" +
+    "        <div class=\"panel panel-default\">\n" +
     "            <div class=\"panel-heading\">\n" +
     "                <h3 class=\"panel-title\">Mannschaften</h3>\n" +
+    "            </div>\n" +
+    "            <div class=\"panel-body\">\n" +
     "                <input type=\"text\" ng-model=\"searchMannschaft\" value=\"\" placeholder=\"Name einer Mannschaft\" class=\"form-control\"> </input>\n" +
     "                <div class=\"list-group speciallistoverflow\">\n" +
     "                    <a ng-repeat=\"item in mannschaften | filter:searchMannschaft\" class=\"list-group-item\" ng-click=\"takeTeam(item)\">\n" +

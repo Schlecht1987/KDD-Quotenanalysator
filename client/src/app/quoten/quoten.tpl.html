@@ -1,62 +1,89 @@
-<div class='wrapper text-center'>
-    <div class="btn-group btn-group-lg" role="group" aria-label="...">
-        <button type="button" class="btn btn-default" ng-click="changeQuotentyp(1)">Alle</button>
-        <button type="button" class="btn btn-default" ng-click="changeQuotentyp(2)">Heim</button>
-        <button type="button" class="btn btn-default" ng-click="changeQuotentyp(3)">Unentschieden</button>
-        <button type="button" class="btn btn-default" ng-click="changeQuotentyp(4)">Gast</button>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class='wrapper text-center'>
+            <div class="btn-group btn-group-lg" role="group" aria-label="...">
+                <button type="button" class="btn btn-default" ng-click="changeQuotentyp(1)">Alle</button>
+                <button type="button" class="btn btn-default" ng-click="changeQuotentyp(2)">Heim</button>
+                <button type="button" class="btn btn-default" ng-click="changeQuotentyp(3)">Unentschieden</button>
+                <button type="button" class="btn btn-default" ng-click="changeQuotentyp(4)">Gast</button>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <highchart id="chart1" config="chartConfig"></highchart>
     </div>
 </div>
-
-<highchart id="chart1" config="chartConfig"></highchart>
-
 <div class='wrapper text-center'>
-    <button type="button" class="btn-success btn-lg" ng-click="neumalen()">
+    <button type="button" class="btn-success btn-lg" ng-click="neumalen()" ng-hide="isLoading">
         GO
     </button>
+    <div class="loader" ng-hide="!isLoading">
+        <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+            <path fill="#000" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z">
+                <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite" />
+            </path>
+        </svg>
+    </div>
 </div>
 
 <div class="row">
-    <div class="col-lg-2 col-lg-offset-2">
-        <p class="text-center"><b>Quotengenauigkeit</b></p>
-        <div class="row">
-            <div class="col-md-12 ">
-                <div class="vcenter" id="floatleftid">
-                    <b> 0.01 </b>
+    <div class="col-lg-3 ">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Quotengenauigkeit</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <div class="vcenter" id="floatleftid">
+                            <b> 0.01 </b>
+                        </div>
+                        <input id="customSlider" type="range" min="0.01" max="2" value="0.1" step="0.01" ng-model="accuracy" ng-mouseup="sliderChange()" />
+                        <div class="vcenter" id="floatleftid">
+                            <b> 2 </b>
+                        </div>
+                    </div>
                 </div>
-                <input id="customSlider" type="range" min="0.01" max="2" value="0.1" step="0.01" ng-model="accuracy" ng-mouseup="sliderChange()" />
-                <div class="vcenter" id="floatleftid">
-                    <b> 2 </b>
-                </div>
+                <p class="text-center"><b>{{accuracy}}</b>
+                </p>
             </div>
         </div>
-        <p class="text-center"><b>{{accuracy}}</b>
-        </p>
+
     </div>
-    <div class="col-lg-2">
-        <p class="text-center"><b>Datum von</b></p>
+    <div class="col-lg-3">
+        <p class="text-center"><b>Datum von</b>
+        </p>
         <div class="input-group">
             <span class="input-group-addon" id="basic-addon1">von</span>
             <my-datepicker ng-model="from"></my-datepicker>
         </div>
     </div>
-    <div class="col-lg-2">
-        <p class="text-center"><b>Datum bis</b></p>
+    <div class="col-lg-3">
+        <p class="text-center"><b>Datum bis</b>
+        </p>
         <div class="input-group">
             <span class="input-group-addon" id="basic-addon1">bis</span>
             <my-datepicker ng-model="until"></my-datepicker>
         </div>
     </div>
-    <div class="col-lg-2">
-        <p class="text-center"><b>Quotenbereich</b></p>
-        <div class="row">
-            <div class="col-md-12 ">
+    <div class="col-lg-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Quotenbereich</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 ">
 
-                <b>1.0 &nbsp&nbsp</b>
-                <input id="ex2" type="text" class="span2" value="" data-slider-min="1.0" data-slider-max="30.0" data-slider-step="0.1" /> &nbsp&nbsp<b>30</b>
+                        <b>1.0 &nbsp&nbsp</b>
+                        <input id="ex2" type="text" class="span2" value="" data-slider-min="1.0" data-slider-max="30.0" data-slider-step="0.1" ng-mouseup="sliderChange()"/> &nbsp&nbsp<b>30</b>
 
+                    </div>
+                </div>
+                <p class="text-center"><b>{{myRangeSliderValue[0]}}-{{myRangeSliderValue[1]}}</b>
+                </p>
             </div>
         </div>
-        <p class="text-center"><b>{{myRangeSliderValue[0]}}-{{myRangeSliderValue[1]}}</b></p>
     </div>
 </div>
 <div class="row">
@@ -71,12 +98,12 @@
 </div>
 
 <div class="row" ng-hide="!extendedSearch">
-    <div class="col-lg-2 col-lg-offset-2" ng-hide="boolFilterSpieltyp">
-        <div class="panel panel-info">
+    <div class="col-lg-3 " ng-hide="boolFilterSpieltyp">
+        <div class="panel panel-default">
             <div class="panel-heading">
-
                 <h3 class="panel-title">Spieltypen</h3>
-
+            </div>
+            <div class="panel-body">
                 <div class="list-group listoverflow">
                     <a ng-repeat="item in spieltyp " class="list-group-item" ng-click="takeSpieltyp(item)">
                         {{item}}
@@ -85,10 +112,12 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-2 " ng-hide="boolFilterSpieltyp">
-        <div class="panel panel-info">
+    <div class="col-lg-3 " ng-hide="boolFilterSpieltyp">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Ausgewählte Spieltypen</h3>
+            </div>
+            <div class="panel-body">
                 <div class="list-group listoverflow">
                     <a ng-repeat="item in selectedSpieltyp " class="list-group-item" ng-click="removeSpieltyp(item)">
                 {{item}}
@@ -98,10 +127,12 @@
         </div>
     </div>
 
-    <div class="col-lg-2 ">
-        <div class="panel panel-info">
+    <div class="col-lg-3 ">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Ausgewählte Mannschften</h3>
+            </div>
+            <div class="panel-body">
                 <div class="list-group listoverflow">
                     <a ng-repeat="item in selectedMannschaften" class="list-group-item" ng-click="removeTeam(item)">
                 {{item}}
@@ -110,10 +141,12 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-2 ">
-        <div class="panel panel-info">
+    <div class="col-lg-3 ">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Mannschaften</h3>
+            </div>
+            <div class="panel-body">
                 <input type="text" ng-model="searchMannschaft" value="" placeholder="Name einer Mannschaft" class="form-control"> </input>
                 <div class="list-group speciallistoverflow">
                     <a ng-repeat="item in mannschaften | filter:searchMannschaft" class="list-group-item" ng-click="takeTeam(item)">

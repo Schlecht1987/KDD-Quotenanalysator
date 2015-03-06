@@ -8816,7 +8816,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 html,
 body {
-  background-color: #00E6FF;
+  background-color: #020202;
 }
 
 #imgbrand {
@@ -8864,6 +8864,15 @@ body {
   border-right-width: 3px;
 }
 
+.row-border {
+  margin-left: 1px;
+  color: #ffffff;
+  background-color: #2d2d2d;
+  border-color: #000000;
+  border-style: solid;
+  border-width: 2px;
+}
+
 .listoverflow {
   height: 200px;
   overflow: auto;
@@ -8872,4 +8881,19 @@ body {
 .speciallistoverflow {
   height: 167px;
   overflow: auto;
+}
+
+#page {
+  padding: 10px;
+  background-color: #aaaaaa;
+  border-radius: 3px;
+}
+
+.panel-custom {
+  height: 70px;
+  background-color: #000000;
+}
+
+.panel-body-custom {
+  height: 300px;
 }

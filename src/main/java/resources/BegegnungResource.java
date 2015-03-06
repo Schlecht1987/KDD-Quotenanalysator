@@ -1,6 +1,8 @@
 package resources;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -40,14 +42,13 @@ public class BegegnungResource {
     @GET
     public List<Match> gibBegegnung() {
       
-        List<Match> b = new ArrayList<Match>();
-       List<mapping.Begegnung> list = (List<mapping.Begegnung>) DbManage.getQuery("From Begegnung");
-        for (int i = 0; i < list.size(); i++) {           
-            b.add(BegegnungModel.mapBegegnung(list.get(i)));
-        }
 
-        return b;
+
+        return BegegnungModel.getBegegnungen();
      
+    }
+    private static String getHQLDateFormatFromDate(Date date) {
+        return new SimpleDateFormat("yyyy-MM-dd").format(date);
     }
 
 }

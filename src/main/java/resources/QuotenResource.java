@@ -9,6 +9,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import org.slf4j.LoggerFactory;
 
@@ -49,7 +50,8 @@ public class QuotenResource {
     @Path("/inputdata/")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public AllMannschaftenAndSpieltyp getMannschaftenAndSpieltypen() {
-        return QuoteModel.getAllMannschaftenAndSpieltyp();
+    public Response getMannschaftenAndSpieltypen() {
+      
+        return Response.ok(QuoteModel.getAllMannschaftenAndSpieltyp()).build();
     }
 }

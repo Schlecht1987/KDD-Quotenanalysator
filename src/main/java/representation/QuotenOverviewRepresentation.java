@@ -14,6 +14,8 @@ public class QuotenOverviewRepresentation {
     private List<Integer> siege;
     @JsonProperty
     private List<Integer> niederlagen;
+    @JsonProperty
+    private List<Float> erwartungswert;
     
     public List<Float> getQuoten() {
         return quoten;
@@ -45,6 +47,16 @@ public class QuotenOverviewRepresentation {
     
     public void setNiederlagen(List<Integer> niederlagen) {
         this.niederlagen = niederlagen;
+    }
+
+    
+    public List<Float> getErwartungswert() {
+        return erwartungswert;
+    }
+
+    
+    public void setErwartungswert(List<Float> erwartungswert) {
+        this.erwartungswert = erwartungswert;
     }
 
 }

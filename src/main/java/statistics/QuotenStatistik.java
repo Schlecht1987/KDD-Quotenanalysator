@@ -130,8 +130,8 @@ public class QuotenStatistik {
 
     public void queryQuoten(String quotenTyp, String sieg, boolean siege) {
         String query = "select " + quotenTyp + " " + "from Quote q, Begegnung b, Ergebnis e "+fromMannschaft +fromSpieltyp+ " where q.begegnung = b.id "
-                + "and b.id = e.begegnung " + "and e.sieger " + sieg + " " + "and " + quotenTyp + " between " + filter.getQuotenRangemin()
-                + " and " + filter.getQuotenRangeMax() + " " + queryMannschaft + " " + querySpieltyp;
+                + "and b.id = e.begegnung " + "and e.sieger " + sieg + " " + "and " + quotenTyp + " >= " + filter.getQuotenRangemin()
+                + " and "+ quotenTyp +" <= " + filter.getQuotenRangeMax() + " " + queryMannschaft + " " + querySpieltyp;
         logger.info("QUERY: " + query);
         List<Float> result = (List<Float>) DbManage.getQuery(query);
         for (Float float1 : result) {
@@ -140,18 +140,7 @@ public class QuotenStatistik {
 
     }
 
-    /*  
-      public void queryQuoten(String quotenTyp, String sieg, boolean siege) {
-          String query = "select " + quotenTyp + " " + "from Quote q, Begegnung b, Ergebnis e " + "where q.begegnung = b.id "
-                  + "and b.id = e.begegnung " + "and e.sieger " + sieg + " " + "and q.quoteM1 between " + filter.getQuotenRangemin()
-                  + " and " + filter.getQuotenRangeMax() + " ";
-
-          List<Float> result = (List<Float>) DbManage.getQuery(query);
-          for (Float float1 : result) {
-              insertQuote(float1, siege);
-          }
-
-      }*/
+   
 
     public QuotenOverviewRepresentation generateQuotenOverviewRepresentation() {
         QuotenOverviewRepresentation qOR = new QuotenOverviewRepresentation();
@@ -159,6 +148,7 @@ public class QuotenStatistik {
         List<Float> prozent = new ArrayList<Float>();
         List<Integer> siege = new ArrayList<Integer>();
         List<Integer> niederlagen = new ArrayList<Integer>();
+        List<Float> erwartungswert = new ArrayList<Float>();
 
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).isHasValues()) {
@@ -170,17 +160,20 @@ public class QuotenStatistik {
                 prozent.add(new Float(prz));
                 siege.add(new Integer(s));
                 niederlagen.add(new Integer(n));
+                erwartungswert.add(new Float(roundExpecation(calculateExpectation(list.get(i).getQuote(), prz))));
             } else {
                 quoten.add(new Float(list.get(i).getQuote()));
                 prozent.add(new Float(-1));
                 siege.add(new Integer(0));
                 niederlagen.add(new Integer(0));
+                erwartungswert.add(new Float(-1));
             }
         }
         qOR.setNiederlagen(niederlagen);
         qOR.setProzent(prozent);
         qOR.setQuoten(quoten);
         qOR.setSiege(siege);
+        qOR.setErwartungswert(erwartungswert);
 
         return qOR;
     }
@@ -189,6 +182,10 @@ public class QuotenStatistik {
 
         return (float) Math.round(f * 10) / 10;
     }
+    
+    public float roundExpecation(float f){
+        return (float) Math.round(f * 100) / 100;
+    }
 
     public List<QuotenInfo> getList() {
         return list;
@@ -196,5 +193,23 @@ public class QuotenStatistik {
 
     public void setList(List<QuotenInfo> list) {
         this.list = list;
+    }
+    
+    public float calculateExpectation(float quote, float chance){
+        //einsatz 1 €
+        float stake = 1f;
+        float expectation = 0f;
+        float profit = 0f;
+        float loss = 0f;
+        
+        profit = stake * quote - stake;
+        profit = profit * chance/100f;
+        
+        loss = -stake;
+        loss = loss * (1f-(chance/100f));
+        
+        expectation = profit + loss;
+        
+        return expectation;
     }
 }

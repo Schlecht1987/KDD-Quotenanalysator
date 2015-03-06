@@ -16,6 +16,7 @@ angular.module('quoten', [])
         '$cookieStore',
         '$compile',
         '$location',
+        '$timeout',
         function(
             Console,
             $translate,
@@ -24,7 +25,8 @@ angular.module('quoten', [])
             $filter,
             $cookieStore,
             $compile,
-            $location
+            $location,
+            $timeout
 
         ) {
             Console.group("QuotenController entered.");
@@ -36,6 +38,8 @@ angular.module('quoten', [])
             //Quotengenauigkeit
             $scope.accuracy = 0.1;
             $scope.myRangeSliderValue = [1.0, 6.0];
+
+            $scope.isLoading = false;
 
             //Jquery für range slider init
             $scope.myRangeSlider = $("#ex2").slider({
@@ -155,22 +159,27 @@ angular.module('quoten', [])
 
             //---------------------------Initial Data--------------------------------
 
-            $http({
-                method: "GET",
-                url: '/quoten/inputdata/'
-            }).
-            success(function(data) {
-                if (!data.error) {
+            $scope.getInitialData = function() {
+
+                $http.get('/quoten/inputdata/').
+                success(function(data, status, headers, config) {
+
                     Console.debug("data", data);
                     $scope.mannschaftentemp = data.mannschaft.slice();
                     $scope.spieltyptemp = data.spieltyp.slice();
                     $scope.resetTeam();
                     $scope.resetSpieltyp();
 
-                }
-            });
 
+                }).
+                error(function(data, status, headers, config) {
+                    // called asynchronously if an error occurs
+                    // or server returns response with an error status.
 
+                });
+
+            };
+            $scope.getInitialData();
             //----------------------Highcharts-----------------------------------
 
             $scope.drawChart = function() {
@@ -184,28 +193,14 @@ angular.module('quoten', [])
 
                     if (!data.error) {
                         console.debug("data", data);
-                        $scope.infos = [];
-                        for (var i = 0; i < data.prozent.length; i++) {
-                            if (data.prozent[i] > -1) {
-                                $scope.infos[i] = {
-                                    y: data.prozent[i],
-                                    siege: data.siege[i],
-                                    niederlagen: data.niederlagen[i],
-                                    anzahl: data.siege[i] + data.niederlagen[i]
-                                };
-                            } else {
-                                $scope.infos[i] = {
-                                    y: 0,
-                                    siege: 0,
-                                    niederlagen: 0,
-                                    anzahl: 0
-                                };
-                            }
-                        }
+                        var infos = [];
+                        infos = $scope.createChartInfos(data);
+
                         $scope.chartConfig = {
                             options: {
                                 chart: {
-                                    type: 'column'
+                                    type: 'column',
+                                    zoomType: 'x'
                                 },
                                 title: {
                                     text: 'Quoten Analyse'
@@ -236,7 +231,7 @@ angular.module('quoten', [])
                                         borderWidth: 0,
                                         dataLabels: {
                                             enabled: true,
-                                            format: '{point.y:.1f}%<br/>  S:{point.anzahl}'
+                                            format: '{point.y:.1f}%<br/>  S:{point.anzahl} <br/> <span style="color:{point.erwartungswertColor}"> E:{point.erwartungswert}</span>'
                                         }
                                     },
                                     column: {
@@ -253,63 +248,92 @@ angular.module('quoten', [])
                             },
                             series: [{
                                 name: $scope.getLegendName(),
-                                data: $scope.infos
+                                data: infos
                             }]
                         };
                     }
                 });
             };
 
+            $scope.createChartInfos = function(data) {
+                var infos = [];
+                for (var i = 0; i < data.prozent.length; i++) {
+                    if (data.prozent[i] > -1) {
+                        infos[i] = {
+                            y: data.prozent[i],
+                            siege: data.siege[i],
+                            niederlagen: data.niederlagen[i],
+                            anzahl: data.siege[i] + data.niederlagen[i],
+                            erwartungswert: data.erwartungswert[i]
+                        };
+                    } else {
+                        infos[i] = {
+                            y: 0,
+                            siege: 0,
+                            niederlagen: 0,
+                            anzahl: 0,
+                            erwartungswert: 0
+                        };
+                    }
+                    if (infos[i].erwartungswert > 0) {
+                        infos[i].erwartungswertColor = "#007A29";
+                    } else if (infos[i].erwartungswert < 0) {
+                        infos[i].erwartungswertColor = "#FF0000";
+                    } else {
+                        infos[i].erwartungswertColor = "#000000";
+                    }
+                }
+                return infos;
+            };
+
             $scope.neumalen = function() {
+                $scope.startLoading();
                 $scope.drawChart();
-                //$scope.chartConfig.options.xAxis.categories.pop(1);
-                /*     var rnd = [];
-                     for (var i = 0; i < 10; i++) {
-                         rnd.push(Math.floor(Math.random() * 20) + 1);
-                     }
-                     $scope.chartConfig.series.push({
-                         data: rnd
-                     });*/
+                $scope.finishLoading();
+            };
+            $scope.startLoading = function() {
+                $scope.isLoading = true;
+            };
+
+            $scope.finishLoading = function() {
+                $timeout(function() {
+                    $scope.isLoading = false;
+                }, 10);
+
 
             };
 
             $scope.pushChart = function() {
-                $http({
-                    method: "POST",
-                    url: '/quoten/',
-                    data: $scope.creatPostObject()
-                }).
-                success(function(data) {
+                if (typeof $scope.chartConfig === "undefined") {
+                    $scope.neumalen();
+                } else {
 
-                    if (!data.error) {
-                        console.debug("data", data);
-                        var infos = [];
-                        for (var i = 0; i < data.prozent.length; i++) {
-                            if (data.prozent[i] > -1) {
-                                infos[i] = {
-                                    y: data.prozent[i],
-                                    siege: data.siege[i],
-                                    niederlagen: data.niederlagen[i],
-                                    anzahl: data.siege[i] + data.niederlagen[i]
-                                };
-                            } else {
-                                infos[i] = {
-                                    y: 0,
-                                    siege: 0,
-                                    niederlagen: 0,
-                                    anzahl: 0
-                                };
-                            }
+
+                    $scope.startLoading();
+                    $http({
+                        method: "POST",
+                        url: '/quoten/',
+                        data: $scope.creatPostObject()
+                    }).
+                    success(function(data) {
+
+                        if (!data.error) {
+                            console.debug("data", data);
+                            var infos = [];
+                            infos = $scope.createChartInfos(data);
+
+
+                            $scope.chartConfig.series.push({
+                                name: $scope.getLegendName(),
+                                data: infos
+                            });
                         }
-                        $scope.chartConfig.series.push({
-                            name: $scope.getLegendName(),
-                            data: infos
-                        });
-                    }
 
 
 
-                });
+                    });
+                    $scope.finishLoading();
+                }
             };
 
 
