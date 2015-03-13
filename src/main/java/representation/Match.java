@@ -25,13 +25,13 @@ public class Match {
     @JsonProperty
     private float  quoteX;
     @JsonProperty
-    private String quoteM1Chance;
+    private float quoteM1Chance;
     @JsonProperty
-    private String quoteXChance;
+    private float quoteXChance;
     @JsonProperty
-    private String quoteM2Chance;
+    private float quoteM2Chance;
     @JsonProperty
-    private String quotenkey;    
+    private float quotenkey;    
     @JsonProperty
     private List<Float> historyQM1;
     @JsonProperty
@@ -99,45 +99,7 @@ public class Match {
    
 
     
-    public String getQuoteM1Chance() {
-        return quoteM1Chance;
-    }
-
     
-    public void setQuoteM1Chance(String quoteM1Chance) {
-        this.quoteM1Chance = quoteM1Chance;
-    }
-
-    
-    public String getQuoteXChance() {
-        return quoteXChance;
-    }
-
-    
-    public void setQuoteXChance(String quoteXChance) {
-        this.quoteXChance = quoteXChance;
-    }
-
-    
-    public String getQuoteM2Chance() {
-        return quoteM2Chance;
-    }
-
-    
-    public void setQuoteM2Chance(String quoteM2Chance) {
-        this.quoteM2Chance = quoteM2Chance;
-    }
-
-    
-    public String getQuotenkey() {
-        return quotenkey;
-    }
-
-    
-    public void setQuotenkey(String quotenkey) {
-        this.quotenkey = quotenkey;
-    }
-
     
    
     
@@ -218,6 +180,46 @@ public class Match {
     
     public void setQuoteX(float quoteX) {
         this.quoteX = quoteX;
+    }
+
+    
+    public float getQuoteM1Chance() {
+        return quoteM1Chance;
+    }
+
+    
+    public void setQuoteM1Chance(float quoteM1Chance) {
+        this.quoteM1Chance = quoteM1Chance;
+    }
+
+    
+    public float getQuoteXChance() {
+        return quoteXChance;
+    }
+
+    
+    public void setQuoteXChance(float quoteXChance) {
+        this.quoteXChance = quoteXChance;
+    }
+
+    
+    public float getQuoteM2Chance() {
+        return quoteM2Chance;
+    }
+
+    
+    public void setQuoteM2Chance(float quoteM2Chance) {
+        this.quoteM2Chance = quoteM2Chance;
+    }
+
+    
+    public float getQuotenkey() {
+        return quotenkey;
+    }
+
+    
+    public void setQuotenkey(float quotenkey) {
+        this.quotenkey = quotenkey;
     }
 
 }

@@ -11,7 +11,7 @@ angular.module("begegnung/begegnung.tpl.html", []).run(["$templateCache", functi
     "\n" +
     "<div class=\"col-lg-12\">\n" +
     "    <div class=\"panel panel-default \" ng-repeat=\"value in begegnungData | filter:data.search| orderBy:['datum']\">\n" +
-    "        <div class=\"panel-heading panel-custom\">\n" +
+    "        <div class=\"panel-heading \">\n" +
     "            <div class=\"row\">\n" +
     "                <div class=\"col-lg-3\">\n" +
     "                    <div class=\"row row-border\">\n" +
@@ -55,20 +55,17 @@ angular.module("begegnung/begegnung.tpl.html", []).run(["$templateCache", functi
     "            </div>\n" +
     "\n" +
     "            <div class=\"row\">\n" +
-    "                <div class=\"col-lg-2\">\n" +
-    "                    Quotenschlüssel: 12\n" +
+    "                <div class=\"col-lg-3\">\n" +
+    "                    <p class=\"text-center\">{{value.quoteM1Chance}}% </p>\n" +
     "                </div>\n" +
     "                <div class=\"col-lg-2\">\n" +
-    "                    Quotenwarscheinlichkeit\n" +
+    "                   <p class=\"text-center\"> {{value.quoteXChance}}% </p>\n" +
+    "                </div>\n" +
+    "                <div class=\"col-lg-3\">\n" +
+    "                   <p class=\"text-center\"> {{value.quoteM2Chance}}% </p>\n" +
     "                </div>\n" +
     "                <div class=\"col-lg-2\">\n" +
-    "                    {{value.spieltyp}}\n" +
-    "                </div>\n" +
-    "                <div class=\"col-lg-2\">\n" +
-    "                    {{value.spieltyp}}\n" +
-    "                </div>\n" +
-    "                <div class=\"col-lg-2\">\n" +
-    "                    {{value.spieltyp}}\n" +
+    "                    Quotenschlüssel: {{value.quotenkey}}\n" +
     "                </div>\n" +
     "                <div class=\"col-lg-2\">\n" +
     "\n" +
@@ -84,8 +81,8 @@ angular.module("begegnung/begegnung.tpl.html", []).run(["$templateCache", functi
     "        </div>\n" +
     "        <div class=\"panel-body\" ng-show=\"showpanel[$index] == true\">\n" +
     "            <div class=\"row\">\n" +
-    "                <div class=\"col-lg-9 col-lg-offset-3\">\n" +
-    "                    <highchart id=\"chart1\" config=\"charConfig[$index]\"></highchart>\n" +
+    "                <div class=\"col-lg-12 \">\n" +
+    "                    <highchart class=\"h-chart\" config=\"charConfig[$index]\"></highchart>\n" +
     "                </div>\n" +
     "            </div>\n" +
     "        </div>\n" +
@@ -136,9 +133,9 @@ angular.module("quoten/quoten.tpl.html", []).run(["$templateCache", function($te
     "                        <div class=\"vcenter\" id=\"floatleftid\">\n" +
     "                            <b> 0.01 </b>\n" +
     "                        </div>\n" +
-    "                        <input id=\"customSlider\" type=\"range\" min=\"0.01\" max=\"2\" value=\"0.1\" step=\"0.01\" ng-model=\"accuracy\" ng-mouseup=\"sliderChange()\" />\n" +
+    "                        <input id=\"customSlider\" type=\"range\" min=\"0.01\" max=\"1\" value=\"0.1\" step=\"0.01\" ng-model=\"accuracy\" ng-mouseup=\"sliderChange()\" />\n" +
     "                        <div class=\"vcenter\" id=\"floatleftid\">\n" +
-    "                            <b> 2 </b>\n" +
+    "                            <b> 1 </b>\n" +
     "                        </div>\n" +
     "                    </div>\n" +
     "                </div>\n" +
@@ -171,11 +168,17 @@ angular.module("quoten/quoten.tpl.html", []).run(["$templateCache", function($te
     "            </div>\n" +
     "            <div class=\"panel-body\">\n" +
     "                <div class=\"row\">\n" +
-    "                    <div class=\"col-md-12 \">\n" +
+    "                    <div class=\"col-md-1 \">\n" +
+    "                        <b>1.0 &nbsp</b>\n" +
+    "                    </div>\n" +
+    "                    <div class=\"col-md-8 \">\n" +
     "\n" +
-    "                        <b>1.0 &nbsp&nbsp</b>\n" +
-    "                        <input id=\"ex2\" type=\"text\" class=\"span2\" value=\"\" data-slider-min=\"1.0\" data-slider-max=\"30.0\" data-slider-step=\"0.1\" ng-mouseup=\"sliderChange()\"/> &nbsp&nbsp<b>30</b>\n" +
     "\n" +
+    "                        <input id=\"ex2\" type=\"text\" value=\"\" data-slider-min=\"1.0\" data-slider-max=\"30.0\" data-slider-step=\"0.1\" ng-mouseup=\"sliderChange()\" />\n" +
+    "\n" +
+    "                    </div>\n" +
+    "                    <div class=\"col-md-2 \">\n" +
+    "                        &nbsp&nbsp<b>&nbsp30</b>\n" +
     "                    </div>\n" +
     "                </div>\n" +
     "                <p class=\"text-center\"><b>{{myRangeSliderValue[0]}}-{{myRangeSliderValue[1]}}</b>\n" +

@@ -40,8 +40,6 @@ angular.module('begegnung', [])
             };
 
             $scope.buildHighcharts = function(index, data) {
-// value.historyDate, value.historyQM1, value.historyQM2, value.historyQX, value.mannschaft_1,value.mannschaft_2
-
                 if(data.historyDate == null){
                      data.historyDate = [];
                      data.historyQM1 = [];

@@ -2,7 +2,7 @@ server:
   applicationConnectors:
     - type: http
       port: 11016
-      bindHost: 127.0.0.1 # only bind to loopback
+      bindHost: 0.0.0.0 # only bind to loopback
       headerCacheSize: 512 bytes
       outputBufferSize: 32KiB
       maxRequestHeaderSize: 8KiB

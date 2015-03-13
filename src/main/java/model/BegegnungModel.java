@@ -49,17 +49,44 @@ public class BegegnungModel {
                 qm1.add(list.get(i).getQuote1());
                 qm2.add(list.get(i).getQuote2());
                 qx.add(list.get(i).getQuoteX());
-                date.add(list.get(i).getDatum().toString());
+                date.add(formatDate(list.get(i).getDatum()));
             }
             m.setHistoryQM1(qm1);
             m.setHistoryQM2(qm2);
             m.setHistoryQX(qx);
             m.setHistoryDate(date);
         }
-
+        m.setQuotenkey(caluclateQuoteKey(m.getQuoteM1(),m.getQuoteM2(),m.getQuoteX()));
+        m.setQuoteM1Chance(calculateQuoteChance(m.getQuoteM1()));
+        m.setQuoteM2Chance(calculateQuoteChance(m.getQuoteM2()));
+        m.setQuoteXChance(calculateQuoteChance(m.getQuoteX()));
         return m;
     }
+    
+    public static String formatDate(Date date){
+        try {
+            return new SimpleDateFormat("MM-dd HH:mm").format(date);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        return date.toString();
+    }
+    public static float caluclateQuoteKey(float qm1, float qm2, float qx){
+        float erg = 0;
+        erg = (1f / (1f/qm1 + 1f/qm2 + 1f/ qx)) * 100;
+        return round(erg);
+    }
+    
+    public static float calculateQuoteChance(float q){
+        float erg = 0;
+        erg = (1f/q) * 100;
+        return round(erg);
+    }
+    
+    public static float round(float f) {
 
+        return (float) Math.round(f * 10) / 10;
+    }
     public static List<HistoryQuote> getHistoryQuoteList(int id) {
         List<HistoryQuote> list = (List<HistoryQuote>) DbManage.getQuery("From HistoryQuote h where h.quote =" + id);
         return list;
