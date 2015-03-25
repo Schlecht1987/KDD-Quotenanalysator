@@ -1,7 +1,7 @@
+/*
+ * 
+ */
 package mapping;
-
-
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -18,13 +18,6 @@ import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
-
-
-
-
-
-// TODO: Auto-generated Javadoc
 /**
  * The Class Begegnung.
  */
@@ -144,24 +137,44 @@ public class Begegnung {
 
 
     
+    /**
+     * Gets the mannschaft_1.
+     *
+     * @return the mannschaft_1
+     */
     public Mannschaft getMannschaft_1() {
         return mannschaft_1;
     }
 
 
     
+    /**
+     * Sets the mannschaft_1.
+     *
+     * @param mannschaft_1 the new mannschaft_1
+     */
     public void setMannschaft_1(Mannschaft mannschaft_1) {
         this.mannschaft_1 = mannschaft_1;
     }
 
 
     
+    /**
+     * Gets the mannschaft_2.
+     *
+     * @return the mannschaft_2
+     */
     public Mannschaft getMannschaft_2() {
         return mannschaft_2;
     }
 
 
     
+    /**
+     * Sets the mannschaft_2.
+     *
+     * @param mannschaft_2 the new mannschaft_2
+     */
     public void setMannschaft_2(Mannschaft mannschaft_2) {
         this.mannschaft_2 = mannschaft_2;
     }

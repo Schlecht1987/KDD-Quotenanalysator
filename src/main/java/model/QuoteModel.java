@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package model;
 
 import java.util.ArrayList;
@@ -9,16 +12,25 @@ import analyser.MakeQuery;
 import mapping.Mannschaft;
 import mapping.Spieltyp;
 import mapping.Wettanbieter;
-import representation.AllMannschaftenAndSpieltyp;
+import representation.TeamsAndGametypes;
 
 
 
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class QuoteModel.
+ */
 public class QuoteModel {
     
-    public static AllMannschaftenAndSpieltyp getAllMannschaftenAndSpieltyp (){
-        AllMannschaftenAndSpieltyp data = new AllMannschaftenAndSpieltyp();
+    /**
+     * Gets the all mannschaften and spieltyp.
+     *
+     * @return the all mannschaften and spieltyp
+     */
+    public static TeamsAndGametypes getAllMannschaftenAndSpieltyp (){
+        TeamsAndGametypes data = new TeamsAndGametypes();
         List<String> mannschaften = new ArrayList<String>();
         List<String> spieltypen = new ArrayList<String>();
         

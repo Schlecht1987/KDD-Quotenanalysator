@@ -1,3 +1,5 @@
+//Nicht Implementierte Startseite
+
 angular.module('start', [])
   .config(['$routeProvider',
     function($routeProvider) {
@@ -29,9 +31,7 @@ angular.module('start', [])
     ) {
       Console.group("StartController entered.");
 
-      $scope.goToDataDelete = function() {
-        $location.path("/delete");
-      };
+      $scope.meineVariable = "Hello World";
 
       Console.groupEnd();
     }

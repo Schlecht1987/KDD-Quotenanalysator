@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package resources;
 
 import java.io.FileInputStream;

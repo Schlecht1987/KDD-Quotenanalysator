@@ -254,3 +254,1074 @@ INFO  [2015-03-13 13:47:40,388] statistics.QuotenStatistik: QUERY: select q.quot
 INFO  [2015-03-13 13:47:40,466] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 2.0 and q.quoteM2 <= 9.0   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
 INFO  [2015-03-13 13:47:43,681] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 2.0 and q.quoteM2 <= 4.3   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
 INFO  [2015-03-13 13:47:43,756] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 2.0 and q.quoteM2 <= 4.3   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+WARN  [2015-03-16 13:18:02,857] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-03-16 13:18:03,016] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-03-16 13:18:03,024] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-03-16 13:18:03,026] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-03-16 13:18:03,027] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-03-16 13:18:03,053] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-03-16 13:18:03,053] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-03-16 13:18:03,188] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-03-16 13:18:03,284] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-03-16 13:18:03,290] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://192.168.2.66:3306/fussballquoten]
+INFO  [2015-03-16 13:18:03,291] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-03-16 13:18:03,291] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-03-16 13:18:03,291] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO  [2015-03-16 13:18:03,602] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  [2015-03-16 13:18:03,608] org.hibernate.engine.jdbc.internal.LobCreatorBuilder: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO  [2015-03-16 13:18:03,842] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  [2015-03-16 13:18:03,845] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+INFO  [2015-03-16 13:18:04,188] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000228: Running hbm2ddl schema update
+INFO  [2015-03-16 13:18:04,188] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000102: Fetching database metadata
+INFO  [2015-03-16 13:18:04,201] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000396: Updating schema
+INFO  [2015-03-16 13:18:04,314] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.BEGEGNUNG
+INFO  [2015-03-16 13:18:04,314] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, spieltyp_id, mannschaft_1_id, datum, mannschaft_2_id]
+INFO  [2015-03-16 13:18:04,314] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-03-16 13:18:04,314] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, primary, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-03-16 13:18:04,381] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.ERGEBNIS
+INFO  [2015-03-16 13:18:04,382] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [m2_tore, id, m2_h_tore, begenung_id, sieger, m1_h_tore, m1_tore]
+INFO  [2015-03-16 13:18:04,382] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_8imdnxkvggxb99gw7cehn003d]
+INFO  [2015-03-16 13:18:04,382] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_8imdnxkvggxb99gw7cehn003d, primary]
+INFO  [2015-03-16 13:18:04,465] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.HISTORY_QUOTE
+INFO  [2015-03-16 13:18:04,465] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, quote2, quote1, quote_id, datum, quotex]
+INFO  [2015-03-16 13:18:04,465] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_46qi15od5xmlqi7tikikcbtm8]
+INFO  [2015-03-16 13:18:04,465] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_46qi15od5xmlqi7tikikcbtm8, primary]
+INFO  [2015-03-16 13:18:04,537] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.MANNSCHAFT
+INFO  [2015-03-16 13:18:04,537] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-16 13:18:04,537] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-16 13:18:04,537] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-16 13:18:04,609] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.QUOTE
+INFO  [2015-03-16 13:18:04,610] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, wettanbieter_id, begegnung_id, quotem1, quotex, quotem2]
+INFO  [2015-03-16 13:18:04,610] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_df8mce9ofcqfn81yswwqqu23g, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-03-16 13:18:04,610] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_df8mce9ofcqfn81yswwqqu23g, primary, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-03-16 13:18:04,674] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.SPIELTYP
+INFO  [2015-03-16 13:18:04,674] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-16 13:18:04,674] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-16 13:18:04,674] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-16 13:18:04,745] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.WETTANBIETER
+INFO  [2015-03-16 13:18:04,745] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-16 13:18:04,745] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-16 13:18:04,745] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-16 13:18:04,747] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000232: Schema update complete
+INFO  [2015-03-16 13:18:04,763] io.dropwizard.server.ServerFactory: Starting AnalyserService
+INFO  [2015-03-16 13:18:04,948] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.18.1 02/19/2014 03:28 AM'
+INFO  [2015-03-16 13:18:05,044] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     / (resources.MainResource)
+    GET     /begegnung (resources.BegegnungResource)
+    GET     /quoten/inputdata/ (resources.QuotenResource)
+    POST    /quoten (resources.QuotenResource)
+
+INFO  [2015-03-16 13:18:05,364] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2015-03-16 13:18:05,364] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+WARN  [2015-03-16 13:20:17,954] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-03-16 13:20:18,042] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-03-16 13:20:18,046] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-03-16 13:20:18,047] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-03-16 13:20:18,048] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-03-16 13:20:18,063] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-03-16 13:20:18,063] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-03-16 13:20:18,139] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-03-16 13:20:18,202] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-03-16 13:20:18,205] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://192.168.2.66:3306/fussballquoten]
+INFO  [2015-03-16 13:20:18,205] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-03-16 13:20:18,209] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-03-16 13:20:18,211] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO  [2015-03-16 13:20:18,465] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  [2015-03-16 13:20:18,470] org.hibernate.engine.jdbc.internal.LobCreatorBuilder: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO  [2015-03-16 13:20:18,609] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  [2015-03-16 13:20:18,613] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+INFO  [2015-03-16 13:20:18,876] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000228: Running hbm2ddl schema update
+INFO  [2015-03-16 13:20:18,876] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000102: Fetching database metadata
+INFO  [2015-03-16 13:20:18,889] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000396: Updating schema
+INFO  [2015-03-16 13:20:18,952] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.BEGEGNUNG
+INFO  [2015-03-16 13:20:18,952] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, spieltyp_id, mannschaft_1_id, datum, mannschaft_2_id]
+INFO  [2015-03-16 13:20:18,953] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-03-16 13:20:18,953] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, primary, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-03-16 13:20:19,039] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.ERGEBNIS
+INFO  [2015-03-16 13:20:19,039] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [m2_tore, id, m2_h_tore, begenung_id, sieger, m1_h_tore, m1_tore]
+INFO  [2015-03-16 13:20:19,040] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_8imdnxkvggxb99gw7cehn003d]
+INFO  [2015-03-16 13:20:19,040] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_8imdnxkvggxb99gw7cehn003d, primary]
+INFO  [2015-03-16 13:20:19,100] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.HISTORY_QUOTE
+INFO  [2015-03-16 13:20:19,100] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, quote2, quote1, quote_id, datum, quotex]
+INFO  [2015-03-16 13:20:19,100] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_46qi15od5xmlqi7tikikcbtm8]
+INFO  [2015-03-16 13:20:19,100] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_46qi15od5xmlqi7tikikcbtm8, primary]
+INFO  [2015-03-16 13:20:19,152] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.MANNSCHAFT
+INFO  [2015-03-16 13:20:19,152] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-16 13:20:19,152] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-16 13:20:19,153] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-16 13:20:19,220] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.QUOTE
+INFO  [2015-03-16 13:20:19,220] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, wettanbieter_id, begegnung_id, quotem1, quotex, quotem2]
+INFO  [2015-03-16 13:20:19,220] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_df8mce9ofcqfn81yswwqqu23g, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-03-16 13:20:19,220] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_df8mce9ofcqfn81yswwqqu23g, primary, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-03-16 13:20:19,272] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.SPIELTYP
+INFO  [2015-03-16 13:20:19,272] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-16 13:20:19,272] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-16 13:20:19,272] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-16 13:20:19,335] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.WETTANBIETER
+INFO  [2015-03-16 13:20:19,335] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-16 13:20:19,335] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-16 13:20:19,335] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-16 13:20:19,336] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000232: Schema update complete
+INFO  [2015-03-16 13:20:19,351] io.dropwizard.server.ServerFactory: Starting AnalyserService
+INFO  [2015-03-16 13:20:19,474] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.18.1 02/19/2014 03:28 AM'
+INFO  [2015-03-16 13:20:19,523] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     / (resources.MainResource)
+    GET     /begegnung (resources.BegegnungResource)
+    GET     /quoten/inputdata/ (resources.QuotenResource)
+    POST    /quoten (resources.QuotenResource)
+
+INFO  [2015-03-16 13:20:19,736] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2015-03-16 13:20:19,737] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+WARN  [2015-03-16 13:28:59,573] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-03-16 13:28:59,689] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-03-16 13:28:59,693] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-03-16 13:28:59,696] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-03-16 13:28:59,697] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-03-16 13:28:59,716] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-03-16 13:28:59,717] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-03-16 13:28:59,840] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-03-16 13:28:59,906] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-03-16 13:28:59,909] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://192.168.2.66:3306/fussballquoten]
+INFO  [2015-03-16 13:28:59,909] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-03-16 13:28:59,909] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-03-16 13:28:59,910] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO  [2015-03-16 13:29:00,230] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  [2015-03-16 13:29:00,235] org.hibernate.engine.jdbc.internal.LobCreatorBuilder: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO  [2015-03-16 13:29:00,443] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  [2015-03-16 13:29:00,446] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+INFO  [2015-03-16 13:29:00,709] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000228: Running hbm2ddl schema update
+INFO  [2015-03-16 13:29:00,709] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000102: Fetching database metadata
+INFO  [2015-03-16 13:29:00,722] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000396: Updating schema
+INFO  [2015-03-16 13:29:00,816] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.BEGEGNUNG
+INFO  [2015-03-16 13:29:00,816] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, spieltyp_id, mannschaft_1_id, datum, mannschaft_2_id]
+INFO  [2015-03-16 13:29:00,816] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-03-16 13:29:00,816] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, primary, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-03-16 13:29:00,880] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.ERGEBNIS
+INFO  [2015-03-16 13:29:00,880] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [m2_tore, id, m2_h_tore, begenung_id, sieger, m1_h_tore, m1_tore]
+INFO  [2015-03-16 13:29:00,880] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_8imdnxkvggxb99gw7cehn003d]
+INFO  [2015-03-16 13:29:00,881] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_8imdnxkvggxb99gw7cehn003d, primary]
+INFO  [2015-03-16 13:29:00,943] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.HISTORY_QUOTE
+INFO  [2015-03-16 13:29:00,943] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, quote2, quote1, quote_id, datum, quotex]
+INFO  [2015-03-16 13:29:00,943] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_46qi15od5xmlqi7tikikcbtm8]
+INFO  [2015-03-16 13:29:00,943] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_46qi15od5xmlqi7tikikcbtm8, primary]
+INFO  [2015-03-16 13:29:01,005] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.MANNSCHAFT
+INFO  [2015-03-16 13:29:01,005] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-16 13:29:01,006] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-16 13:29:01,006] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-16 13:29:01,060] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.QUOTE
+INFO  [2015-03-16 13:29:01,060] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, wettanbieter_id, begegnung_id, quotem1, quotex, quotem2]
+INFO  [2015-03-16 13:29:01,061] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_df8mce9ofcqfn81yswwqqu23g, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-03-16 13:29:01,061] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_df8mce9ofcqfn81yswwqqu23g, primary, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-03-16 13:29:01,108] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.SPIELTYP
+INFO  [2015-03-16 13:29:01,108] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-16 13:29:01,108] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-16 13:29:01,108] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-16 13:29:01,161] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.WETTANBIETER
+INFO  [2015-03-16 13:29:01,161] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-16 13:29:01,161] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-16 13:29:01,161] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-16 13:29:01,162] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000232: Schema update complete
+INFO  [2015-03-16 13:29:01,175] io.dropwizard.server.ServerFactory: Starting AnalyserService
+INFO  [2015-03-16 13:29:01,285] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.18.1 02/19/2014 03:28 AM'
+INFO  [2015-03-16 13:29:01,332] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     / (resources.MainResource)
+    GET     /begegnung (resources.BegegnungResource)
+    GET     /quoten/inputdata/ (resources.QuotenResource)
+    POST    /quoten (resources.QuotenResource)
+
+INFO  [2015-03-16 13:29:01,652] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2015-03-16 13:29:01,652] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-03-16 13:32:33,922] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-16 13:32:34,138] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-16 13:32:34,359] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-16 13:32:34,425] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-16 13:32:34,481] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-16 13:32:34,611] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-16 13:32:42,491] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-16 13:32:42,659] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-16 13:32:42,822] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-16 13:32:42,864] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-16 13:32:42,907] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-16 13:32:42,986] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-16 13:32:48,186] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-16 13:32:48,334] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-16 13:32:50,283] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-16 13:32:50,322] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-16 13:33:04,563] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-16 13:33:04,617] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-16 13:33:08,178] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-16 13:33:08,223] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-16 13:33:11,266] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 4.2  
+INFO  [2015-03-16 13:33:11,538] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 4.2  
+INFO  [2015-03-16 13:33:19,892] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 7.6 and q.quoteX <= 10.1  
+INFO  [2015-03-16 13:33:19,955] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 7.6 and q.quoteX <= 10.1  
+INFO  [2015-03-16 13:33:25,107] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 7.6 and q.quoteM1 <= 10.1  
+INFO  [2015-03-16 13:33:25,174] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 7.6 and q.quoteM1 <= 10.1  
+INFO  [2015-03-16 13:33:25,226] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 7.6 and q.quoteX <= 10.1  
+INFO  [2015-03-16 13:33:25,272] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 7.6 and q.quoteX <= 10.1  
+INFO  [2015-03-16 13:33:25,326] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 7.6 and q.quoteM2 <= 10.1  
+INFO  [2015-03-16 13:33:25,414] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 7.6 and q.quoteM2 <= 10.1  
+INFO  [2015-03-16 13:33:26,466] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 7.6 and q.quoteX <= 10.1  
+INFO  [2015-03-16 13:33:26,519] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 7.6 and q.quoteX <= 10.1  
+INFO  [2015-03-16 13:33:28,066] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 7.6 and q.quoteX <= 10.1  
+INFO  [2015-03-16 13:33:28,106] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 7.6 and q.quoteX <= 10.1  
+INFO  [2015-03-16 13:33:38,107] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 3.6 and q.quoteX <= 10.1  
+INFO  [2015-03-16 13:33:38,244] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 3.6 and q.quoteX <= 10.1  
+INFO  [2015-03-16 13:33:40,666] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 3.6 and q.quoteX <= 5.7  
+INFO  [2015-03-16 13:33:40,791] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 3.6 and q.quoteX <= 5.7  
+WARN  [2015-03-17 15:53:11,094] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-03-17 15:53:11,206] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-03-17 15:53:11,211] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-03-17 15:53:11,212] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-03-17 15:53:11,213] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-03-17 15:53:11,228] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-03-17 15:53:11,228] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-03-17 15:53:11,310] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-03-17 15:53:11,378] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-03-17 15:53:11,381] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://192.168.2.66:3306/fussballquoten]
+INFO  [2015-03-17 15:53:11,382] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-03-17 15:53:11,382] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-03-17 15:53:11,383] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO  [2015-03-17 15:53:11,656] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  [2015-03-17 15:53:11,662] org.hibernate.engine.jdbc.internal.LobCreatorBuilder: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO  [2015-03-17 15:53:11,817] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  [2015-03-17 15:53:11,821] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+INFO  [2015-03-17 15:53:12,086] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000228: Running hbm2ddl schema update
+INFO  [2015-03-17 15:53:12,086] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000102: Fetching database metadata
+INFO  [2015-03-17 15:53:12,103] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000396: Updating schema
+INFO  [2015-03-17 15:53:12,193] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.BEGEGNUNG
+INFO  [2015-03-17 15:53:12,194] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, spieltyp_id, mannschaft_1_id, datum, mannschaft_2_id]
+INFO  [2015-03-17 15:53:12,194] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-03-17 15:53:12,194] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, primary, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-03-17 15:53:12,261] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.ERGEBNIS
+INFO  [2015-03-17 15:53:12,262] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [m2_tore, id, m2_h_tore, begenung_id, sieger, m1_h_tore, m1_tore]
+INFO  [2015-03-17 15:53:12,262] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_8imdnxkvggxb99gw7cehn003d]
+INFO  [2015-03-17 15:53:12,262] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_8imdnxkvggxb99gw7cehn003d, primary]
+INFO  [2015-03-17 15:53:12,347] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.HISTORY_QUOTE
+INFO  [2015-03-17 15:53:12,347] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, quote2, quote1, quote_id, datum, quotex]
+INFO  [2015-03-17 15:53:12,347] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_46qi15od5xmlqi7tikikcbtm8]
+INFO  [2015-03-17 15:53:12,347] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_46qi15od5xmlqi7tikikcbtm8, primary]
+INFO  [2015-03-17 15:53:12,416] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.MANNSCHAFT
+INFO  [2015-03-17 15:53:12,416] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-17 15:53:12,416] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-17 15:53:12,416] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-17 15:53:12,491] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.QUOTE
+INFO  [2015-03-17 15:53:12,491] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, wettanbieter_id, begegnung_id, quotem1, quotex, quotem2]
+INFO  [2015-03-17 15:53:12,491] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_df8mce9ofcqfn81yswwqqu23g, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-03-17 15:53:12,491] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_df8mce9ofcqfn81yswwqqu23g, primary, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-03-17 15:53:12,539] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.SPIELTYP
+INFO  [2015-03-17 15:53:12,540] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-17 15:53:12,540] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-17 15:53:12,540] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-17 15:53:12,594] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.WETTANBIETER
+INFO  [2015-03-17 15:53:12,594] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-17 15:53:12,594] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-17 15:53:12,594] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-17 15:53:12,595] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000232: Schema update complete
+INFO  [2015-03-17 15:53:12,616] io.dropwizard.server.ServerFactory: Starting AnalyserService
+INFO  [2015-03-17 15:53:12,751] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.18.1 02/19/2014 03:28 AM'
+INFO  [2015-03-17 15:53:12,806] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     / (resources.MainResource)
+    GET     /begegnung (resources.BegegnungResource)
+    GET     /quoten/inputdata/ (resources.QuotenResource)
+    POST    /quoten (resources.QuotenResource)
+
+INFO  [2015-03-17 15:53:13,120] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2015-03-17 15:53:13,121] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-03-17 15:55:45,523] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-17 15:55:45,703] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-17 15:56:12,503] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-17 15:56:12,554] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-17 15:56:15,247] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-17 15:56:15,420] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-17 15:56:15,596] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-17 15:56:15,702] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-17 15:56:15,801] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-17 15:56:16,081] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-17 15:56:19,070] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.9  
+INFO  [2015-03-17 15:56:19,336] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.9  
+INFO  [2015-03-17 15:56:19,608] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.9  
+INFO  [2015-03-17 15:56:19,737] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.9  
+INFO  [2015-03-17 15:56:19,858] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.9  
+INFO  [2015-03-17 15:56:20,421] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.9  
+INFO  [2015-03-17 15:56:20,904] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.9  
+INFO  [2015-03-17 15:56:21,190] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.9  
+INFO  [2015-03-17 15:56:21,453] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.9  
+INFO  [2015-03-17 15:56:21,531] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.9  
+INFO  [2015-03-17 15:56:21,594] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.9  
+INFO  [2015-03-17 15:56:21,697] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.9  
+INFO  [2015-03-17 15:56:24,439] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.9  
+INFO  [2015-03-17 15:56:24,695] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.9  
+INFO  [2015-03-17 15:56:24,941] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.9  
+INFO  [2015-03-17 15:56:25,087] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.9  
+INFO  [2015-03-17 15:56:25,142] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.9  
+INFO  [2015-03-17 15:56:25,293] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.9  
+INFO  [2015-03-17 19:32:38,135] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 4.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:38,253] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 4.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:38,330] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 4.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:38,421] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 4.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:38,494] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 4.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:38,583] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 4.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:43,096] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 4.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:43,176] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 4.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:43,244] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.6 and q.quoteX <= 4.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:43,343] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.6 and q.quoteX <= 4.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:43,408] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.6 and q.quoteM2 <= 4.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:43,495] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.6 and q.quoteM2 <= 4.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:53,319] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 3.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:53,414] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 3.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:53,482] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.6 and q.quoteX <= 3.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:53,567] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.6 and q.quoteX <= 3.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:53,632] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.6 and q.quoteM2 <= 3.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:53,719] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.6 and q.quoteM2 <= 3.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:55,687] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 2.2 and q.quoteM1 <= 3.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:55,762] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 2.2 and q.quoteM1 <= 3.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:55,831] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 2.2 and q.quoteX <= 3.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:55,914] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 2.2 and q.quoteX <= 3.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:55,989] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 2.2 and q.quoteM2 <= 3.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 19:32:56,060] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 2.2 and q.quoteM2 <= 3.9   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 20:19:29,074] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Mannschaft m  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  and (m.id = b.mannschaft_1 or m.id = b.mannschaft_2) and (  m.name =  'Deutschland' ) 
+INFO  [2015-03-17 20:19:29,492] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Mannschaft m  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  and (m.id = b.mannschaft_1 or m.id = b.mannschaft_2) and (  m.name =  'Deutschland' ) 
+INFO  [2015-03-17 20:19:29,880] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e , Mannschaft m  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  and (m.id = b.mannschaft_1 or m.id = b.mannschaft_2) and (  m.name =  'Deutschland' ) 
+INFO  [2015-03-17 20:19:30,186] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e , Mannschaft m  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  and (m.id = b.mannschaft_1 or m.id = b.mannschaft_2) and (  m.name =  'Deutschland' ) 
+INFO  [2015-03-17 20:19:30,416] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e , Mannschaft m  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  and (m.id = b.mannschaft_1 or m.id = b.mannschaft_2) and (  m.name =  'Deutschland' ) 
+INFO  [2015-03-17 20:19:30,756] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e , Mannschaft m  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  and (m.id = b.mannschaft_1 or m.id = b.mannschaft_2) and (  m.name =  'Deutschland' ) 
+INFO  [2015-03-17 20:19:53,177] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 20:19:53,259] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 20:19:53,329] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 20:19:53,408] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 20:19:53,469] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 20:19:53,546] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 20:23:21,922] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-17 20:23:22,240] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-17 20:23:22,589] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-17 20:23:22,916] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-17 20:23:23,156] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-17 20:23:23,465] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-17 20:24:24,098] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-17 20:24:24,432] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-17 20:24:24,713] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-17 20:24:25,033] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-17 20:24:25,264] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-17 20:24:25,565] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-17 20:25:42,026] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-17 20:25:42,331] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-17 20:25:42,601] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-17 20:25:42,923] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-17 20:25:43,158] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-17 20:25:43,457] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-17 20:26:29,316] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-17 20:26:29,606] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-17 20:26:29,883] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-17 20:26:30,196] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-17 20:26:30,425] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-17 20:26:30,731] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-17 20:26:58,298] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-17 20:26:58,589] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-17 20:26:58,873] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-17 20:26:59,179] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-17 20:26:59,411] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-17 20:26:59,728] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-17 20:31:21,690] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-17 20:31:21,978] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-17 20:31:22,251] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-17 20:31:22,551] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-17 20:31:22,812] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-17 20:31:23,128] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-17 20:58:09,285] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.5  
+INFO  [2015-03-17 20:58:09,599] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.5  
+INFO  [2015-03-17 20:58:09,889] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.5  
+INFO  [2015-03-17 20:58:10,206] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.5  
+INFO  [2015-03-17 20:58:10,442] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.5  
+INFO  [2015-03-17 20:58:10,755] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.5  
+INFO  [2015-03-17 20:58:11,563] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.0 and q.quoteM1 <= 2.5  
+INFO  [2015-03-17 20:58:11,866] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.0 and q.quoteM1 <= 2.5  
+INFO  [2015-03-17 20:58:12,164] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.0 and q.quoteX <= 2.5  
+INFO  [2015-03-17 20:58:12,480] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.0 and q.quoteX <= 2.5  
+INFO  [2015-03-17 20:58:12,716] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.0 and q.quoteM2 <= 2.5  
+INFO  [2015-03-17 20:58:13,048] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.0 and q.quoteM2 <= 2.5  
+INFO  [2015-03-17 20:58:13,060] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.0 and q.quoteM1 <= 2.5  
+INFO  [2015-03-17 20:58:13,582] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.0 and q.quoteM1 <= 2.5  
+INFO  [2015-03-17 20:58:13,861] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.0 and q.quoteX <= 2.5  
+INFO  [2015-03-17 20:58:14,181] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.0 and q.quoteX <= 2.5  
+INFO  [2015-03-17 20:58:14,441] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.0 and q.quoteM2 <= 2.5  
+INFO  [2015-03-17 20:58:14,741] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.0 and q.quoteM2 <= 2.5  
+INFO  [2015-03-17 20:58:16,228] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 2.5  
+INFO  [2015-03-17 20:58:16,516] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 2.5  
+INFO  [2015-03-17 20:58:16,787] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.6 and q.quoteX <= 2.5  
+INFO  [2015-03-17 20:58:17,093] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.6 and q.quoteX <= 2.5  
+INFO  [2015-03-17 20:58:17,371] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.6 and q.quoteM2 <= 2.5  
+INFO  [2015-03-17 20:58:17,680] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.6 and q.quoteM2 <= 2.5  
+INFO  [2015-03-17 20:58:19,500] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 2.5  
+INFO  [2015-03-17 20:58:19,786] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 2.5  
+INFO  [2015-03-17 20:58:20,396] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 2.5  
+INFO  [2015-03-17 20:58:20,693] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 2.5  
+INFO  [2015-03-17 21:01:36,844] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Mannschaft m  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 2.5  and (m.id = b.mannschaft_1 or m.id = b.mannschaft_2) and (  m.name =  'Hamburger SV' ) 
+INFO  [2015-03-17 21:01:37,248] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Mannschaft m  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 2.5  and (m.id = b.mannschaft_1 or m.id = b.mannschaft_2) and (  m.name =  'Hamburger SV' ) 
+INFO  [2015-03-17 21:01:58,388] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 2.5   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 21:01:58,467] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 2.5   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 21:02:43,972] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 2.5   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 21:02:44,043] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 2.5   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 21:02:50,676] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 6.2   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 21:02:50,764] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 6.2   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 21:03:09,819] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 6.2   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 21:03:09,891] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 6.2   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 21:03:16,084] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 3.1   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 21:03:16,177] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.6 and q.quoteM1 <= 3.1   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 21:03:18,644] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.0 and q.quoteM1 <= 3.1   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 21:03:18,732] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.0 and q.quoteM1 <= 3.1   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 21:03:21,715] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 2.5 and q.quoteM1 <= 3.1   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 21:03:21,792] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 2.5 and q.quoteM1 <= 3.1   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 21:03:36,620] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 2.5 and q.quoteM1 <= 3.1   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 21:03:36,677] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 2.5 and q.quoteM1 <= 3.1   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 21:03:39,459] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 3.1 and q.quoteM1 <= 9.6   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 21:03:39,540] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 3.1 and q.quoteM1 <= 9.6   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 21:03:45,523] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 3.1 and q.quoteM1 <= 9.6   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 21:03:45,602] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e , Spieltyp s  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 3.1 and q.quoteM1 <= 9.6   and s.id = b.spieltyp and (  s.name =  'Bundesliga' )
+INFO  [2015-03-17 21:03:51,021] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 13.7 and q.quoteM1 <= 28.5  
+INFO  [2015-03-17 21:03:51,326] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 13.7 and q.quoteM1 <= 28.5  
+INFO  [2015-03-17 21:03:51,381] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 13.7 and q.quoteM1 <= 28.5  
+INFO  [2015-03-17 21:03:51,848] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 13.7 and q.quoteM1 <= 28.5  
+INFO  [2015-03-17 21:03:52,452] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 13.7 and q.quoteM1 <= 28.5  
+INFO  [2015-03-17 21:03:52,734] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 13.7 and q.quoteM1 <= 28.5  
+INFO  [2015-03-17 21:03:53,001] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 13.7 and q.quoteX <= 28.5  
+INFO  [2015-03-17 21:03:53,305] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 13.7 and q.quoteX <= 28.5  
+INFO  [2015-03-17 21:03:53,371] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 13.7 and q.quoteM1 <= 28.5  
+INFO  [2015-03-17 21:03:53,726] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 13.7 and q.quoteM2 <= 28.5  
+INFO  [2015-03-17 21:03:53,866] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 13.7 and q.quoteM1 <= 28.5  
+INFO  [2015-03-17 21:03:54,296] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 13.7 and q.quoteM2 <= 28.5  
+INFO  [2015-03-17 21:03:54,354] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 13.7 and q.quoteX <= 28.5  
+INFO  [2015-03-17 21:03:54,861] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 13.7 and q.quoteX <= 28.5  
+INFO  [2015-03-17 21:03:55,097] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 13.7 and q.quoteM2 <= 28.5  
+INFO  [2015-03-17 21:03:55,446] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 13.7 and q.quoteM2 <= 28.5  
+INFO  [2015-03-17 21:07:22,605] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 13.7 and q.quoteX <= 28.5  
+INFO  [2015-03-17 21:07:22,908] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 13.7 and q.quoteX <= 28.5  
+INFO  [2015-03-17 21:07:27,939] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 2.9 and q.quoteX <= 28.5  
+INFO  [2015-03-17 21:07:28,296] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 2.9 and q.quoteX <= 28.5  
+INFO  [2015-03-17 21:07:35,219] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 2.9 and q.quoteX <= 3.8  
+INFO  [2015-03-17 21:07:35,559] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 2.9 and q.quoteX <= 3.8  
+INFO  [2015-03-17 21:07:40,987] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 2.9 and q.quoteX <= 3.8  
+INFO  [2015-03-17 21:07:41,328] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 2.9 and q.quoteX <= 3.8  
+INFO  [2015-03-17 21:07:42,916] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 2.9 and q.quoteX <= 3.8  
+INFO  [2015-03-17 21:07:43,258] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 2.9 and q.quoteX <= 3.8  
+WARN  [2015-03-18 12:46:01,936] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-03-18 12:46:02,052] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-03-18 12:46:02,057] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-03-18 12:46:02,058] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-03-18 12:46:02,059] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-03-18 12:46:02,074] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-03-18 12:46:02,074] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-03-18 12:46:02,146] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-03-18 12:46:02,205] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-03-18 12:46:02,207] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://192.168.2.66:3306/fussballquoten]
+INFO  [2015-03-18 12:46:02,208] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-03-18 12:46:02,208] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-03-18 12:46:02,209] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO  [2015-03-18 12:46:02,534] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  [2015-03-18 12:46:02,539] org.hibernate.engine.jdbc.internal.LobCreatorBuilder: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO  [2015-03-18 12:46:02,688] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  [2015-03-18 12:46:02,692] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+INFO  [2015-03-18 12:46:02,971] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000228: Running hbm2ddl schema update
+INFO  [2015-03-18 12:46:02,971] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000102: Fetching database metadata
+INFO  [2015-03-18 12:46:02,985] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000396: Updating schema
+INFO  [2015-03-18 12:46:03,073] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.BEGEGNUNG
+INFO  [2015-03-18 12:46:03,073] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, spieltyp_id, mannschaft_1_id, datum, mannschaft_2_id]
+INFO  [2015-03-18 12:46:03,073] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-03-18 12:46:03,073] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, primary, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-03-18 12:46:03,151] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.ERGEBNIS
+INFO  [2015-03-18 12:46:03,151] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [m2_tore, id, m2_h_tore, begenung_id, sieger, m1_h_tore, m1_tore]
+INFO  [2015-03-18 12:46:03,151] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_8imdnxkvggxb99gw7cehn003d]
+INFO  [2015-03-18 12:46:03,151] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_8imdnxkvggxb99gw7cehn003d, primary]
+INFO  [2015-03-18 12:46:03,221] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.HISTORY_QUOTE
+INFO  [2015-03-18 12:46:03,221] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, quote2, quote1, quote_id, datum, quotex]
+INFO  [2015-03-18 12:46:03,221] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_46qi15od5xmlqi7tikikcbtm8]
+INFO  [2015-03-18 12:46:03,221] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_46qi15od5xmlqi7tikikcbtm8, primary]
+INFO  [2015-03-18 12:46:03,276] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.MANNSCHAFT
+INFO  [2015-03-18 12:46:03,277] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-18 12:46:03,277] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-18 12:46:03,277] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-18 12:46:03,333] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.QUOTE
+INFO  [2015-03-18 12:46:03,333] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, wettanbieter_id, begegnung_id, quotem1, quotex, quotem2]
+INFO  [2015-03-18 12:46:03,333] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_df8mce9ofcqfn81yswwqqu23g, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-03-18 12:46:03,333] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_df8mce9ofcqfn81yswwqqu23g, primary, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-03-18 12:46:03,382] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.SPIELTYP
+INFO  [2015-03-18 12:46:03,382] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-18 12:46:03,383] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-18 12:46:03,383] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-18 12:46:03,425] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.WETTANBIETER
+INFO  [2015-03-18 12:46:03,425] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-18 12:46:03,425] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-18 12:46:03,426] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-18 12:46:03,426] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000232: Schema update complete
+INFO  [2015-03-18 12:46:03,448] io.dropwizard.server.ServerFactory: Starting AnalyserService
+INFO  [2015-03-18 12:46:03,574] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.18.1 02/19/2014 03:28 AM'
+INFO  [2015-03-18 12:46:03,630] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     / (resources.MainResource)
+    GET     /begegnung (resources.BegegnungResource)
+    GET     /quoten/inputdata/ (resources.QuotenResource)
+    POST    /quoten (resources.QuotenResource)
+
+INFO  [2015-03-18 12:46:03,877] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2015-03-18 12:46:03,877] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-03-18 17:06:07,441] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-18 17:06:07,649] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-18 17:06:11,865] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 4.3  
+INFO  [2015-03-18 17:06:12,197] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 4.3  
+INFO  [2015-03-18 17:06:16,561] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 2.8 and q.quoteX <= 4.3  
+INFO  [2015-03-18 17:06:16,896] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 2.8 and q.quoteX <= 4.3  
+INFO  [2015-03-18 17:06:31,641] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 2.8 and q.quoteX <= 4.0  
+INFO  [2015-03-18 17:06:31,976] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 2.8 and q.quoteX <= 4.0  
+INFO  [2015-03-18 17:06:42,008] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 2.9 and q.quoteX <= 4.0  
+INFO  [2015-03-18 17:06:42,332] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 2.9 and q.quoteX <= 4.0  
+INFO  [2015-03-18 17:07:35,475] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-18 17:07:35,664] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-18 17:07:35,835] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-18 17:07:36,126] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-18 17:07:36,252] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-18 17:07:36,531] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-18 17:08:16,635] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-18 17:08:16,879] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-18 17:08:17,095] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-18 17:08:17,349] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-18 17:08:17,468] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-18 17:08:17,716] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-18 17:08:36,754] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-18 17:08:36,986] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-18 17:08:37,190] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-18 17:08:37,437] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-18 17:08:37,565] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-18 17:08:37,810] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-18 17:08:58,081] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 2.2 and q.quoteM1 <= 4.0  
+INFO  [2015-03-18 17:08:58,260] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 2.2 and q.quoteM1 <= 4.0  
+INFO  [2015-03-18 17:08:58,397] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 2.2 and q.quoteX <= 4.0  
+INFO  [2015-03-18 17:08:58,612] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 2.2 and q.quoteX <= 4.0  
+INFO  [2015-03-18 17:08:58,736] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 2.2 and q.quoteM2 <= 4.0  
+INFO  [2015-03-18 17:08:58,938] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 2.2 and q.quoteM2 <= 4.0  
+INFO  [2015-03-18 17:09:02,881] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 2.9 and q.quoteM1 <= 4.0  
+INFO  [2015-03-18 17:09:03,206] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 2.9 and q.quoteM1 <= 4.0  
+INFO  [2015-03-18 17:09:03,396] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 2.9 and q.quoteX <= 4.0  
+INFO  [2015-03-18 17:09:03,697] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 2.9 and q.quoteX <= 4.0  
+INFO  [2015-03-18 17:09:03,838] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 2.9 and q.quoteM2 <= 4.0  
+INFO  [2015-03-18 17:09:04,119] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 2.9 and q.quoteM2 <= 4.0  
+WARN  [2015-03-19 15:47:57,834] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-03-19 15:47:57,944] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-03-19 15:47:57,949] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-03-19 15:47:57,950] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-03-19 15:47:57,951] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-03-19 15:47:57,967] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-03-19 15:47:57,968] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-03-19 15:47:58,055] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-03-19 15:47:58,114] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-03-19 15:47:58,117] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://192.168.2.66:3306/fussballquoten]
+INFO  [2015-03-19 15:47:58,118] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-03-19 15:47:58,118] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-03-19 15:47:58,119] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO  [2015-03-19 15:47:58,408] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  [2015-03-19 15:47:58,413] org.hibernate.engine.jdbc.internal.LobCreatorBuilder: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO  [2015-03-19 15:47:58,576] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  [2015-03-19 15:47:58,579] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+INFO  [2015-03-19 15:47:58,855] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000228: Running hbm2ddl schema update
+INFO  [2015-03-19 15:47:58,855] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000102: Fetching database metadata
+INFO  [2015-03-19 15:47:58,869] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000396: Updating schema
+INFO  [2015-03-19 15:47:58,936] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.BEGEGNUNG
+INFO  [2015-03-19 15:47:58,936] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, spieltyp_id, mannschaft_1_id, datum, mannschaft_2_id]
+INFO  [2015-03-19 15:47:58,936] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-03-19 15:47:58,936] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, primary, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-03-19 15:47:58,995] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.ERGEBNIS
+INFO  [2015-03-19 15:47:58,996] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [m2_tore, id, m2_h_tore, begenung_id, sieger, m1_h_tore, m1_tore]
+INFO  [2015-03-19 15:47:58,996] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_8imdnxkvggxb99gw7cehn003d]
+INFO  [2015-03-19 15:47:58,996] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_8imdnxkvggxb99gw7cehn003d, primary]
+INFO  [2015-03-19 15:47:59,058] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.HISTORY_QUOTE
+INFO  [2015-03-19 15:47:59,058] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, quote2, quote1, quote_id, datum, quotex]
+INFO  [2015-03-19 15:47:59,058] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_46qi15od5xmlqi7tikikcbtm8]
+INFO  [2015-03-19 15:47:59,058] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_46qi15od5xmlqi7tikikcbtm8, primary]
+INFO  [2015-03-19 15:47:59,104] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.MANNSCHAFT
+INFO  [2015-03-19 15:47:59,105] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-19 15:47:59,105] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-19 15:47:59,105] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-19 15:47:59,165] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.QUOTE
+INFO  [2015-03-19 15:47:59,165] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, wettanbieter_id, begegnung_id, quotem1, quotex, quotem2]
+INFO  [2015-03-19 15:47:59,165] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_df8mce9ofcqfn81yswwqqu23g, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-03-19 15:47:59,165] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_df8mce9ofcqfn81yswwqqu23g, primary, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-03-19 15:47:59,220] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.SPIELTYP
+INFO  [2015-03-19 15:47:59,220] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-19 15:47:59,220] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-19 15:47:59,220] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-19 15:47:59,273] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.WETTANBIETER
+INFO  [2015-03-19 15:47:59,273] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-19 15:47:59,273] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-19 15:47:59,273] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-19 15:47:59,274] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000232: Schema update complete
+INFO  [2015-03-19 15:47:59,287] io.dropwizard.server.ServerFactory: Starting AnalyserService
+INFO  [2015-03-19 15:47:59,408] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.18.1 02/19/2014 03:28 AM'
+INFO  [2015-03-19 15:47:59,458] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     / (resources.MainResource)
+    GET     /begegnung (resources.BegegnungResource)
+    GET     /quoten/inputdata/ (resources.QuotenResource)
+    POST    /quoten (resources.QuotenResource)
+
+INFO  [2015-03-19 15:47:59,687] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2015-03-19 15:47:59,688] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-03-19 15:48:57,845] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-19 15:48:58,033] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 2.2  
+INFO  [2015-03-19 15:48:58,178] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-19 15:48:58,368] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-19 15:48:58,519] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+INFO  [2015-03-19 15:48:58,711] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 2.2  
+WARN  [2015-03-20 17:54:37,563] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-03-20 17:54:37,697] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-03-20 17:54:37,703] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-03-20 17:54:37,704] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-03-20 17:54:37,705] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-03-20 17:54:37,723] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-03-20 17:54:37,723] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-03-20 17:54:37,834] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-03-20 17:54:37,926] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-03-20 17:54:37,931] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://192.168.2.66:3306/fussballquoten]
+INFO  [2015-03-20 17:54:37,931] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-03-20 17:54:37,931] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-03-20 17:54:37,932] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+WARN  [2015-03-20 17:55:26,177] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-03-20 17:55:26,287] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-03-20 17:55:26,291] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-03-20 17:55:26,292] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-03-20 17:55:26,293] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-03-20 17:55:26,305] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-03-20 17:55:26,306] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-03-20 17:55:26,377] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-03-20 17:55:26,433] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-03-20 17:55:26,436] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://192.168.2.66:3306/fussballquoten]
+INFO  [2015-03-20 17:55:26,436] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-03-20 17:55:26,436] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-03-20 17:55:26,437] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+WARN  [2015-03-20 17:55:55,611] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-03-20 17:55:55,701] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-03-20 17:55:55,705] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-03-20 17:55:55,706] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-03-20 17:55:55,710] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-03-20 17:55:55,726] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-03-20 17:55:55,726] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-03-20 17:55:55,801] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-03-20 17:55:55,855] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-03-20 17:55:55,857] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://192.168.2.66:3306/fussballquoten]
+INFO  [2015-03-20 17:55:55,858] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-03-20 17:55:55,858] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-03-20 17:55:55,861] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO  [2015-03-20 17:55:56,127] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  [2015-03-20 17:55:56,132] org.hibernate.engine.jdbc.internal.LobCreatorBuilder: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO  [2015-03-20 17:55:56,293] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  [2015-03-20 17:55:56,296] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+INFO  [2015-03-20 17:55:56,595] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000228: Running hbm2ddl schema update
+INFO  [2015-03-20 17:55:56,595] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000102: Fetching database metadata
+INFO  [2015-03-20 17:55:56,615] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000396: Updating schema
+INFO  [2015-03-20 17:55:56,687] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.BEGEGNUNG
+INFO  [2015-03-20 17:55:56,687] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, spieltyp_id, mannschaft_1_id, datum, mannschaft_2_id]
+INFO  [2015-03-20 17:55:56,687] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-03-20 17:55:56,687] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, primary, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-03-20 17:55:56,754] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.ERGEBNIS
+INFO  [2015-03-20 17:55:56,754] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [m2_tore, id, m2_h_tore, begenung_id, sieger, m1_h_tore, m1_tore]
+INFO  [2015-03-20 17:55:56,755] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_8imdnxkvggxb99gw7cehn003d]
+INFO  [2015-03-20 17:55:56,755] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_8imdnxkvggxb99gw7cehn003d, primary]
+INFO  [2015-03-20 17:55:56,825] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.HISTORY_QUOTE
+INFO  [2015-03-20 17:55:56,825] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, quote2, quote1, quote_id, datum, quotex]
+INFO  [2015-03-20 17:55:56,826] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_46qi15od5xmlqi7tikikcbtm8]
+INFO  [2015-03-20 17:55:56,826] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_46qi15od5xmlqi7tikikcbtm8, primary]
+INFO  [2015-03-20 17:55:56,899] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.MANNSCHAFT
+INFO  [2015-03-20 17:55:56,899] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-20 17:55:56,899] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-20 17:55:56,899] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-20 17:55:56,972] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.QUOTE
+INFO  [2015-03-20 17:55:56,972] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, wettanbieter_id, begegnung_id, quotem1, quotex, quotem2]
+INFO  [2015-03-20 17:55:56,973] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_df8mce9ofcqfn81yswwqqu23g, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-03-20 17:55:56,973] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_df8mce9ofcqfn81yswwqqu23g, primary, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-03-20 17:55:57,027] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.SPIELTYP
+INFO  [2015-03-20 17:55:57,028] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-20 17:55:57,028] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-20 17:55:57,028] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-20 17:55:57,094] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.WETTANBIETER
+INFO  [2015-03-20 17:55:57,094] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-20 17:55:57,094] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-20 17:55:57,094] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-20 17:55:57,095] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000232: Schema update complete
+INFO  [2015-03-20 17:55:57,113] io.dropwizard.server.ServerFactory: Starting AnalyserService
+INFO  [2015-03-20 17:55:57,272] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.18.1 02/19/2014 03:28 AM'
+INFO  [2015-03-20 17:55:57,330] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     / (resources.MainResource)
+    GET     /begegnung (resources.BegegnungResource)
+    GET     /quoten/inputdata/ (resources.QuotenResource)
+    POST    /quoten (resources.QuotenResource)
+
+INFO  [2015-03-20 17:55:57,587] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2015-03-20 17:55:57,588] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-03-20 17:57:25,731] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 3.8  
+INFO  [2015-03-20 17:57:25,948] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.2 and q.quoteM1 <= 3.8  
+INFO  [2015-03-20 17:57:26,105] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 3.8  
+INFO  [2015-03-20 17:57:26,394] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 3.8  
+INFO  [2015-03-20 17:57:26,505] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 3.8  
+INFO  [2015-03-20 17:57:26,759] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.2 and q.quoteM2 <= 3.8  
+INFO  [2015-03-20 17:57:30,383] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 2.8 and q.quoteM1 <= 3.8  
+INFO  [2015-03-20 17:57:30,541] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 2.8 and q.quoteM1 <= 3.8  
+INFO  [2015-03-20 17:57:30,685] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 2.8 and q.quoteX <= 3.8  
+INFO  [2015-03-20 17:57:30,904] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 2.8 and q.quoteX <= 3.8  
+INFO  [2015-03-20 17:57:31,050] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 2.8 and q.quoteM2 <= 3.8  
+INFO  [2015-03-20 17:57:31,239] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 2.8 and q.quoteM2 <= 3.8  
+INFO  [2015-03-20 17:57:32,631] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 2.8 and q.quoteX <= 3.8  
+INFO  [2015-03-20 17:57:32,887] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 2.8 and q.quoteX <= 3.8  
+INFO  [2015-03-20 17:57:35,383] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 2.8 and q.quoteX <= 3.8  
+INFO  [2015-03-20 17:57:35,610] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 2.8 and q.quoteX <= 3.8  
+INFO  [2015-03-20 17:58:11,952] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 2.2 and q.quoteX <= 3.8  
+INFO  [2015-03-20 17:58:12,179] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 2.2 and q.quoteX <= 3.8  
+INFO  [2015-03-20 17:58:19,471] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 2.2 and q.quoteM1 <= 3.8  
+INFO  [2015-03-20 17:58:19,651] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 2.2 and q.quoteM1 <= 3.8  
+INFO  [2015-03-20 17:58:20,886] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 2.2 and q.quoteM1 <= 3.8  
+INFO  [2015-03-20 17:58:21,063] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 2.2 and q.quoteM1 <= 3.8  
+INFO  [2015-03-20 17:58:38,414] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 2.2 and q.quoteM1 <= 3.8  
+INFO  [2015-03-20 17:58:38,583] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 2.2 and q.quoteM1 <= 3.8  
+INFO  [2015-03-20 17:58:56,191] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 2.2 and q.quoteM2 <= 3.8  
+INFO  [2015-03-20 17:58:56,398] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 2.2 and q.quoteM2 <= 3.8  
+INFO  [2015-03-20 17:58:57,390] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 2.2 and q.quoteM2 <= 3.8  
+INFO  [2015-03-20 17:58:57,584] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 2.2 and q.quoteM2 <= 3.8  
+INFO  [2015-03-20 17:59:01,726] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 2.2 and q.quoteM2 <= 3.8  
+INFO  [2015-03-20 17:59:01,944] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 2.2 and q.quoteM2 <= 3.8  
+INFO  [2015-03-20 18:04:38,555] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 2.2 and q.quoteM1 <= 3.8  
+INFO  [2015-03-20 18:04:38,739] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 2.2 and q.quoteM1 <= 3.8  
+INFO  [2015-03-20 18:04:58,152] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.1 and q.quoteM1 <= 3.8  
+INFO  [2015-03-20 18:04:58,329] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.1 and q.quoteM1 <= 3.8  
+INFO  [2015-03-20 18:04:59,998] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.1 and q.quoteM1 <= 2.9  
+INFO  [2015-03-20 18:05:00,165] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.1 and q.quoteM1 <= 2.9  
+INFO  [2015-03-20 18:05:13,215] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.1 and q.quoteM1 <= 5.0  
+INFO  [2015-03-20 18:05:13,408] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.1 and q.quoteM1 <= 5.0  
+INFO  [2015-03-20 18:08:44,522] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '2'  and q.quoteM2 >= 1.1 and q.quoteM2 <= 5.0  
+INFO  [2015-03-20 18:08:44,755] statistics.QuotenStatistik: QUERY: select q.quoteM2 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '2'  and q.quoteM2 >= 1.1 and q.quoteM2 <= 5.0  
+WARN  [2015-03-21 12:44:44,605] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-03-21 12:44:44,734] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-03-21 12:44:44,740] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-03-21 12:44:44,741] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-03-21 12:44:44,742] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-03-21 12:44:44,768] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-03-21 12:44:44,768] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-03-21 12:44:44,864] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-03-21 12:44:44,944] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-03-21 12:44:44,948] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://192.168.2.66:3306/fussballquoten]
+INFO  [2015-03-21 12:44:44,949] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-03-21 12:44:44,949] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-03-21 12:44:44,950] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO  [2015-03-21 12:44:45,228] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  [2015-03-21 12:44:45,234] org.hibernate.engine.jdbc.internal.LobCreatorBuilder: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO  [2015-03-21 12:44:45,425] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  [2015-03-21 12:44:45,429] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+INFO  [2015-03-21 12:44:45,729] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000228: Running hbm2ddl schema update
+INFO  [2015-03-21 12:44:45,729] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000102: Fetching database metadata
+INFO  [2015-03-21 12:44:45,743] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000396: Updating schema
+INFO  [2015-03-21 12:44:45,811] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.BEGEGNUNG
+INFO  [2015-03-21 12:44:45,812] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, spieltyp_id, mannschaft_1_id, datum, mannschaft_2_id]
+INFO  [2015-03-21 12:44:45,812] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-03-21 12:44:45,812] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, primary, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-03-21 12:44:45,876] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.ERGEBNIS
+INFO  [2015-03-21 12:44:45,876] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [m2_tore, id, m2_h_tore, begenung_id, sieger, m1_h_tore, m1_tore]
+INFO  [2015-03-21 12:44:45,876] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_8imdnxkvggxb99gw7cehn003d]
+INFO  [2015-03-21 12:44:45,876] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_8imdnxkvggxb99gw7cehn003d, primary]
+INFO  [2015-03-21 12:44:45,940] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.HISTORY_QUOTE
+INFO  [2015-03-21 12:44:45,940] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, quote2, quote1, quote_id, datum, quotex]
+INFO  [2015-03-21 12:44:45,940] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_46qi15od5xmlqi7tikikcbtm8]
+INFO  [2015-03-21 12:44:45,940] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_46qi15od5xmlqi7tikikcbtm8, primary]
+INFO  [2015-03-21 12:44:45,999] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.MANNSCHAFT
+INFO  [2015-03-21 12:44:45,999] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-21 12:44:45,999] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-21 12:44:45,999] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-21 12:44:46,061] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.QUOTE
+INFO  [2015-03-21 12:44:46,062] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, wettanbieter_id, begegnung_id, quotem1, quotex, quotem2]
+INFO  [2015-03-21 12:44:46,062] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_df8mce9ofcqfn81yswwqqu23g, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-03-21 12:44:46,062] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_df8mce9ofcqfn81yswwqqu23g, primary, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-03-21 12:44:46,119] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.SPIELTYP
+INFO  [2015-03-21 12:44:46,119] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-21 12:44:46,119] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-21 12:44:46,119] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-21 12:44:46,167] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.WETTANBIETER
+INFO  [2015-03-21 12:44:46,167] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-21 12:44:46,167] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-21 12:44:46,167] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-21 12:44:46,168] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000232: Schema update complete
+INFO  [2015-03-21 12:44:46,185] io.dropwizard.server.ServerFactory: Starting AnalyserService
+INFO  [2015-03-21 12:44:46,340] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.18.1 02/19/2014 03:28 AM'
+INFO  [2015-03-21 12:44:46,413] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     / (resources.MainResource)
+    GET     /begegnung (resources.BegegnungResource)
+    GET     /quoten/inputdata/ (resources.QuotenResource)
+    POST    /quoten (resources.QuotenResource)
+
+INFO  [2015-03-21 12:44:46,689] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2015-03-21 12:44:46,690] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2015-03-21 12:44:54,251] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-21 12:44:54,445] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.2 and q.quoteX <= 2.2  
+INFO  [2015-03-21 12:44:56,879] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 2.2 and q.quoteX <= 3.8  
+INFO  [2015-03-21 12:44:57,103] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 2.2 and q.quoteX <= 3.8  
+INFO  [2015-03-21 12:44:59,662] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 2.2 and q.quoteX <= 4.0  
+INFO  [2015-03-21 12:44:59,895] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 2.2 and q.quoteX <= 4.0  
+INFO  [2015-03-21 12:45:03,438] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 2.9 and q.quoteX <= 4.0  
+INFO  [2015-03-21 12:45:03,658] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 2.9 and q.quoteX <= 4.0  
+INFO  [2015-03-21 12:48:01,631] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.4 and q.quoteX <= 4.0  
+INFO  [2015-03-21 12:48:01,858] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.4 and q.quoteX <= 4.0  
+INFO  [2015-03-21 12:48:04,910] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.4 and q.quoteX <= 2.4  
+INFO  [2015-03-21 12:48:05,103] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.4 and q.quoteX <= 2.4  
+INFO  [2015-03-21 12:48:06,910] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != 'x'  and q.quoteX >= 1.0 and q.quoteX <= 2.4  
+INFO  [2015-03-21 12:48:07,103] statistics.QuotenStatistik: QUERY: select q.quoteX from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = 'x'  and q.quoteX >= 1.0 and q.quoteX <= 2.4  
+INFO  [2015-03-21 12:48:09,231] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.0 and q.quoteM1 <= 2.4  
+INFO  [2015-03-21 12:48:09,396] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.0 and q.quoteM1 <= 2.4  
+INFO  [2015-03-21 12:48:10,174] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  != '1'  and q.quoteM1 >= 1.0 and q.quoteM1 <= 2.4  
+INFO  [2015-03-21 12:48:10,337] statistics.QuotenStatistik: QUERY: select q.quoteM1 from Quote q, Begegnung b, Ergebnis e  where q.begegnung = b.id and b.id = e.begegnung and e.sieger  = '1'  and q.quoteM1 >= 1.0 and q.quoteM1 <= 2.4  
+WARN  [2015-03-21 13:44:10,774] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-03-21 13:44:10,903] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-03-21 13:44:10,907] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-03-21 13:44:10,908] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-03-21 13:44:10,909] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-03-21 13:44:10,929] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-03-21 13:44:10,930] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-03-21 13:44:10,998] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-03-21 13:44:11,060] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-03-21 13:44:11,063] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://192.168.2.66:3306/fussballquoten]
+INFO  [2015-03-21 13:44:11,064] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-03-21 13:44:11,064] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-03-21 13:44:11,072] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO  [2015-03-21 13:44:11,329] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  [2015-03-21 13:44:11,334] org.hibernate.engine.jdbc.internal.LobCreatorBuilder: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO  [2015-03-21 13:44:11,469] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  [2015-03-21 13:44:11,472] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+INFO  [2015-03-21 13:44:11,724] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000228: Running hbm2ddl schema update
+INFO  [2015-03-21 13:44:11,725] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000102: Fetching database metadata
+INFO  [2015-03-21 13:44:11,734] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000396: Updating schema
+INFO  [2015-03-21 13:44:11,835] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.BEGEGNUNG
+INFO  [2015-03-21 13:44:11,835] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, spieltyp_id, mannschaft_1_id, datum, mannschaft_2_id]
+INFO  [2015-03-21 13:44:11,835] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-03-21 13:44:11,835] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, primary, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-03-21 13:44:11,908] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.ERGEBNIS
+INFO  [2015-03-21 13:44:11,908] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [m2_tore, id, m2_h_tore, begenung_id, sieger, m1_h_tore, m1_tore]
+INFO  [2015-03-21 13:44:11,908] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_8imdnxkvggxb99gw7cehn003d]
+INFO  [2015-03-21 13:44:11,908] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_8imdnxkvggxb99gw7cehn003d, primary]
+INFO  [2015-03-21 13:44:11,976] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.HISTORY_QUOTE
+INFO  [2015-03-21 13:44:11,977] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, quote2, quote1, quote_id, datum, quotex]
+INFO  [2015-03-21 13:44:11,977] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_46qi15od5xmlqi7tikikcbtm8]
+INFO  [2015-03-21 13:44:11,977] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_46qi15od5xmlqi7tikikcbtm8, primary]
+INFO  [2015-03-21 13:44:12,032] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.MANNSCHAFT
+INFO  [2015-03-21 13:44:12,032] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-21 13:44:12,032] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-21 13:44:12,032] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-21 13:44:12,090] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.QUOTE
+INFO  [2015-03-21 13:44:12,090] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, wettanbieter_id, begegnung_id, quotem1, quotex, quotem2]
+INFO  [2015-03-21 13:44:12,090] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_df8mce9ofcqfn81yswwqqu23g, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-03-21 13:44:12,090] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_df8mce9ofcqfn81yswwqqu23g, primary, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-03-21 13:44:12,151] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.SPIELTYP
+INFO  [2015-03-21 13:44:12,151] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-21 13:44:12,151] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-21 13:44:12,151] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-21 13:44:12,227] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.WETTANBIETER
+INFO  [2015-03-21 13:44:12,227] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-21 13:44:12,227] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-21 13:44:12,227] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-21 13:44:12,228] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000232: Schema update complete
+INFO  [2015-03-21 13:44:12,246] io.dropwizard.server.ServerFactory: Starting AnalyserService
+INFO  [2015-03-21 13:44:12,361] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.18.1 02/19/2014 03:28 AM'
+INFO  [2015-03-21 13:44:12,427] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     / (resources.MainResource)
+    GET     /begegnung (resources.BegegnungResource)
+    GET     /quoten/inputdata/ (resources.QuotenResource)
+    POST    /quoten (resources.QuotenResource)
+
+INFO  [2015-03-21 13:44:12,623] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2015-03-21 13:44:12,623] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+WARN  [2015-03-21 13:46:45,099] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-03-21 13:46:45,188] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-03-21 13:46:45,193] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-03-21 13:46:45,195] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-03-21 13:46:45,196] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-03-21 13:46:45,211] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-03-21 13:46:45,211] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-03-21 13:46:45,295] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-03-21 13:46:45,355] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-03-21 13:46:45,358] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://192.168.2.66:3306/fussballquoten]
+INFO  [2015-03-21 13:46:45,359] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-03-21 13:46:45,359] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-03-21 13:46:45,360] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO  [2015-03-21 13:46:45,635] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  [2015-03-21 13:46:45,640] org.hibernate.engine.jdbc.internal.LobCreatorBuilder: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO  [2015-03-21 13:46:45,787] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  [2015-03-21 13:46:45,790] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+WARN  [2015-03-21 15:07:45,404] com.google.common.cache.CacheBuilder: ignoring weigher specified without maximumWeight
+INFO  [2015-03-21 15:07:45,512] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  [2015-03-21 15:07:45,517] org.hibernate.Version: HHH000412: Hibernate Core {4.3.7.Final}
+INFO  [2015-03-21 15:07:45,518] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2015-03-21 15:07:45,519] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2015-03-21 15:07:45,532] org.hibernate.cfg.Configuration: HHH000043: Configuring from resource: /hibernate.cfg.xml
+INFO  [2015-03-21 15:07:45,532] org.hibernate.cfg.Configuration: HHH000040: Configuration resource: /hibernate.cfg.xml
+INFO  [2015-03-21 15:07:45,586] org.hibernate.cfg.Configuration: HHH000041: Configured SessionFactory: null
+WARN  [2015-03-21 15:07:45,640] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  [2015-03-21 15:07:45,643] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://192.168.2.66:3306/fussballquoten]
+INFO  [2015-03-21 15:07:45,643] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000046: Connection properties: {user=webcrawler, password=****}
+INFO  [2015-03-21 15:07:45,643] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000006: Autocommit mode: false
+INFO  [2015-03-21 15:07:45,644] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: HHH000115: Hibernate connection pool size: 20 (min=1)
+INFO  [2015-03-21 15:07:45,883] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  [2015-03-21 15:07:45,888] org.hibernate.engine.jdbc.internal.LobCreatorBuilder: HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO  [2015-03-21 15:07:46,053] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  [2015-03-21 15:07:46,056] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+INFO  [2015-03-21 15:07:46,310] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000228: Running hbm2ddl schema update
+INFO  [2015-03-21 15:07:46,310] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000102: Fetching database metadata
+INFO  [2015-03-21 15:07:46,326] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000396: Updating schema
+INFO  [2015-03-21 15:07:46,403] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.BEGEGNUNG
+INFO  [2015-03-21 15:07:46,404] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, spieltyp_id, mannschaft_1_id, datum, mannschaft_2_id]
+INFO  [2015-03-21 15:07:46,404] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-03-21 15:07:46,404] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_35irrh9sd09sdgqvpjgmpplx1, fk_o5xd857bwlrdpje4tnwr1aud2, primary, fk_q36kjjdj3dmoc9a0s5346rs1l]
+INFO  [2015-03-21 15:07:46,463] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.ERGEBNIS
+INFO  [2015-03-21 15:07:46,463] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [m2_tore, id, m2_h_tore, begenung_id, sieger, m1_h_tore, m1_tore]
+INFO  [2015-03-21 15:07:46,464] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_8imdnxkvggxb99gw7cehn003d]
+INFO  [2015-03-21 15:07:46,464] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_8imdnxkvggxb99gw7cehn003d, primary]
+INFO  [2015-03-21 15:07:46,529] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.HISTORY_QUOTE
+INFO  [2015-03-21 15:07:46,529] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, quote2, quote1, quote_id, datum, quotex]
+INFO  [2015-03-21 15:07:46,529] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_46qi15od5xmlqi7tikikcbtm8]
+INFO  [2015-03-21 15:07:46,529] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_46qi15od5xmlqi7tikikcbtm8, primary]
+INFO  [2015-03-21 15:07:46,580] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.MANNSCHAFT
+INFO  [2015-03-21 15:07:46,580] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-21 15:07:46,580] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-21 15:07:46,580] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-21 15:07:46,648] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.QUOTE
+INFO  [2015-03-21 15:07:46,648] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, wettanbieter_id, begegnung_id, quotem1, quotex, quotem2]
+INFO  [2015-03-21 15:07:46,649] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: [fk_df8mce9ofcqfn81yswwqqu23g, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-03-21 15:07:46,649] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [fk_df8mce9ofcqfn81yswwqqu23g, primary, fk_mboh6syitjtvn08c4k0kkmw9j]
+INFO  [2015-03-21 15:07:46,697] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.SPIELTYP
+INFO  [2015-03-21 15:07:46,697] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-21 15:07:46,697] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-21 15:07:46,697] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-21 15:07:46,753] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000261: Table found: fussballquoten.WETTANBIETER
+INFO  [2015-03-21 15:07:46,753] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000037: Columns: [id, name]
+INFO  [2015-03-21 15:07:46,753] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000108: Foreign keys: []
+INFO  [2015-03-21 15:07:46,753] org.hibernate.tool.hbm2ddl.TableMetadata: HHH000126: Indexes: [primary]
+INFO  [2015-03-21 15:07:46,754] org.hibernate.tool.hbm2ddl.SchemaUpdate: HHH000232: Schema update complete
+INFO  [2015-03-21 15:07:46,771] io.dropwizard.server.ServerFactory: Starting AnalyserService
+INFO  [2015-03-21 15:07:46,885] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.18.1 02/19/2014 03:28 AM'
+INFO  [2015-03-21 15:07:46,939] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     / (resources.MainResource)
+    GET     /begegnung (resources.BegegnungResource)
+    GET     /quoten/inputdata/ (resources.QuotenResource)
+    POST    /quoten (resources.QuotenResource)
+
+INFO  [2015-03-21 15:07:47,239] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+WARN  [2015-03-21 15:07:47,239] io.dropwizard.setup.AdminEnvironment: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

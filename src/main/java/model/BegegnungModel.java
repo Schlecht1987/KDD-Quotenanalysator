@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package model;
 
 import java.text.SimpleDateFormat;
@@ -14,8 +17,18 @@ import mapping.Quote;
 import analyser.DbManage;
 import analyser.MakeQuery;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class BegegnungModel.
+ */
 public class BegegnungModel {
 
+    /**
+     * Find begegnung ergebnis.
+     *
+     * @param begegnungsID the begegnungs id
+     * @return true, if successful
+     */
     public static boolean findBegegnungErgebnis(int begegnungsID) {
 
         List<Ergebnis> erg = (List<Ergebnis>) DbManage.getQuery("from Ergebnis where begegnung = " + begegnungsID);
@@ -25,6 +38,14 @@ public class BegegnungModel {
         return false;
     }
 
+    /**
+     * Map begegnung.
+     * Mappt ein Begegnungs Objekt auf ein Match Objekt
+     * Erzeugt die Daten für die Statistik, wie theoretische Gewinnwahrscheinlichkeit
+     * und Quotenschlüssel. Mappt auch die Quotenänderungsdaten auf das Match Objekt
+     * @param b the b
+     * @return the match
+     */
     public static Match mapBegegnung(Begegnung b) {
         Match m = new Match();
         m.setDatum(b.getDatum().toString());
@@ -51,6 +72,12 @@ public class BegegnungModel {
                 qx.add(list.get(i).getQuoteX());
                 date.add(formatDate(list.get(i).getDatum()));
             }
+            //add actual quote
+            qm1.add(q.getQuoteM1());
+            qm2.add(q.getQuoteM2());
+            qx.add(q.getQuoteX());
+            date.add(formatDate(new Date()));
+            
             m.setHistoryQM1(qm1);
             m.setHistoryQM2(qm2);
             m.setHistoryQX(qx);
@@ -63,35 +90,74 @@ public class BegegnungModel {
         return m;
     }
     
+    /**
+     * Format date.
+     *
+     * @param date the date
+     * @return the string
+     */
     public static String formatDate(Date date){
         try {
-            return new SimpleDateFormat("MM-dd HH:mm").format(date);
+            return new SimpleDateFormat("dd-MM HH:mm").format(date);
         } catch (Exception e) {
             // TODO: handle exception
         }
         return date.toString();
     }
+    
+    /**
+     * Caluclate quote key.
+     *
+     * @param qm1 the qm1
+     * @param qm2 the qm2
+     * @param qx the qx
+     * @return the float
+     */
     public static float caluclateQuoteKey(float qm1, float qm2, float qx){
         float erg = 0;
         erg = (1f / (1f/qm1 + 1f/qm2 + 1f/ qx)) * 100;
         return round(erg);
     }
     
+    /**
+     * Calculate quote chance.
+     *
+     * @param q the q
+     * @return the float
+     */
     public static float calculateQuoteChance(float q){
         float erg = 0;
         erg = (1f/q) * 100;
         return round(erg);
     }
     
+    /**
+     * Round.
+     *
+     * @param f the f
+     * @return the float
+     */
     public static float round(float f) {
 
         return (float) Math.round(f * 10) / 10;
     }
+    
+    /**
+     * Gets the history quote list.
+     *
+     * @param id the id
+     * @return the history quote list
+     */
     public static List<HistoryQuote> getHistoryQuoteList(int id) {
         List<HistoryQuote> list = (List<HistoryQuote>) DbManage.getQuery("From HistoryQuote h where h.quote =" + id);
         return list;
     }
 
+    /**
+     * Gets the begegnungen.
+     *
+     * @return the begegnungen
+     */
     public static List<Match> getBegegnungen() {
         List<Match> b = new ArrayList<Match>();
         Date d = new Date();
@@ -104,6 +170,12 @@ public class BegegnungModel {
         return b;
     }
 
+    /**
+     * Gets the quoteby begegnungs id.
+     *
+     * @param id the id
+     * @return the quoteby begegnungs id
+     */
     private static Quote getQuotebyBegegnungsId(int id) {
         List<Quote> list = (List<Quote>) DbManage.getQuery(MakeQuery.getQuoteFromBegegnungsId(id));
         if (list.size() == 1) {
@@ -117,6 +189,12 @@ public class BegegnungModel {
         return q;
     }
 
+    /**
+     * Gets the HQL date format from date.
+     *
+     * @param date the date
+     * @return the HQL date format from date
+     */
     private static String getHQLDateFormatFromDate(Date date) {
         return new SimpleDateFormat("yyyy-MM-dd").format(date);
     }

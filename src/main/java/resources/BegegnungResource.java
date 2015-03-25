@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package resources;
 
 import java.text.SimpleDateFormat;
@@ -20,35 +23,21 @@ import analyser.DbManage;
 import com.codahale.metrics.annotation.Timed;
 import com.google.common.base.Optional;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class BegegnungResource.
+ */
 @Path("begegnung")
 @Produces(MediaType.APPLICATION_JSON)
 public class BegegnungResource {
-
-
-    private final AtomicLong counter;
     
-    public  BegegnungResource()
-    {
-
-        this.counter = new AtomicLong();
-    }
-
-    public BegegnungResource(String template, String defaultName) {
-
-        this.counter = new AtomicLong();
-    }
-
-
+    /**
+     * Gib begegnung.
+     *
+     * @return the list
+     */
     @GET
     public List<Match> gibBegegnung() {
-      
-
-
-        return BegegnungModel.getBegegnungen();
-     
+        return BegegnungModel.getBegegnungen();   
     }
-    private static String getHQLDateFormatFromDate(Date date) {
-        return new SimpleDateFormat("yyyy-MM-dd").format(date);
-    }
-
 }

@@ -1,3 +1,4 @@
+// Hauptmodul 
 angular.module('app', [
     'ngRoute',
     'start',
@@ -22,7 +23,7 @@ angular.module('app').config(['$routeProvider', '$locationProvider', '$translate
     function($routeProvider, $locationProvider, $translateProvider) {
         $locationProvider.html5Mode(false);
         $routeProvider.otherwise({
-            redirectTo: '/start'
+            redirectTo: '/quoten'
         });
         $translateProvider.translations('de', {
 

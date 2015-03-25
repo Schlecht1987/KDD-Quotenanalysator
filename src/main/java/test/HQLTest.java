@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package test;
 
 import java.util.Arrays;
@@ -12,15 +15,29 @@ import mapping.Quote;
 import analyser.DbManage;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class HQLTest.
+ */
 public class HQLTest {
+    
+    /** The logger. */
     private final org.slf4j.Logger logger = LoggerFactory.getLogger(HQLTest.class);
+    
+    /** The date query. */
     private String dateQuery = "";
     
+    /**
+     * Instantiates a new HQL test.
+     */
     public HQLTest(){
         
         
     }
     
+    /**
+     * Quoten overview.
+     */
     public void quotenOverview() {
         String query = "select q.quoteM1, b.mannschaft_1, b.datum "
                 +"from Begegnung b, Quote q "
@@ -40,6 +57,9 @@ public class HQLTest {
         System.out.println(l.size());
     }
     
+    /**
+     * Test query.
+     */
     public void testQuery(){
         
         String query = "select q.quoteM1 "

@@ -270,6 +270,6 @@ angular.module("start/start.tpl.html", []).run(["$templateCache", function($temp
   $templateCache.put("start/start.tpl.html",
     "<!-- Single button -->\n" +
     "<div class=\"container\">\n" +
-    "  HELLO WORLD IHR MOTHERFUCKER\n" +
+    " <div ng-model='meineVariable'> {{meineVariable}} </div>\n" +
     "</div>");
 }]);

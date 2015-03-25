@@ -28,29 +28,24 @@ angular.module('begegnung', [])
 
         ) {
             Console.group("BegegnungController entered.");
-
+            //Speicherung von Booleans ob ein Panel Sichbar ist oder nicht
             $scope.showpanel = [];
-
+            // Speicherung der Json Konstruke für die Diagramme
             $scope.charConfig = [];
 
-            $scope.eineZahl = 5;
-
+            //Zeigt ein Panel an oder versteckt es
             $scope.togglePanel = function(index) {
                 $scope.showpanel[index] = !$scope.showpanel[index];
             };
 
+            //Setzt die Daten in das Highcharts Json Konstrukt
             $scope.buildHighcharts = function(index, data) {
-                if(data.historyDate == null){
-                     data.historyDate = [];
-                     data.historyQM1 = [];
-                     data.historyQM2 = [];
-                     data.historyQX = [];
+                if (data.historyDate == null) {
+                    data.historyDate = [];
+                    data.historyQM1 = [];
+                    data.historyQM2 = [];
+                    data.historyQX = [];
                 }
-                data.historyDate.push("Aktuell");
-                data.historyQM1.push(data.quoteM1);
-                data.historyQM2.push(data.quoteM2);
-                data.historyQX.push(data.quoteX);
-
 
                 var chartObject = {
                     options: {
@@ -74,23 +69,36 @@ angular.module('begegnung', [])
 
                     series: [{
                         name: data.mannschaft_1,
-                        data:  data.historyQM1
+                        data: data.historyQM1
                     }, {
                         name: 'X',
                         data: data.historyQX
                     }, {
                         name: data.mannschaft_2,
-                        data:  data.historyQM2
+                        data: data.historyQM2
                     }],
                     title: {
-                        text: 'Quotenänderung ' + data.mannschaft_1 + ' vs ' + data.mannschaft_2
+                        text: 'Quotenänderung ' + data.mannschaft_1 + ' vs ' + data.mannschaft_2,
+                        style: {
+                            fontWeight: 'bold'
+                        }
                     },
                     xAxis: {
-                        categories: data.historyDate
+                        categories: data.historyDate,
+                        labels: {
+                            style: {
+                                fontSize: '13px',
+                                fontFamily: 'Verdana, sans-serif',
+                                fontWeight: 'bold'
+                            }
+                        }
                     },
                     yAxis: {
                         title: {
-                            text: 'Quote'
+                            text: 'Quote',
+                            style: {
+                                fontWeight: 'bold'
+                            }
                         }
                     }
 
@@ -100,7 +108,7 @@ angular.module('begegnung', [])
             };
 
 
-
+            //Initialer GET Request um Daten zu laden
             $http({
                 method: "GET",
                 url: '/begegnung/'
@@ -112,11 +120,9 @@ angular.module('begegnung', [])
 
                 }
             });
-            $scope.test = function() {
-                return "hat geklappt";
-            };
 
-            //schneidet sekunden vom timestamp string ab
+
+            //schneidet sekunden vom timestamp string der Initialdaten ab
             $scope.cutTimestamp = function(date) {
 
                 return date.substring(0, (date.length - 5));

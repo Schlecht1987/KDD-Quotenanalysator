@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package analyser;
 
 import java.util.List;
@@ -13,7 +16,14 @@ import org.slf4j.LoggerFactory;
 
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class DbManage.
+ * @author Jochen
+ */
 public class DbManage {
+    
+    /** The session factory. */
     public static SessionFactory sessionFactory;
 
     /** The logger. */
@@ -27,6 +37,9 @@ public class DbManage {
 
     }
     
+    /**
+     * Inits the sessionFactory Object
+     */
     public static void init(){
         sessionFactory = getSessionFactory();
     }
@@ -57,6 +70,13 @@ public class DbManage {
         return false;
     }
 
+    /**
+     * Update object.
+     *
+     * @param o the o
+     * @param info the info
+     * @return the boolean
+     */
     public static Boolean updateObject(Object o, String info) {
         Session session = sessionFactory.openSession();
         try {
@@ -76,6 +96,13 @@ public class DbManage {
         return false;
     }
 
+    /**
+     * Delete object.
+     *
+     * @param o the o
+     * @param info the info
+     * @return the boolean
+     */
     public static Boolean deleteObject(Object o, String info) {
         Session session = sessionFactory.openSession();
         try {
@@ -121,6 +148,11 @@ public class DbManage {
     }
     
     
+    /**
+     * Gets the session factory.
+     *
+     * @return the session factory
+     */
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             // loads configuration and mappings

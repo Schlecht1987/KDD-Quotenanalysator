@@ -1,4 +1,4 @@
-/*! kdd-quotenanalysator - v0.0.1-SNAPSHOT - 2015-03-06
+/*! kdd-quotenanalysator - v0.0.1-SNAPSHOT - 2015-03-19
  * http://localhost:11016/
  * Copyright (c) 2015 Hendrik Froemming;
  * Licensed 
@@ -27,7 +27,7 @@ angular.module('app').config(['$routeProvider', '$locationProvider', '$translate
     function($routeProvider, $locationProvider, $translateProvider) {
         $locationProvider.html5Mode(false);
         $routeProvider.otherwise({
-            redirectTo: '/start'
+            redirectTo: '/quoten'
         });
         $translateProvider.translations('de', {
 
@@ -115,16 +115,16 @@ angular.module('begegnung', [])
             };
 
             $scope.buildHighcharts = function(index, data) {
-                if(data.historyDate == null){
-                     data.historyDate = [];
-                     data.historyQM1 = [];
-                     data.historyQM2 = [];
-                     data.historyQX = [];
+                if (data.historyDate == null) {
+                    data.historyDate = [];
+                    data.historyQM1 = [];
+                    data.historyQM2 = [];
+                    data.historyQX = [];
                 }
-                data.historyDate.push("Aktuell");
-                data.historyQM1.push(data.quoteM1);
-                data.historyQM2.push(data.quoteM2);
-                data.historyQX.push(data.quoteX);
+                //  data.historyDate.push("Aktuell");
+                //   data.historyQM1.push(data.quoteM1);
+                //   data.historyQM2.push(data.quoteM2);
+                //   data.historyQX.push(data.quoteX);
 
 
                 var chartObject = {
@@ -149,23 +149,36 @@ angular.module('begegnung', [])
 
                     series: [{
                         name: data.mannschaft_1,
-                        data:  data.historyQM1
+                        data: data.historyQM1
                     }, {
                         name: 'X',
                         data: data.historyQX
                     }, {
                         name: data.mannschaft_2,
-                        data:  data.historyQM2
+                        data: data.historyQM2
                     }],
                     title: {
-                        text: 'Quotenänderung ' + data.mannschaft_1 + ' vs ' + data.mannschaft_2
+                        text: 'Quotenänderung ' + data.mannschaft_1 + ' vs ' + data.mannschaft_2,
+                        style: {
+                            fontWeight: 'bold'
+                        }
                     },
                     xAxis: {
-                        categories: data.historyDate
+                        categories: data.historyDate,
+                        labels: {
+                            style: {
+                                fontSize: '13px',
+                                fontFamily: 'Verdana, sans-serif',
+                                fontWeight: 'bold'
+                            }
+                        }
                     },
                     yAxis: {
                         title: {
-                            text: 'Quote'
+                            text: 'Quote',
+                            style: {
+                                fontWeight: 'bold'
+                            }
                         }
                     }
 
@@ -345,15 +358,15 @@ angular.module('quoten', [])
             $scope.creatPostObject = function() {
 
                 var postObject = {
-                    quotenTyp: $scope.quotenTyp,
+                    oddsTyp: $scope.quotenTyp,
                     dateFrom: $scope.from,
                     dateUntil: $scope.until,
-                    quotengenauigkeit: $scope.accuracy,
-                    quotenRangemin: $scope.myRangeSliderValue[0],
-                    quotenRangeMax: $scope.myRangeSliderValue[1],
+                    oddsAccuracy: $scope.accuracy,
+                    oddsRangeMin: $scope.myRangeSliderValue[0],
+                    oddsRangeMax: $scope.myRangeSliderValue[1],
                     extendedFilter: $scope.extendedSearch,
-                    spieltyp: $scope.selectedSpieltyp,
-                    mannschaft: $scope.selectedMannschaften
+                    gameType: $scope.selectedSpieltyp,
+                    team: $scope.selectedMannschaften
                 };
 
                 return postObject;
@@ -405,7 +418,10 @@ angular.module('quoten', [])
                                     zoomType: 'x'
                                 },
                                 title: {
-                                    text: 'Quoten Analyse'
+                                    text: 'Quoten Analyse',
+                                    style: {
+                                        fontWeight: 'bold'
+                                    }
                                 },
 
                                 xAxis: {
@@ -414,15 +430,28 @@ angular.module('quoten', [])
                                     labels: {
                                         style: {
                                             fontSize: '13px',
-                                            fontFamily: 'Verdana, sans-serif'
+                                            fontFamily: 'Verdana, sans-serif',
+                                            fontWeight: 'bold'
                                         }
                                     }
                                 },
                                 yAxis: {
                                     min: 0,
-                                    max: 120,
+                                    max: 100,
                                     title: {
-                                        text: '%'
+                                        text: '%',
+                                        style: {
+                                            fontSize: '13px',
+                                            fontFamily: 'Verdana, sans-serif',
+                                            fontWeight: 'bold'
+                                        }
+                                    },
+                                    labels: {
+                                        style: {
+                                            fontSize: '13px',
+                                            fontFamily: 'Verdana, sans-serif',
+                                            fontWeight: 'bold'
+                                        }
                                     }
                                 },
                                 legend: {
@@ -433,7 +462,12 @@ angular.module('quoten', [])
                                         borderWidth: 0,
                                         dataLabels: {
                                             enabled: true,
-                                            format: '{point.y:.1f}%<br/>  S:{point.anzahl} <br/> <span style="color:{point.erwartungswertColor}"> E:{point.erwartungswert}</span>'
+                                            format: '{point.y:.1f}%<br/>  S:{point.anzahl} <br/> <span style="color:{point.erwartungswertColor}"> E:{point.erwartungswert}</span>',
+                                            style: {
+                                                fontSize: '15px',
+                                                fontFamily: 'Verdana, sans-serif',
+                                                fontWeight: 'bold'
+                                            }
                                         }
                                     },
                                     column: {
@@ -576,9 +610,7 @@ angular.module('start', [])
     ) {
       Console.group("StartController entered.");
 
-      $scope.goToDataDelete = function() {
-        $location.path("/delete");
-      };
+      $scope.meineVariable = "Hello World";
 
       Console.groupEnd();
     }
@@ -1873,7 +1905,7 @@ angular.module("start/start.tpl.html", []).run(["$templateCache", function($temp
   $templateCache.put("start/start.tpl.html",
     "<!-- Single button -->\n" +
     "<div class=\"container\">\n" +
-    "  HELLO WORLD IHR MOTHERFUCKER\n" +
+    " <div ng-model='meineVariable'> {{meineVariable}} </div>\n" +
     "</div>");
 }]);
 

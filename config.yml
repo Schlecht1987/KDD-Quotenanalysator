@@ -60,12 +60,12 @@ logging:
       threshold: ALL
 
       # Using this logfile path for developing
-      currentLogFilename: ./logs/operating-Numbers.log
-      archivedLogFilenamePattern: ./logs/operating-Numbers-%d.log.gz
+      currentLogFilename: ./logs/kdd-quotenanalyser.log
+      archivedLogFilenamePattern: ./logs/kdd-quotenanalyser-%d.log.gz
 
       # Using this logfile path for production
-      #currentLogFilename: /var/log/opnum/opnum.log
-      #archivedLogFilenamePattern: /var/log/opnum/opnum-%d.log.gz
+      #currentLogFilename: /var/log/kdd/kdd.log
+      #archivedLogFilenamePattern: /var/log/kdd/kdd-%d.log.gz
 
       archive: true
       archivedFileCount: 5
