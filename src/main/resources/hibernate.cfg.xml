@@ -13,8 +13,8 @@
 
 		<!-- Assume test is the database name -->
 		<property name="hibernate.connection.url">
-			jdbc:mysql://192.168.2.66:3306/fussballquoten  
-			  <!--jdbc:mysql://localhost/fussballquoten-->
+			 <!--jdbc:mysql://192.168.2.66:3306/fussballquoten --> 
+			  jdbc:mysql://localhost/fussballquoten
 		</property>
 		<property name="hibernate.connection.username">
 			webcrawler

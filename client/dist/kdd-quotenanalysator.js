@@ -1,8 +1,9 @@
-/*! kdd-quotenanalysator - v0.0.1-SNAPSHOT - 2015-03-19
+/*! kdd-quotenanalysator - v0.0.1-SNAPSHOT - 2015-03-31
  * http://localhost:11016/
  * Copyright (c) 2015 Hendrik Froemming;
  * Licensed 
  */
+// Hauptmodul 
 angular.module('app', [
     'ngRoute',
     'start',
@@ -18,7 +19,8 @@ angular.module('app', [
     'ui.bootstrap',
     'highcharts-ng',
     'myDatepicker',
-    'bootstrapSlider'
+    'bootstrapSlider',
+    'angularUtils.directives.dirPagination'
 
 ]);
 
@@ -62,9 +64,37 @@ angular.module('app').controller('AppCtrl', [
         $filter
     ) {
         Console.group("AppController entered");
-        //The value for the Login Modal Loginbutton
-        $scope.loginButtonValue = "Login";
+        $scope.comingmatches = 0;
+        $scope.gametypes = 0;
+        $scope.matches = 0;
+        $scope.matcheswithoutresult = 0;
+        $scope.oddsChanges = 0;
+        $scope.results = 0;
+        $scope.teams = 0;
 
+        $scope.getOverviewData = function() {
+            console.log("try to get initial data");
+            $http.get('/inputdata/').
+            success(function(data, status, headers, config) {
+
+                Console.debug("data", data);
+                $scope.comingmatches = data.comingmatches;
+                $scope.gametypes = data.gametypes;
+                $scope.matches = data.matches;
+                $scope.matcheswithoutresult = data.matcheswithoutresult;
+                $scope.oddsChanges = data.oddsChanges;
+                $scope.results = data.results;
+                $scope.teams = data.teams;
+
+            }).
+            error(function(data, status, headers, config) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+
+            });
+
+        };
+        $scope.getOverviewData();
 
         // Apply the theme
         var highchartsOptions = Highcharts.setOptions(Highcharts.theme);
@@ -91,6 +121,7 @@ angular.module('begegnung', [])
         '$cookieStore',
         '$compile',
         '$location',
+        '$timeout',
         function(
             Console,
             $translate,
@@ -99,33 +130,54 @@ angular.module('begegnung', [])
             $filter,
             $cookieStore,
             $compile,
-            $location
+            $location,
+            $timeout
 
         ) {
             Console.group("BegegnungController entered.");
-
+            //Speicherung von Booleans ob ein Panel Sichbar ist oder nicht
             $scope.showpanel = [];
-
+            // Speicherung der Json Konstruke für die Diagramme
             $scope.charConfig = [];
 
-            $scope.eineZahl = 5;
+            $scope.isLoading = false;
 
-            $scope.togglePanel = function(index) {
+            //Zeigt ein Panel an oder versteckt es
+            $scope.togglePanel = function(index, data) {
                 $scope.showpanel[index] = !$scope.showpanel[index];
+
+                if (typeof $scope.charConfig[index] !== 'undefined') {
+
+                } else {
+                    $timeout(function() {
+                        $scope.buildHighcharts(data);
+                    }, 30);
+                }
             };
 
-            $scope.buildHighcharts = function(index, data) {
+            $scope.paginationPageChange = function() {
+                console.log("Pagination change");
+                for (var i = 0; i < $scope.showpanel.length; i++) {
+                    $scope.showpanel[i] = false;
+                    console.log($scope.showpanel[i]);
+                }
+            };
+
+            $scope.currentPage = 1;
+
+            //Setzt die Daten in das Highcharts Json Konstrukt
+            $scope.buildHighcharts = function(data) {
                 if (data.historyDate == null) {
                     data.historyDate = [];
                     data.historyQM1 = [];
                     data.historyQM2 = [];
                     data.historyQX = [];
                 }
-                //  data.historyDate.push("Aktuell");
-                //   data.historyQM1.push(data.quoteM1);
-                //   data.historyQM2.push(data.quoteM2);
-                //   data.historyQX.push(data.quoteX);
 
+                data.historyDate.push("Aktuell");
+                data.historyQM1.push(data.quoteM1);
+                data.historyQM2.push(data.quoteM2);
+                data.historyQX.push(data.quoteX);
 
                 var chartObject = {
                     options: {
@@ -184,31 +236,71 @@ angular.module('begegnung', [])
 
 
                 };
-                $scope.charConfig[index] = chartObject;
+                $scope.charConfig[data.id] = chartObject;
             };
 
+            // Loading Anzeige Aktivieren
+            $scope.startLoading = function() {
+                $scope.isLoading = true;
+            };
+            // Loading Anzeige Deaktivieren
+            $scope.finishLoading = function() {
+                $timeout(function() {
+                    $scope.isLoading = false;
+                }, 10);
+            };
 
-
+            $scope.expectationColorM1 = [];
+            $scope.expectationColorX = [];
+            $scope.expectationColorM2 = [];
+            //Initialer GET Request um Daten zu laden
+            $scope.startLoading();
             $http({
                 method: "GET",
                 url: '/begegnung/'
             }).
             success(function(data) {
                 if (!data.error) {
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].quoteM1Expecation < 0) {
+                            $scope.expectationColorM1[data[i].id] = "#FF0000";
+                        } else if (data[i].quoteM1Expecation > 0) {
+                            $scope.expectationColorM1[data[i].id] = "#007A29";
+                        } else {
+                            $scope.expectationColorM1[data[i].id] = "#FFFFFF";
+                        }
+
+                        if (data[i].quoteXExpecation < 0) {
+                            $scope.expectationColorX[data[i].id] = "#FF0000";
+                        } else if (data[i].quoteXExpecation > 0) {
+                            $scope.expectationColorX[data[i].id] = "#007A29";
+                        } else {
+                            $scope.expectationColorX[data[i].id] = "#FFFFFF";
+                        }
+
+                        if (data[i].quoteM2Expecation < 0) {
+                            $scope.expectationColorM2[data[i].id] = "#FF0000";
+                        } else if (data[i].quoteM2Expecation > 0) {
+                            $scope.expectationColorM2[data[i].id] = "#007A29";
+                        } else {
+                            $scope.expectationColorM2[data[i].id] = "#FFFFFF";
+                        }
+
+                    }
                     $scope.begegnungData = data;
                     console.debug(data);
-
+                    $scope.finishLoading();
                 }
             });
-            $scope.test = function() {
-                return "hat geklappt";
-            };
 
-            //schneidet sekunden vom timestamp string ab
+
+            //schneidet sekunden vom timestamp string der Initialdaten ab
             $scope.cutTimestamp = function(date) {
 
                 return date.substring(0, (date.length - 5));
             };
+
+
             Console.groupEnd();
         }
     ]);
@@ -248,12 +340,15 @@ angular.module('quoten', [])
             //-------------------------Filter---------------------------------------
             //1= Alle   2= Heim   3 = Unentschieden   4= Gast
             $scope.quotenTyp = 1;
+            //Quotenfilter Datum von
             $scope.from = "2013-12-01";
+             //Quotenfilter Datum bis
             $scope.until = "2015-12-01";
             //Quotengenauigkeit
             $scope.accuracy = 0.1;
+            //Quotenbereich
             $scope.myRangeSliderValue = [1.2, 2.2];
-
+            //Boolean der prüft ob grade Daten geladen werden
             $scope.isLoading = false;
 
             //Jquery für range slider init
@@ -265,18 +360,19 @@ angular.module('quoten', [])
                 $scope.rangesliderChange();
             });
 
-
-
+            //Funktion die beim Ändern der Quotengenauigkeit aufgerufen wird
             $scope.sliderChange = function() {
                 $scope.neumalen();
             };
-
+            //Funktion die beim Ändern des Quotenbereichts aufgerufen wird
             $scope.rangesliderChange = function() {
                 $scope.myRangeSliderValue = $scope.myRangeSlider.slider('getValue');
                 //Wichtig
                 $scope.$apply();
             };
-
+            //Funktion die beim Änderun des Quotentypes ausgeführt wird
+            //setzt den neuen Quotentyp und fragt neue Daten ab und 
+            // pusht diese in das Highcharts Data Array
             $scope.changeQuotentyp = function(value) {
                 if (value <= 4 && value >= 1) {
                     $scope.quotenTyp = value;
@@ -284,7 +380,7 @@ angular.module('quoten', [])
                     $scope.pushChart();
                 }
             };
-
+            //Erzeugt zum Quotentyp den entsprechenden String
             $scope.getLegendName = function() {
                 if ($scope.quotenTyp === 1) {
                     return "Alle";
@@ -305,56 +401,63 @@ angular.module('quoten', [])
             //----------------Erweiterter Filter -----------------------------------------
             //Boolean für den erweiterten filter content
             $scope.extendedSearch = true;
+            //Liste mit Spieltypen für den Quotenfilter
             $scope.spieltyp = [];
-            //Kopie des arrays erzeugen
+            //Kopie des arrays erzeugen für reset
             $scope.spieltyptemp = [];
+            //Ausgewählte Spieltypen vom Quotenfilter
             $scope.selectedSpieltyp = [];
+            //Liste mit Mannschaften für den Quotenfilter
             $scope.mannschaften = [];
-            //Kopie des arrays erzeugen
+            //Kopie des arrays erzeugen für reset
             $scope.mannschaftentemp = [];
+            //Ausgewählte  Mannschaften von dem Quotenfilter
             $scope.selectedMannschaften = [];
 
             //Filter Input Feld
             $scope.searchMannschaft = "";
 
+            $scope.searchSpieltyp ="";
+
+            //resettet den Mannschaft Array
             $scope.resetTeam = function() {
                 $scope.selectedMannschaften = null;
                 $scope.selectedMannschaften = [];
                 $scope.mannschaften = null;
                 $scope.mannschaften = $scope.mannschaftentemp.slice();
             };
-
+            //resettet den Spieltyp array
             $scope.resetSpieltyp = function() {
                 $scope.selectedSpieltyp = null;
                 $scope.selectedSpieltyp = [];
                 $scope.spieltyp = null;
                 $scope.spieltyp = $scope.spieltyptemp.slice();
             };
-
+            //Nimmt ein Team in den Mannschafts Array auf
             $scope.takeTeam = function(name) {
                 $scope.resetSpieltyp();
                 $scope.selectedMannschaften.push(name);
                 $scope.mannschaften.splice($scope.mannschaften.indexOf(name), 1);
             };
-
+            // Entfernt eine Team aus dem Mannschafts Array
             $scope.removeTeam = function(name) {
                 $scope.mannschaften.push(name);
                 $scope.selectedMannschaften.splice($scope.selectedMannschaften.indexOf(name), 1);
             };
 
 
-
+             //Fügt ein Spieltyp in den Spieltyp Array ein
             $scope.takeSpieltyp = function(name) {
                 $scope.resetTeam();
                 $scope.selectedSpieltyp.push(name);
                 $scope.spieltyp.splice($scope.spieltyp.indexOf(name), 1);
             };
-
+             //Nimmt ein Spieltyp aus dem Spieltyp Array 
             $scope.removeSpieltyp = function(name) {
                 $scope.spieltyp.push(name);
                 $scope.selectedSpieltyp.splice($scope.selectedSpieltyp.indexOf(name), 1);
             };
-
+            // Erzeugung des Quotenfilter POST Objektes
             $scope.creatPostObject = function() {
 
                 var postObject = {
@@ -373,7 +476,7 @@ angular.module('quoten', [])
             };
 
             //---------------------------Initial Data--------------------------------
-
+            //GET Request für initial Daten ( Liste mit Mannschaften und allen Spieltypen)
             $scope.getInitialData = function() {
 
                 $http.get('/quoten/inputdata/').
@@ -396,7 +499,7 @@ angular.module('quoten', [])
             };
             $scope.getInitialData();
             //----------------------Highcharts-----------------------------------
-
+            //Erzeugung des Diagramm durch Zuweisung des Highcharts Json Konstrukt
             $scope.drawChart = function() {
                 //get the data from the server and creates the chart
                 $http({
@@ -490,7 +593,9 @@ angular.module('quoten', [])
                     }
                 });
             };
-
+            // POST Resonponse Daten parser Funktion
+            // Mappt die Json Daten in ein für Highcharts
+            // Konfortableres Format
             $scope.createChartInfos = function(data) {
                 var infos = [];
                 for (var i = 0; i < data.prozent.length; i++) {
@@ -521,16 +626,17 @@ angular.module('quoten', [])
                 }
                 return infos;
             };
-
+            // Diagramm neu Zeichnen
             $scope.neumalen = function() {
                 $scope.startLoading();
                 $scope.drawChart();
                 $scope.finishLoading();
             };
+            // Loading Anzeige Aktivieren
             $scope.startLoading = function() {
                 $scope.isLoading = true;
             };
-
+            // Loading Anzeige Deaktivieren
             $scope.finishLoading = function() {
                 $timeout(function() {
                     $scope.isLoading = false;
@@ -538,7 +644,8 @@ angular.module('quoten', [])
 
 
             };
-
+            // Neue Diagramm Daten abfragen, und diese 
+            // in das aktuelle Diagramm einfügen
             $scope.pushChart = function() {
                 if (typeof $scope.chartConfig === "undefined") {
                     $scope.neumalen();
@@ -578,6 +685,8 @@ angular.module('quoten', [])
             Console.groupEnd();
         }
     ]);
+
+//Nicht Implementierte Startseite
 
 angular.module('start', [])
   .config(['$routeProvider',
@@ -1637,28 +1746,33 @@ angular.module('templates.app', ['begegnung/begegnung.tpl.html', 'quoten/quoten.
 
 angular.module("begegnung/begegnung.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("begegnung/begegnung.tpl.html",
-    "<div class=\"col-lg-3 col-lg-offset-9\">\n" +
-    "\n" +
-    "    <input type=\"text\" class=\"form-control\" placeholder=\"Suche\" ng:model=\"data.search\">\n" +
-    "\n" +
+    "<div class=\"row\">\n" +
+    "    <div class=\"col-lg-6 col-lg-offset-3\" id=\"begegnung_search\">\n" +
+    "        <input type=\"text\" class=\"form-control\" placeholder=\"Suche\" ng:model=\"data.search\">\n" +
+    "    </div>\n" +
     "</div>\n" +
-    "\n" +
-    "\n" +
     "<div class=\"col-lg-12\">\n" +
-    "    <div class=\"panel panel-default \" ng-repeat=\"value in begegnungData | filter:data.search| orderBy:['datum']\">\n" +
+    "    <div class=\"panel panel-default \" dir-paginate=\"value in begegnungData | filter:data.search| orderBy:['datum'] | itemsPerPage: 10 \" current-page=\"currentPage\">\n" +
     "        <div class=\"panel-heading \">\n" +
     "            <div class=\"row\">\n" +
-    "                <div class=\"col-lg-3\">\n" +
+    "                <div class=\"col-lg-10\">\n" +
+    "                    <p class=\"text-center\"><b>Liga: {{value.spieltyp}}</b></p>\n" +
+    "                </div>\n" +
+    "                <div class=\"col-lg-2\">\n" +
+    "                    <p class=\"text-center\"> {{cutTimestamp(value.datum)}} </p>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "            <div class=\"row\">\n" +
+    "                <div class=\"col-lg-4\">\n" +
     "                    <div class=\"row row-border\">\n" +
-    "                        <div class=\"col-lg-9\">\n" +
+    "                        <div class=\"col-lg-10\">\n" +
     "                            {{value.mannschaft_1}}\n" +
     "                        </div>\n" +
-    "                        <div class=\"col-lg-3\">\n" +
+    "                        <div class=\"col-lg-2\">\n" +
     "                            {{value.quoteM1}}\n" +
     "                        </div>\n" +
     "                    </div>\n" +
     "                </div>\n" +
-    "\n" +
     "                <div class=\"col-lg-2\">\n" +
     "                    <div class=\"row row-border\">\n" +
     "                        <div class=\"col-lg-9\">\n" +
@@ -1669,56 +1783,74 @@ angular.module("begegnung/begegnung.tpl.html", []).run(["$templateCache", functi
     "                        </div>\n" +
     "                    </div>\n" +
     "                </div>\n" +
-    "\n" +
-    "                <div class=\"col-lg-3\">\n" +
+    "                <div class=\"col-lg-4\">\n" +
     "                    <div class=\"row row-border\">\n" +
-    "                        <div class=\"col-lg-9\">\n" +
+    "                        <div class=\"col-lg-10\">\n" +
     "                            {{value.mannschaft_2}}\n" +
     "                        </div>\n" +
-    "                        <div class=\"col-lg-3\">\n" +
+    "                        <div class=\"col-lg-2\">\n" +
     "                            {{value.quoteM2}}\n" +
     "                        </div>\n" +
     "                    </div>\n" +
     "                </div>\n" +
-    "\n" +
-    "                <div class=\"col-lg-2\">\n" +
-    "                    {{value.spieltyp}}\n" +
-    "                </div>\n" +
-    "                <div class=\"col-lg-2\">\n" +
-    "                    {{cutTimestamp(value.datum)}}\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "\n" +
-    "            <div class=\"row\">\n" +
-    "                <div class=\"col-lg-3\">\n" +
-    "                    <p class=\"text-center\">{{value.quoteM1Chance}}% </p>\n" +
-    "                </div>\n" +
-    "                <div class=\"col-lg-2\">\n" +
-    "                   <p class=\"text-center\"> {{value.quoteXChance}}% </p>\n" +
-    "                </div>\n" +
-    "                <div class=\"col-lg-3\">\n" +
-    "                   <p class=\"text-center\"> {{value.quoteM2Chance}}% </p>\n" +
-    "                </div>\n" +
     "                <div class=\"col-lg-2\">\n" +
     "                    Quotenschlüssel: {{value.quotenkey}}\n" +
     "                </div>\n" +
+    "            </div>\n" +
+    "            <div class=\"row\">\n" +
+    "                <div class=\"col-lg-10\">\n" +
+    "                    <div class=\"row\">\n" +
+    "                        <div class=\"col-lg-4\">\n" +
+    "                            <p class=\"text-center\"><b>T: {{value.quoteM1Chance}}%&nbsp;&nbsp;&nbsp;R: {{value.quoteM1RealChance}}%&nbsp;&nbsp;&nbsp;S: {{value.quoteM1CountGames}}&nbsp;&nbsp;&nbsp;<span ng-style=\"{color:expectationColorM1[value.id]}\">E: {{value.quoteM1Expecation}}</span>&nbsp;&nbsp;&nbsp;Q: {{value.quoteM1UsedQuoteForStats}}</b></p>\n" +
+    "                        </div>\n" +
+    "                        <div class=\"col-lg-4\">\n" +
+    "                            <p class=\"text-center\"><b>T:{{value.quoteXChance}}%&nbsp;&nbsp; R:{{value.quoteXRealChance}}%&nbsp;&nbsp;S:{{value.quoteXCountGames}}&nbsp;&nbsp;<span ng-style=\"{color:expectationColorX[value.id]}\">E:{{value.quoteXExpecation}}</span>&nbsp;&nbsp;Q:{{value.quoteXUsedQuoteForStats}}</b></p>\n" +
+    "                        </div>\n" +
+    "                        <div class=\"col-lg-4\">\n" +
+    "                            <p class=\"text-center\"><b>T: {{value.quoteM2Chance}}%&nbsp;&nbsp;&nbsp;R: {{value.quoteM2RealChance}}%&nbsp;&nbsp;&nbsp;S: {{value.quoteM2CountGames}}&nbsp;&nbsp;&nbsp;<span ng-style=\"{color:expectationColorM2[value.id]}\">E: {{value.quoteM2Expecation}}</span>&nbsp;&nbsp;&nbsp;Q: {{value.quoteM2UsedQuoteForStats}}</b></p>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
     "                <div class=\"col-lg-2\">\n" +
-    "\n" +
-    "                    <button type=\"button\" class=\"btn btn-default\" aria-label=\"Left Align\" ng-click=\"togglePanel($index);buildHighcharts($index, value)\">\n" +
+    "                    <button type=\"button\" class=\"btn btn-default\" aria-label=\"Left Align\" ng-click=\"togglePanel($index,value)\">\n" +
     "                        <span class=\"glyphicon glyphicon-menu-down\" aria-hidden=\"true\"></span>\n" +
     "                    </button>\n" +
     "                </div>\n" +
-    "\n" +
     "            </div>\n" +
-    "\n" +
-    "\n" +
-    "\n" +
     "        </div>\n" +
     "        <div class=\"panel-body\" ng-show=\"showpanel[$index] == true\">\n" +
     "            <div class=\"row\">\n" +
     "                <div class=\"col-lg-12 \">\n" +
-    "                    <highchart class=\"h-chart\" config=\"charConfig[$index]\"></highchart>\n" +
+    "                    <highchart class=\"h-chart\" config=\"charConfig[value.id]\"></highchart>\n" +
     "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-lg-1 col-lg-offset-6\">\n" +
+    "        <div class=\"loader\" title=\"5\" ng-hide=\"!isLoading\">\n" +
+    "            <svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" width=\"24px\" height=\"30px\" viewBox=\"0 0 24 30\" style=\"enable-background:new 0 0 50 50;\" xml:space=\"preserve\">\n" +
+    "                <rect x=\"0\" y=\"13\" width=\"4\" height=\"5\" fill=\"#333\">\n" +
+    "                    <animate attributeName=\"height\" attributeType=\"XML\" values=\"5;21;5\" begin=\"0s\" dur=\"0.6s\" repeatCount=\"indefinite\" />\n" +
+    "                    <animate attributeName=\"y\" attributeType=\"XML\" values=\"13; 5; 13\" begin=\"0s\" dur=\"0.6s\" repeatCount=\"indefinite\" />\n" +
+    "                </rect>\n" +
+    "                <rect x=\"10\" y=\"13\" width=\"4\" height=\"5\" fill=\"#333\">\n" +
+    "                    <animate attributeName=\"height\" attributeType=\"XML\" values=\"5;21;5\" begin=\"0.15s\" dur=\"0.6s\" repeatCount=\"indefinite\" />\n" +
+    "                    <animate attributeName=\"y\" attributeType=\"XML\" values=\"13; 5; 13\" begin=\"0.15s\" dur=\"0.6s\" repeatCount=\"indefinite\" />\n" +
+    "                </rect>\n" +
+    "                <rect x=\"20\" y=\"13\" width=\"4\" height=\"5\" fill=\"#333\">\n" +
+    "                    <animate attributeName=\"height\" attributeType=\"XML\" values=\"5;21;5\" begin=\"0.3s\" dur=\"0.6s\" repeatCount=\"indefinite\" />\n" +
+    "                    <animate attributeName=\"y\" attributeType=\"XML\" values=\"13; 5; 13\" begin=\"0.3s\" dur=\"0.6s\" repeatCount=\"indefinite\" />\n" +
+    "                </rect>\n" +
+    "            </svg>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</div>\n" +
+    "<div class=\"row\">\n" +
+    "    <div class=\"col-log-8 col-lg-offset-4\">\n" +
+    "        <div class=\"row\">\n" +
+    "            <div class=\"col-log-11 col-lg-offset-1\">\n" +
+    "                <dir-pagination-controls max-size=\"\" direction-links=\"\" boundary-links=\"\" on-page-change=\"paginationPageChange()\" pagination-id=\"\" template-url=\"../../vendor/bower_components/angular-utils-pagination/dirPagination.tpl.html\">\n" +
+    "                </dir-pagination-controls>\n" +
     "            </div>\n" +
     "        </div>\n" +
     "    </div>\n" +
@@ -1841,7 +1973,8 @@ angular.module("quoten/quoten.tpl.html", []).run(["$templateCache", function($te
     "            </div>\n" +
     "            <div class=\"panel-body\">\n" +
     "                <div class=\"list-group listoverflow\">\n" +
-    "                    <a ng-repeat=\"item in spieltyp \" class=\"list-group-item\" ng-click=\"takeSpieltyp(item)\">\n" +
+    "                <input type=\"text\" ng-model=\"searchSpieltyp\" value=\"\" placeholder=\"Name einer Liga\" class=\"form-control\"> </input>\n" +
+    "                    <a ng-repeat=\"item in spieltyp | filter:searchSpieltyp\" class=\"list-group-item\" ng-click=\"takeSpieltyp(item)\">\n" +
     "                        {{item}}\n" +
     "                     </a>\n" +
     "                </div>\n" +
@@ -1909,7 +2042,7 @@ angular.module("start/start.tpl.html", []).run(["$templateCache", function($temp
     "</div>");
 }]);
 
-angular.module('templates.common', ['directives/angular-slider.tpl.html']);
+angular.module('templates.common', ['directives/angular-slider.tpl.html', '../../vendor/bower_components/angular-utils-pagination/dirPagination.tpl.html']);
 
 angular.module("directives/angular-slider.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("directives/angular-slider.tpl.html",
@@ -1952,4 +2085,26 @@ angular.module("directives/angular-slider.tpl.html", []).run(["$templateCache", 
     "    {{index.alert}}\n" +
     "  </div>\n" +
     "</div>");
+}]);
+
+angular.module("../../vendor/bower_components/angular-utils-pagination/dirPagination.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../../vendor/bower_components/angular-utils-pagination/dirPagination.tpl.html",
+    "<ul class=\"pagination\" ng-if=\"1 < pages.length\">\n" +
+    "    <li ng-if=\"boundaryLinks\" ng-class=\"{ disabled : pagination.current == 1 }\">\n" +
+    "        <a href=\"\" ng-click=\"setCurrent(1)\">&laquo;</a>\n" +
+    "    </li>\n" +
+    "    <li ng-if=\"directionLinks\" ng-class=\"{ disabled : pagination.current == 1 }\">\n" +
+    "        <a href=\"\" ng-click=\"setCurrent(pagination.current - 1)\">&lsaquo;</a>\n" +
+    "    </li>\n" +
+    "    <li ng-repeat=\"pageNumber in pages track by $index\" ng-class=\"{ active : pagination.current == pageNumber, disabled : pageNumber == '...' }\">\n" +
+    "        <a href=\"\" ng-click=\"setCurrent(pageNumber)\">{{ pageNumber }}</a>\n" +
+    "    </li>\n" +
+    "\n" +
+    "    <li ng-if=\"directionLinks\" ng-class=\"{ disabled : pagination.current == pagination.last }\">\n" +
+    "        <a href=\"\" ng-click=\"setCurrent(pagination.current + 1)\">&rsaquo;</a>\n" +
+    "    </li>\n" +
+    "    <li ng-if=\"boundaryLinks\"  ng-class=\"{ disabled : pagination.current == pagination.last }\">\n" +
+    "        <a href=\"\" ng-click=\"setCurrent(pagination.last)\">&raquo;</a>\n" +
+    "    </li>\n" +
+    "</ul>");
 }]);

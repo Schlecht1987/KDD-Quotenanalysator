@@ -14,51 +14,49 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @JsonInclude(Include.NON_NULL)
 public class QuotenFilter {
 
-    /** 1= Alle| 2= Heim   3 = Unentschieden 4= Gast. */
+    /** 1= Alle| 2= Heim 3 = Unentschieden 4= Gast. */
     @JsonProperty
     private int      oddsTyp;
-    
+
     /** The date from. */
     @JsonProperty
     private String   dateFrom;
-    
+
     /** The date until. */
     @JsonProperty
     private String   dateUntil;
-    
+
     /** The odds accuracy. */
     @JsonProperty
     private float    oddsAccuracy;
-    
+
     /** The odds range min. */
     @JsonProperty
     private float    oddsRangeMin;
-    
+
     /** The odds range max. */
     @JsonProperty
     private float    oddsRangeMax;
-    
+
     /** The extended filter. */
     @JsonProperty
     private boolean  extendedFilter;
-    
+
     /** The game type. */
     @JsonProperty
     private String[] gameType;
-    
+
     /** The team. */
     @JsonProperty
     private String[] team;
-
-    
 
     /**
      * Prints the.
      */
     public void print() {
-        String print = "Quotentyp: "+this.oddsTyp+" Datum von: " + this.getDateFrom() + " bis " + this.getDateUntil() + " Quotengenauigkeit: " + this.oddsAccuracy
-                + " Min Range: " + this.oddsRangeMin + " Max Range: " + this.oddsRangeMax + " Extended Filter an: "
-                + this.extendedFilter + "  Anzhal Mannschaften: " + team.length + " ";
+        String print = "Quotentyp: " + this.oddsTyp + " Datum von: " + this.getDateFrom() + " bis " + this.getDateUntil()
+                + " Quotengenauigkeit: " + this.oddsAccuracy + " Min Range: " + this.oddsRangeMin + " Max Range: " + this.oddsRangeMax
+                + " Extended Filter an: " + this.extendedFilter + "  Anzhal Mannschaften: " + team.length + " ";
         for (int i = 0; i < team.length; i++) {
             print += "Mannschaft " + (i + 1) + " " + team[i] + " ";
         }
@@ -69,9 +67,20 @@ public class QuotenFilter {
         System.out.println(print);
     }
 
+    public QuotenFilter() {
 
+    }
 
-    
+    public QuotenFilter(int oddtyp) {
+        this.setOddsTyp(oddtyp);
+        this.setDateUntil("2020-12-31");
+        this.setDateFrom("2013-12-01");
+        this.setExtendedFilter(false);
+        this.setOddsAccuracy(0.1f);
+        this.setOddsRangeMax(1000.0f);
+        this.setOddsRangeMin(1.0f);
+    }
+
     /**
      * Gets the odds typ.
      *
@@ -81,9 +90,6 @@ public class QuotenFilter {
         return oddsTyp;
     }
 
-
-
-    
     /**
      * Sets the odds typ.
      *
@@ -93,9 +99,6 @@ public class QuotenFilter {
         this.oddsTyp = oddsTyp;
     }
 
-
-
-    
     /**
      * Gets the date from.
      *
@@ -105,9 +108,6 @@ public class QuotenFilter {
         return dateFrom;
     }
 
-
-
-    
     /**
      * Sets the date from.
      *
@@ -117,9 +117,6 @@ public class QuotenFilter {
         this.dateFrom = dateFrom;
     }
 
-
-
-    
     /**
      * Gets the date until.
      *
@@ -129,9 +126,6 @@ public class QuotenFilter {
         return dateUntil;
     }
 
-
-
-    
     /**
      * Sets the date until.
      *
@@ -141,9 +135,6 @@ public class QuotenFilter {
         this.dateUntil = dateUntil;
     }
 
-
-
-    
     /**
      * Gets the odds accuracy.
      *
@@ -153,9 +144,6 @@ public class QuotenFilter {
         return oddsAccuracy;
     }
 
-
-
-    
     /**
      * Sets the odds accuracy.
      *
@@ -165,9 +153,6 @@ public class QuotenFilter {
         this.oddsAccuracy = oddsAccuracy;
     }
 
-
-
-    
     /**
      * Gets the odds range min.
      *
@@ -177,9 +162,6 @@ public class QuotenFilter {
         return oddsRangeMin;
     }
 
-
-
-    
     /**
      * Sets the odds range min.
      *
@@ -189,9 +171,6 @@ public class QuotenFilter {
         this.oddsRangeMin = oddsRangeMin;
     }
 
-
-
-    
     /**
      * Gets the odds range max.
      *
@@ -201,9 +180,6 @@ public class QuotenFilter {
         return oddsRangeMax;
     }
 
-
-
-    
     /**
      * Sets the odds range max.
      *
@@ -213,9 +189,6 @@ public class QuotenFilter {
         this.oddsRangeMax = oddsRangeMax;
     }
 
-
-
-    
     /**
      * Checks if is extended filter.
      *
@@ -225,9 +198,6 @@ public class QuotenFilter {
         return extendedFilter;
     }
 
-
-
-    
     /**
      * Sets the extended filter.
      *
@@ -237,9 +207,6 @@ public class QuotenFilter {
         this.extendedFilter = extendedFilter;
     }
 
-
-
-    
     /**
      * Gets the game type.
      *
@@ -249,9 +216,6 @@ public class QuotenFilter {
         return gameType;
     }
 
-
-
-    
     /**
      * Sets the game type.
      *
@@ -261,9 +225,6 @@ public class QuotenFilter {
         this.gameType = gameType;
     }
 
-
-
-    
     /**
      * Gets the team.
      *
@@ -273,9 +234,6 @@ public class QuotenFilter {
         return team;
     }
 
-
-
-    
     /**
      * Sets the team.
      *
@@ -285,6 +243,4 @@ public class QuotenFilter {
         this.team = team;
     }
 
-    
-   
 }

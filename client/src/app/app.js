@@ -14,7 +14,8 @@ angular.module('app', [
     'ui.bootstrap',
     'highcharts-ng',
     'myDatepicker',
-    'bootstrapSlider'
+    'bootstrapSlider',
+    'angularUtils.directives.dirPagination'
 
 ]);
 
@@ -58,9 +59,37 @@ angular.module('app').controller('AppCtrl', [
         $filter
     ) {
         Console.group("AppController entered");
-        //The value for the Login Modal Loginbutton
-        $scope.loginButtonValue = "Login";
+        $scope.comingmatches = 0;
+        $scope.gametypes = 0;
+        $scope.matches = 0;
+        $scope.matcheswithoutresult = 0;
+        $scope.oddsChanges = 0;
+        $scope.results = 0;
+        $scope.teams = 0;
 
+        $scope.getOverviewData = function() {
+            console.log("try to get initial data");
+            $http.get('/inputdata/').
+            success(function(data, status, headers, config) {
+
+                Console.debug("data", data);
+                $scope.comingmatches = data.comingmatches;
+                $scope.gametypes = data.gametypes;
+                $scope.matches = data.matches;
+                $scope.matcheswithoutresult = data.matcheswithoutresult;
+                $scope.oddsChanges = data.oddsChanges;
+                $scope.results = data.results;
+                $scope.teams = data.teams;
+
+            }).
+            error(function(data, status, headers, config) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+
+            });
+
+        };
+        $scope.getOverviewData();
 
         // Apply the theme
         var highchartsOptions = Highcharts.setOptions(Highcharts.theme);

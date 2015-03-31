@@ -2,28 +2,33 @@ angular.module('templates.app', ['begegnung/begegnung.tpl.html', 'quoten/quoten.
 
 angular.module("begegnung/begegnung.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("begegnung/begegnung.tpl.html",
-    "<div class=\"col-lg-3 col-lg-offset-9\">\n" +
-    "\n" +
-    "    <input type=\"text\" class=\"form-control\" placeholder=\"Suche\" ng:model=\"data.search\">\n" +
-    "\n" +
+    "<div class=\"row\">\n" +
+    "    <div class=\"col-lg-6 col-lg-offset-3\" id=\"begegnung_search\">\n" +
+    "        <input type=\"text\" class=\"form-control\" placeholder=\"Suche\" ng:model=\"data.search\">\n" +
+    "    </div>\n" +
     "</div>\n" +
-    "\n" +
-    "\n" +
     "<div class=\"col-lg-12\">\n" +
-    "    <div class=\"panel panel-default \" ng-repeat=\"value in begegnungData | filter:data.search| orderBy:['datum']\">\n" +
+    "    <div class=\"panel panel-default \" dir-paginate=\"value in begegnungData | filter:data.search| orderBy:['datum'] | itemsPerPage: 10 \" current-page=\"currentPage\">\n" +
     "        <div class=\"panel-heading \">\n" +
     "            <div class=\"row\">\n" +
-    "                <div class=\"col-lg-3\">\n" +
+    "                <div class=\"col-lg-10\">\n" +
+    "                    <p class=\"text-center\"><b>Liga: {{value.spieltyp}}</b></p>\n" +
+    "                </div>\n" +
+    "                <div class=\"col-lg-2\">\n" +
+    "                    <p class=\"text-center\"> {{cutTimestamp(value.datum)}} </p>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "            <div class=\"row\">\n" +
+    "                <div class=\"col-lg-4\">\n" +
     "                    <div class=\"row row-border\">\n" +
-    "                        <div class=\"col-lg-9\">\n" +
+    "                        <div class=\"col-lg-10\">\n" +
     "                            {{value.mannschaft_1}}\n" +
     "                        </div>\n" +
-    "                        <div class=\"col-lg-3\">\n" +
+    "                        <div class=\"col-lg-2\">\n" +
     "                            {{value.quoteM1}}\n" +
     "                        </div>\n" +
     "                    </div>\n" +
     "                </div>\n" +
-    "\n" +
     "                <div class=\"col-lg-2\">\n" +
     "                    <div class=\"row row-border\">\n" +
     "                        <div class=\"col-lg-9\">\n" +
@@ -34,56 +39,74 @@ angular.module("begegnung/begegnung.tpl.html", []).run(["$templateCache", functi
     "                        </div>\n" +
     "                    </div>\n" +
     "                </div>\n" +
-    "\n" +
-    "                <div class=\"col-lg-3\">\n" +
+    "                <div class=\"col-lg-4\">\n" +
     "                    <div class=\"row row-border\">\n" +
-    "                        <div class=\"col-lg-9\">\n" +
+    "                        <div class=\"col-lg-10\">\n" +
     "                            {{value.mannschaft_2}}\n" +
     "                        </div>\n" +
-    "                        <div class=\"col-lg-3\">\n" +
+    "                        <div class=\"col-lg-2\">\n" +
     "                            {{value.quoteM2}}\n" +
     "                        </div>\n" +
     "                    </div>\n" +
     "                </div>\n" +
-    "\n" +
-    "                <div class=\"col-lg-2\">\n" +
-    "                    {{value.spieltyp}}\n" +
-    "                </div>\n" +
-    "                <div class=\"col-lg-2\">\n" +
-    "                    {{cutTimestamp(value.datum)}}\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "\n" +
-    "            <div class=\"row\">\n" +
-    "                <div class=\"col-lg-3\">\n" +
-    "                    <p class=\"text-center\">{{value.quoteM1Chance}}% </p>\n" +
-    "                </div>\n" +
-    "                <div class=\"col-lg-2\">\n" +
-    "                   <p class=\"text-center\"> {{value.quoteXChance}}% </p>\n" +
-    "                </div>\n" +
-    "                <div class=\"col-lg-3\">\n" +
-    "                   <p class=\"text-center\"> {{value.quoteM2Chance}}% </p>\n" +
-    "                </div>\n" +
     "                <div class=\"col-lg-2\">\n" +
     "                    Quotenschlüssel: {{value.quotenkey}}\n" +
     "                </div>\n" +
+    "            </div>\n" +
+    "            <div class=\"row\">\n" +
+    "                <div class=\"col-lg-10\">\n" +
+    "                    <div class=\"row\">\n" +
+    "                        <div class=\"col-lg-4\">\n" +
+    "                            <p class=\"text-center\"><b>T: {{value.quoteM1Chance}}%&nbsp;&nbsp;&nbsp;R: {{value.quoteM1RealChance}}%&nbsp;&nbsp;&nbsp;S: {{value.quoteM1CountGames}}&nbsp;&nbsp;&nbsp;<span ng-style=\"{color:expectationColorM1[value.id]}\">E: {{value.quoteM1Expecation}}</span>&nbsp;&nbsp;&nbsp;Q: {{value.quoteM1UsedQuoteForStats}}</b></p>\n" +
+    "                        </div>\n" +
+    "                        <div class=\"col-lg-4\">\n" +
+    "                            <p class=\"text-center\"><b>T:{{value.quoteXChance}}%&nbsp;&nbsp; R:{{value.quoteXRealChance}}%&nbsp;&nbsp;S:{{value.quoteXCountGames}}&nbsp;&nbsp;<span ng-style=\"{color:expectationColorX[value.id]}\">E:{{value.quoteXExpecation}}</span>&nbsp;&nbsp;Q:{{value.quoteXUsedQuoteForStats}}</b></p>\n" +
+    "                        </div>\n" +
+    "                        <div class=\"col-lg-4\">\n" +
+    "                            <p class=\"text-center\"><b>T: {{value.quoteM2Chance}}%&nbsp;&nbsp;&nbsp;R: {{value.quoteM2RealChance}}%&nbsp;&nbsp;&nbsp;S: {{value.quoteM2CountGames}}&nbsp;&nbsp;&nbsp;<span ng-style=\"{color:expectationColorM2[value.id]}\">E: {{value.quoteM2Expecation}}</span>&nbsp;&nbsp;&nbsp;Q: {{value.quoteM2UsedQuoteForStats}}</b></p>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
     "                <div class=\"col-lg-2\">\n" +
-    "\n" +
-    "                    <button type=\"button\" class=\"btn btn-default\" aria-label=\"Left Align\" ng-click=\"togglePanel($index);buildHighcharts($index, value)\">\n" +
+    "                    <button type=\"button\" class=\"btn btn-default\" aria-label=\"Left Align\" ng-click=\"togglePanel($index,value)\">\n" +
     "                        <span class=\"glyphicon glyphicon-menu-down\" aria-hidden=\"true\"></span>\n" +
     "                    </button>\n" +
     "                </div>\n" +
-    "\n" +
     "            </div>\n" +
-    "\n" +
-    "\n" +
-    "\n" +
     "        </div>\n" +
     "        <div class=\"panel-body\" ng-show=\"showpanel[$index] == true\">\n" +
     "            <div class=\"row\">\n" +
     "                <div class=\"col-lg-12 \">\n" +
-    "                    <highchart class=\"h-chart\" config=\"charConfig[$index]\"></highchart>\n" +
+    "                    <highchart class=\"h-chart\" config=\"charConfig[value.id]\"></highchart>\n" +
     "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-lg-1 col-lg-offset-6\">\n" +
+    "        <div class=\"loader\" title=\"5\" ng-hide=\"!isLoading\">\n" +
+    "            <svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" width=\"24px\" height=\"30px\" viewBox=\"0 0 24 30\" style=\"enable-background:new 0 0 50 50;\" xml:space=\"preserve\">\n" +
+    "                <rect x=\"0\" y=\"13\" width=\"4\" height=\"5\" fill=\"#333\">\n" +
+    "                    <animate attributeName=\"height\" attributeType=\"XML\" values=\"5;21;5\" begin=\"0s\" dur=\"0.6s\" repeatCount=\"indefinite\" />\n" +
+    "                    <animate attributeName=\"y\" attributeType=\"XML\" values=\"13; 5; 13\" begin=\"0s\" dur=\"0.6s\" repeatCount=\"indefinite\" />\n" +
+    "                </rect>\n" +
+    "                <rect x=\"10\" y=\"13\" width=\"4\" height=\"5\" fill=\"#333\">\n" +
+    "                    <animate attributeName=\"height\" attributeType=\"XML\" values=\"5;21;5\" begin=\"0.15s\" dur=\"0.6s\" repeatCount=\"indefinite\" />\n" +
+    "                    <animate attributeName=\"y\" attributeType=\"XML\" values=\"13; 5; 13\" begin=\"0.15s\" dur=\"0.6s\" repeatCount=\"indefinite\" />\n" +
+    "                </rect>\n" +
+    "                <rect x=\"20\" y=\"13\" width=\"4\" height=\"5\" fill=\"#333\">\n" +
+    "                    <animate attributeName=\"height\" attributeType=\"XML\" values=\"5;21;5\" begin=\"0.3s\" dur=\"0.6s\" repeatCount=\"indefinite\" />\n" +
+    "                    <animate attributeName=\"y\" attributeType=\"XML\" values=\"13; 5; 13\" begin=\"0.3s\" dur=\"0.6s\" repeatCount=\"indefinite\" />\n" +
+    "                </rect>\n" +
+    "            </svg>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</div>\n" +
+    "<div class=\"row\">\n" +
+    "    <div class=\"col-log-8 col-lg-offset-4\">\n" +
+    "        <div class=\"row\">\n" +
+    "            <div class=\"col-log-11 col-lg-offset-1\">\n" +
+    "                <dir-pagination-controls max-size=\"\" direction-links=\"\" boundary-links=\"\" on-page-change=\"paginationPageChange()\" pagination-id=\"\" template-url=\"../../vendor/bower_components/angular-utils-pagination/dirPagination.tpl.html\">\n" +
+    "                </dir-pagination-controls>\n" +
     "            </div>\n" +
     "        </div>\n" +
     "    </div>\n" +
@@ -206,7 +229,8 @@ angular.module("quoten/quoten.tpl.html", []).run(["$templateCache", function($te
     "            </div>\n" +
     "            <div class=\"panel-body\">\n" +
     "                <div class=\"list-group listoverflow\">\n" +
-    "                    <a ng-repeat=\"item in spieltyp \" class=\"list-group-item\" ng-click=\"takeSpieltyp(item)\">\n" +
+    "                <input type=\"text\" ng-model=\"searchSpieltyp\" value=\"\" placeholder=\"Name einer Liga\" class=\"form-control\"> </input>\n" +
+    "                    <a ng-repeat=\"item in spieltyp | filter:searchSpieltyp\" class=\"list-group-item\" ng-click=\"takeSpieltyp(item)\">\n" +
     "                        {{item}}\n" +
     "                     </a>\n" +
     "                </div>\n" +

@@ -8,11 +8,17 @@ import java.io.FileInputStream;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+
+import model.MainModel;
+import model.QuoteModel;
 
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import representation.DataOverview;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -35,6 +41,7 @@ public class MainResource {
      */
     @GET
     public Response getMainView() {
+
         try (FileInputStream inputStream = new FileInputStream("client/dist/index.html")) {
             String html = IOUtils.toString(inputStream);
             return html != null ? Response.ok().entity(html).build() : Response.serverError().build();
@@ -42,6 +49,14 @@ public class MainResource {
             LOG.error(e.getMessage(), e);
             return Response.serverError().build();
         }
+    }
+    
+    @Path("/inputdata/")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getMetaData(){
+        
+        return Response.ok(MainModel.generateDataoverview()).build();
     }
 
 }

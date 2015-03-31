@@ -110,6 +110,8 @@ angular.module('quoten', [])
             //Filter Input Feld
             $scope.searchMannschaft = "";
 
+            $scope.searchSpieltyp ="";
+
             //resettet den Mannschaft Array
             $scope.resetTeam = function() {
                 $scope.selectedMannschaften = null;

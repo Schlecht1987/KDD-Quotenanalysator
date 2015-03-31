@@ -85,6 +85,58 @@ public class Match {
     @JsonProperty
     private boolean hasHistory;
     
+    @JsonProperty
+    private float quoteM1Expecation;
+    
+    @JsonProperty
+    private int quoteM1CountGames;
+    
+    @JsonProperty
+    private float quoteM1RealChance;
+    
+    @JsonProperty
+    private int quoteM1Wins;
+    
+    @JsonProperty
+    private int quoteM1Loses;
+    
+    @JsonProperty
+    private float quoteM1UsedQuoteForStats;
+    
+    @JsonProperty
+    private float quoteXExpecation;
+    
+    @JsonProperty
+    private int quoteXCountGames;
+    
+    @JsonProperty
+    private float quoteXRealChance;
+    
+    @JsonProperty
+    private int quoteXWins;
+    
+    @JsonProperty
+    private int quoteXLoses;
+    @JsonProperty
+    private float quoteXUsedQuoteForStats;
+    
+    @JsonProperty
+    private float quoteM2Expecation;
+    
+    @JsonProperty
+    private int quoteM2CountGames;
+    
+    @JsonProperty
+    private float quoteM2RealChance;
+    
+    @JsonProperty
+    private int quoteM2Wins;
+    
+    @JsonProperty
+    private int quoteM2Loses;
+    
+    @JsonProperty
+    private float quoteM2UsedQuoteForStats;
 
     /**
      * Gets the id.
@@ -443,5 +495,193 @@ public class Match {
     public void setQuotenkey(float quotenkey) {
         this.quotenkey = quotenkey;
     }
+
+    
+    public float getQuoteM1Expecation() {
+        return quoteM1Expecation;
+    }
+
+    
+    public void setQuoteM1Expecation(float quoteM1Expecation) {
+        this.quoteM1Expecation = quoteM1Expecation;
+    }
+
+    
+    public int getQuoteM1CountGames() {
+        return quoteM1CountGames;
+    }
+
+    
+    public void setQuoteM1CountGames(int quoteM1CountGames) {
+        this.quoteM1CountGames = quoteM1CountGames;
+    }
+
+    
+    public float getQuoteM1RealChance() {
+        return quoteM1RealChance;
+    }
+
+    
+    public void setQuoteM1RealChance(float quoteM1RealChance) {
+        this.quoteM1RealChance = quoteM1RealChance;
+    }
+
+    
+    public int getQuoteM1Wins() {
+        return quoteM1Wins;
+    }
+
+    
+    public void setQuoteM1Wins(int quoteM1Wins) {
+        this.quoteM1Wins = quoteM1Wins;
+    }
+
+    
+    public int getQuoteM1Loses() {
+        return quoteM1Loses;
+    }
+
+    
+    public void setQuoteM1Loses(int quoteM1Loses) {
+        this.quoteM1Loses = quoteM1Loses;
+    }
+
+    
+    public float getQuoteXExpecation() {
+        return quoteXExpecation;
+    }
+
+    
+    public void setQuoteXExpecation(float quoteXExpecation) {
+        this.quoteXExpecation = quoteXExpecation;
+    }
+
+    
+    public int getQuoteXCountGames() {
+        return quoteXCountGames;
+    }
+
+    
+    public void setQuoteXCountGames(int quoteXCountGames) {
+        this.quoteXCountGames = quoteXCountGames;
+    }
+
+    
+    public float getQuoteXRealChance() {
+        return quoteXRealChance;
+    }
+
+    
+    public void setQuoteXRealChance(float quoteXRealChance) {
+        this.quoteXRealChance = quoteXRealChance;
+    }
+
+    
+    public int getQuoteXWins() {
+        return quoteXWins;
+    }
+
+    
+    public void setQuoteXWins(int quoteXWins) {
+        this.quoteXWins = quoteXWins;
+    }
+
+    
+    public int getQuoteXLoses() {
+        return quoteXLoses;
+    }
+
+    
+    public void setQuoteXLoses(int quoteXLoses) {
+        this.quoteXLoses = quoteXLoses;
+    }
+
+    
+    public float getQuoteM2Expecation() {
+        return quoteM2Expecation;
+    }
+
+    
+    public void setQuoteM2Expecation(float quoteM2Expecation) {
+        this.quoteM2Expecation = quoteM2Expecation;
+    }
+
+    
+    public int getQuoteM2CountGames() {
+        return quoteM2CountGames;
+    }
+
+    
+    public void setQuoteM2CountGames(int quoteM2CountGames) {
+        this.quoteM2CountGames = quoteM2CountGames;
+    }
+
+    
+    public float getQuoteM2RealChance() {
+        return quoteM2RealChance;
+    }
+
+    
+    public void setQuoteM2RealChance(float quoteM2RealChance) {
+        this.quoteM2RealChance = quoteM2RealChance;
+    }
+
+    
+    public int getQuoteM2Wins() {
+        return quoteM2Wins;
+    }
+
+    
+    public void setQuoteM2Wins(int quoteM2Wins) {
+        this.quoteM2Wins = quoteM2Wins;
+    }
+
+    
+    public float getQuoteM1UsedQuoteForStats() {
+        return quoteM1UsedQuoteForStats;
+    }
+
+    
+    public void setQuoteM1UsedQuoteForStats(float quoteM1UsedQuoteForStats) {
+        this.quoteM1UsedQuoteForStats = quoteM1UsedQuoteForStats;
+    }
+
+    
+    public float getQuoteXUsedQuoteForStats() {
+        return quoteXUsedQuoteForStats;
+    }
+
+    
+    public void setQuoteXUsedQuoteForStats(float quoteXUsedQuoteForStats) {
+        this.quoteXUsedQuoteForStats = quoteXUsedQuoteForStats;
+    }
+
+    
+    public int getQuoteM2Loses() {
+        return quoteM2Loses;
+    }
+
+    
+    public void setQuoteM2Loses(int quoteM2Loses) {
+        this.quoteM2Loses = quoteM2Loses;
+    }
+
+    
+    public float getQuoteM2UsedQuoteForStats() {
+        return quoteM2UsedQuoteForStats;
+    }
+
+    
+    public void setQuoteM2UsedQuoteForStats(float quoteM2UsedQuoteForStats) {
+        this.quoteM2UsedQuoteForStats = quoteM2UsedQuoteForStats;
+    }
+
+    
+
+
+    
+
+
+  
 
 }

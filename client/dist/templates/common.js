@@ -1,4 +1,4 @@
-angular.module('templates.common', ['directives/angular-slider.tpl.html']);
+angular.module('templates.common', ['directives/angular-slider.tpl.html', '../../vendor/bower_components/angular-utils-pagination/dirPagination.tpl.html']);
 
 angular.module("directives/angular-slider.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("directives/angular-slider.tpl.html",
@@ -41,4 +41,26 @@ angular.module("directives/angular-slider.tpl.html", []).run(["$templateCache", 
     "    {{index.alert}}\n" +
     "  </div>\n" +
     "</div>");
+}]);
+
+angular.module("../../vendor/bower_components/angular-utils-pagination/dirPagination.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../../vendor/bower_components/angular-utils-pagination/dirPagination.tpl.html",
+    "<ul class=\"pagination\" ng-if=\"1 < pages.length\">\n" +
+    "    <li ng-if=\"boundaryLinks\" ng-class=\"{ disabled : pagination.current == 1 }\">\n" +
+    "        <a href=\"\" ng-click=\"setCurrent(1)\">&laquo;</a>\n" +
+    "    </li>\n" +
+    "    <li ng-if=\"directionLinks\" ng-class=\"{ disabled : pagination.current == 1 }\">\n" +
+    "        <a href=\"\" ng-click=\"setCurrent(pagination.current - 1)\">&lsaquo;</a>\n" +
+    "    </li>\n" +
+    "    <li ng-repeat=\"pageNumber in pages track by $index\" ng-class=\"{ active : pagination.current == pageNumber, disabled : pageNumber == '...' }\">\n" +
+    "        <a href=\"\" ng-click=\"setCurrent(pageNumber)\">{{ pageNumber }}</a>\n" +
+    "    </li>\n" +
+    "\n" +
+    "    <li ng-if=\"directionLinks\" ng-class=\"{ disabled : pagination.current == pagination.last }\">\n" +
+    "        <a href=\"\" ng-click=\"setCurrent(pagination.current + 1)\">&rsaquo;</a>\n" +
+    "    </li>\n" +
+    "    <li ng-if=\"boundaryLinks\"  ng-class=\"{ disabled : pagination.current == pagination.last }\">\n" +
+    "        <a href=\"\" ng-click=\"setCurrent(pagination.last)\">&raquo;</a>\n" +
+    "    </li>\n" +
+    "</ul>");
 }]);

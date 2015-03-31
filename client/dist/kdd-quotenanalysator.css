@@ -8814,6 +8814,7 @@ input[type=range]:focus::-ms-fill-upper {
 html,
 body {
   background-color: #020202;
+  background-image: radial-gradient(circle farthest-corner at center, #3c4b57 0%, #1c262b 100%);
 }
 
 #imgbrand {
@@ -8891,5 +8892,14 @@ body {
 }
 
 .h-chart {
-  width: 60%;
+  width: 100%;
+}
+
+h5 {
+  color: #ffffff;
+}
+
+#begegnung_search {
+  height: 40px;
+  margin-bottom: 30px;
 }

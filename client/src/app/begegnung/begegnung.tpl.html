@@ -1,25 +1,30 @@
-<div class="col-lg-3 col-lg-offset-9">
-
-    <input type="text" class="form-control" placeholder="Suche" ng:model="data.search">
-
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-3" id="begegnung_search">
+        <input type="text" class="form-control" placeholder="Suche" ng:model="data.search">
+    </div>
 </div>
-
-
 <div class="col-lg-12">
-    <div class="panel panel-default " ng-repeat="value in begegnungData | filter:data.search| orderBy:['datum']">
+    <div class="panel panel-default " dir-paginate="value in begegnungData | filter:data.search| orderBy:['datum'] | itemsPerPage: 10 " current-page="currentPage">
         <div class="panel-heading ">
             <div class="row">
-                <div class="col-lg-3">
+                <div class="col-lg-10">
+                    <p class="text-center"><b>{{value.spieltyp}}</b></p>
+                </div>
+                <div class="col-lg-2">
+                    <p class="text-center"> {{cutTimestamp(value.datum)}} </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
                     <div class="row row-border">
-                        <div class="col-lg-9">
+                        <div class="col-lg-10">
                             {{value.mannschaft_1}}
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-2">
                             {{value.quoteM1}}
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-2">
                     <div class="row row-border">
                         <div class="col-lg-9">
@@ -30,56 +35,74 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-3">
+                <div class="col-lg-4">
                     <div class="row row-border">
-                        <div class="col-lg-9">
+                        <div class="col-lg-10">
                             {{value.mannschaft_2}}
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-2">
                             {{value.quoteM2}}
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-2">
-                    {{value.spieltyp}}
-                </div>
-                <div class="col-lg-2">
-                    {{cutTimestamp(value.datum)}}
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-3">
-                    <p class="text-center">{{value.quoteM1Chance}}% </p>
-                </div>
-                <div class="col-lg-2">
-                   <p class="text-center"> {{value.quoteXChance}}% </p>
-                </div>
-                <div class="col-lg-3">
-                   <p class="text-center"> {{value.quoteM2Chance}}% </p>
-                </div>
                 <div class="col-lg-2">
                     Quotenschlüssel: {{value.quotenkey}}
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <p class="text-center"><b>T: {{value.quoteM1Chance}}%&nbsp;&nbsp;&nbsp;R: {{value.quoteM1RealChance}}%&nbsp;&nbsp;&nbsp;S: {{value.quoteM1CountGames}}&nbsp;&nbsp;&nbsp;<span ng-style="{color:expectationColorM1[value.id]}">E: {{value.quoteM1Expecation}}</span>&nbsp;&nbsp;&nbsp;Q: {{value.quoteM1UsedQuoteForStats}}</b></p>
+                        </div>
+                        <div class="col-lg-4">
+                            <p class="text-center"><b>T:{{value.quoteXChance}}%&nbsp;&nbsp; R:{{value.quoteXRealChance}}%&nbsp;&nbsp;S:{{value.quoteXCountGames}}&nbsp;&nbsp;<span ng-style="{color:expectationColorX[value.id]}">E:{{value.quoteXExpecation}}</span>&nbsp;&nbsp;Q:{{value.quoteXUsedQuoteForStats}}</b></p>
+                        </div>
+                        <div class="col-lg-4">
+                            <p class="text-center"><b>T: {{value.quoteM2Chance}}%&nbsp;&nbsp;&nbsp;R: {{value.quoteM2RealChance}}%&nbsp;&nbsp;&nbsp;S: {{value.quoteM2CountGames}}&nbsp;&nbsp;&nbsp;<span ng-style="{color:expectationColorM2[value.id]}">E: {{value.quoteM2Expecation}}</span>&nbsp;&nbsp;&nbsp;Q: {{value.quoteM2UsedQuoteForStats}}</b></p>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-2">
-
-                    <button type="button" class="btn btn-default" aria-label="Left Align" ng-click="togglePanel($index);buildHighcharts($index, value)">
+                    <button type="button" class="btn btn-default" aria-label="Left Align" ng-click="togglePanel($index,value)">
                         <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
                     </button>
                 </div>
-
             </div>
-
-
-
         </div>
         <div class="panel-body" ng-show="showpanel[$index] == true">
             <div class="row">
                 <div class="col-lg-12 ">
-                    <highchart class="h-chart" config="charConfig[$index]"></highchart>
+                    <highchart class="h-chart" config="charConfig[value.id]"></highchart>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1 col-lg-offset-6">
+        <div class="loader" title="5" ng-hide="!isLoading">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                <rect x="0" y="13" width="4" height="5" fill="#333">
+                    <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0s" dur="0.6s" repeatCount="indefinite" />
+                    <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0s" dur="0.6s" repeatCount="indefinite" />
+                </rect>
+                <rect x="10" y="13" width="4" height="5" fill="#333">
+                    <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.15s" dur="0.6s" repeatCount="indefinite" />
+                    <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.15s" dur="0.6s" repeatCount="indefinite" />
+                </rect>
+                <rect x="20" y="13" width="4" height="5" fill="#333">
+                    <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+                    <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+                </rect>
+            </svg>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-log-8 col-lg-offset-4">
+        <div class="row">
+            <div class="col-log-11 col-lg-offset-1">
+                <dir-pagination-controls max-size="" direction-links="" boundary-links="" on-page-change="paginationPageChange()" pagination-id="" template-url="../../vendor/bower_components/angular-utils-pagination/dirPagination.tpl.html">
+                </dir-pagination-controls>
             </div>
         </div>
     </div>

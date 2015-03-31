@@ -29,61 +29,60 @@ public class QuotenStatistik {
 
     /** The list. */
     private List<QuotenInfo>       list                     = new ArrayList<QuotenInfo>();
-    
+
     /** The logger. */
     private final org.slf4j.Logger logger                   = LoggerFactory.getLogger(QuotenStatistik.class);
-    
+
     /** The filter. */
     private QuotenFilter           filter;
-    
+
     /** The heim. */
     private final String           HEIM                     = "q.quoteM1";
-    
+
     /** The unentschieden. */
     private final String           UNENTSCHIEDEN            = "q.quoteX";
-    
+
     /** The gast. */
     private final String           GAST                     = "q.quoteM2";
-    
+
     /** The sieg nicht heim. */
     private final String           SIEG_NICHT_HEIM          = " != '1' ";
-    
+
     /** The sieg heim. */
     private final String           SIEG_HEIM                = " = '1' ";
-    
+
     /** The sieg nicht unentschieden. */
     private final String           SIEG_NICHT_UNENTSCHIEDEN = " != 'x' ";
-    
+
     /** The sieg unentschieden. */
     private final String           SIEG_UNENTSCHIEDEN       = " = 'x' ";
-    
+
     /** The sieg nicht gast. */
     private final String           SIEG_NICHT_GAST          = " != '2' ";
-    
+
     /** The sieg gast. */
     private final String           SIEG_GAST                = " = '2' ";
-    
+
     /** The mannschaft. */
     private final String           MANNSCHAFT               = " and (m.id = b.mannschaft_1 or m.id = b.mannschaft_2) and ( ";
-    
+
     /** The spieltyp. */
     private final String           SPIELTYP                 = " and s.id = b.spieltyp and ( ";
 
     /** The query mannschaft. */
     private String                 queryMannschaft          = "";
-    
+
     /** The from mannschaft. */
-    private String                 fromMannschaft           ="";
-    
+    private String                 fromMannschaft           = "";
+
     /** The query spieltyp. */
     private String                 querySpieltyp            = "";
-    
+
     /** The from spieltyp. */
-    private String                 fromSpieltyp             ="";
+    private String                 fromSpieltyp             = "";
 
     /**
-     * Instantiates a new quoten statistik.
-     * setzt den Quotenfilter gloabal
+     * Instantiates a new quoten statistik. setzt den Quotenfilter gloabal
      * 
      * @param filter the filter
      */
@@ -95,6 +94,19 @@ public class QuotenStatistik {
         }
 
         getQuoten();
+    }
+
+    public QuotenInfo searchForQuote(float quote) {
+        int index = 0;
+        float min = Float.MAX_VALUE;
+        for (int i = 0; i < list.size(); i++) {
+            float temp = list.get(i).getQuote();
+            if (Math.abs(temp - quote) < min) {
+                index = i;
+                min = Math.abs(temp - quote);
+            }
+        }
+        return list.get(index);
     }
 
     /**
@@ -121,7 +133,7 @@ public class QuotenStatistik {
         querySpieltyp = querySpieltyp.substring(0, querySpieltyp.length() - 2);
         querySpieltyp += ")";
         fromSpieltyp = ", Spieltyp s ";
-     
+
     }
 
     /**
@@ -139,8 +151,7 @@ public class QuotenStatistik {
     }
 
     /**
-     * Ruft die verschiedenen Quotenqueries auf, die dann die Quoten entsprechend
-     * in die QuotenInfo liste einsortiert
+     * Ruft die verschiedenen Quotenqueries auf, die dann die Quoten entsprechend in die QuotenInfo liste einsortiert
      *
      * @return the quoten
      */
@@ -201,9 +212,10 @@ public class QuotenStatistik {
      * @param siege für das einsortieren, ob eine Quote gewonnen hat oder verloren hat
      */
     public void queryQuoten(String quotenTyp, String sieg, boolean siege) {
-        String query = "select " + quotenTyp + " " + "from Quote q, Begegnung b, Ergebnis e "+fromMannschaft +fromSpieltyp+ " where q.begegnung = b.id "
-                + "and b.id = e.begegnung " + "and e.sieger " + sieg + " " + "and " + quotenTyp + " >= " + filter.getOddsRangeMin()
-                + " and "+ quotenTyp +" <= " + filter.getOddsRangeMax() + " and b.datum >= '"+filter.getDateFrom()+"' and b.datum <= '"+filter.getDateUntil()+"' " + queryMannschaft + " " + querySpieltyp;
+        String query = "select " + quotenTyp + " " + "from Quote q, Begegnung b, Ergebnis e " + fromMannschaft + fromSpieltyp
+                + " where q.begegnung = b.id " + "and b.id = e.begegnung " + "and e.sieger " + sieg + " " + "and " + quotenTyp + " >= "
+                + filter.getOddsRangeMin() + " and " + quotenTyp + " <= " + filter.getOddsRangeMax() + " and b.datum >= '"
+                + filter.getDateFrom() + "' and b.datum <= '" + filter.getDateUntil() + "' " + queryMannschaft + " " + querySpieltyp;
         logger.info("QUERY: " + query);
         List<Float> result = (List<Float>) DbManage.getQuery(query);
         for (Float float1 : result) {
@@ -212,12 +224,10 @@ public class QuotenStatistik {
 
     }
 
-   
-
     /**
-     * Generate quoten overview representation.
-     *Das POST Response Objekt wird erzeugt und von der QuotenInfo Liste gemappt
-     *Berechnet alle Notwendigen Statistiken
+     * Generate quoten overview representation. Das POST Response Objekt wird erzeugt und von der QuotenInfo Liste gemappt Berechnet alle
+     * Notwendigen Statistiken
+     * 
      * @return the quoten overview representation
      */
     public QuotenOverviewRepresentation generateQuotenOverviewRepresentation() {
@@ -266,14 +276,14 @@ public class QuotenStatistik {
 
         return (float) Math.round(f * 10) / 10;
     }
-    
+
     /**
      * Round expecation.
      *
      * @param f the f
      * @return the float
      */
-    public float roundExpecation(float f){
+    public float roundExpecation(float f) {
         return (float) Math.round(f * 100) / 100;
     }
 
@@ -294,7 +304,7 @@ public class QuotenStatistik {
     public void setList(List<QuotenInfo> list) {
         this.list = list;
     }
-    
+
     /**
      * Calculate expectation.
      *
@@ -302,21 +312,21 @@ public class QuotenStatistik {
      * @param chance the chance
      * @return the float
      */
-    public float calculateExpectation(float quote, float chance){
+    public float calculateExpectation(float quote, float chance) {
         //einsatz 1 €
         float stake = 1f;
         float expectation = 0f;
         float profit = 0f;
         float loss = 0f;
-        
+
         profit = stake * quote - stake;
-        profit = profit * chance/100f;
-        
+        profit = profit * chance / 100f;
+
         loss = -stake;
-        loss = loss * (1f-(chance/100f));
-        
+        loss = loss * (1f - (chance / 100f));
+
         expectation = profit + loss;
-        
+
         return expectation;
     }
 }

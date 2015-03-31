@@ -38,6 +38,7 @@ public class BegegnungResource {
      */
     @GET
     public List<Match> gibBegegnung() {
-        return BegegnungModel.getBegegnungen();   
+        BegegnungModel begegnung = new BegegnungModel();
+        return begegnung.getBegegnungen();   
     }
 }

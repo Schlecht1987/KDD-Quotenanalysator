@@ -15,7 +15,7 @@
 <body ng-controller="AppCtrl">
     <nav class="navbar navbar-default ">
         <div class="container-fluid">
-            <div class="navbar-header">               
+            <div class="navbar-header">
                 <a class="navbar-brand" href="#/quoten">
                     <div class="navbar-brand-name">
                         <img id="imgbrand" src="/assets/img/quotenAnalyser.png" alt="Logo" /> KDD-Quotenanalysator
@@ -37,6 +37,33 @@
             </div>
         </div>
     </nav>
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <div class="row">
+                <div class="col-lg-2 ">
+                    <h5><nobr>Kommende Spiele: {{comingmatches}}</nobr></h5>
+                </div>
+                <div class="col-lg-1">
+                    <h5><nobr>Teams: {{teams}}</nobr></h5>
+                </div>
+                <div class="col-lg-2">
+                    <h5><nobr>&nbsp;&nbsp;Spiele Insgesamt: {{matches}}</nobr></h5>
+                </div>
+                <div class="col-lg-2">
+                    <h5><nobr>Quotenänderungen: {{oddsChanges}}</nobr></h5>
+                </div>
+                <div class="col-lg-2">
+                    <h5><nobr>&nbsp;&nbsp;Ergebnisse: {{results}}</nobr></h5>
+                </div>
+                <div class="col-lg-1">
+                    <h5><nobr>Ligen: {{gametypes}}</nobr></h5>
+                </div>
+                <div class="col-lg-2">
+                    <h5><nobr>Spiele ohne Ergebnis: {{matcheswithoutresult}}</nobr></h5>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2" ng:view id="page">

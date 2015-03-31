@@ -60,13 +60,16 @@ module.exports = function(grunt) {
       html: ['src/index.html'],
       tpl: {
         app: ['src/app/**/*.tpl.html'],
-        common: ['src/common/**/*.tpl.html']
+        common: ['src/common/**/*.tpl.html',
+        'vendor/bower_components/**/*.tpl.html']
       },
       less: [
         'vendor/bootstrap/css/bootstrap.css',
         'vendor/bootstrap-datepicker/css/datepicker.css',
         'vendor/bootstrap-slider/bootstrap-slider.css',
         'vendor/helper/test.css',
+        'vendor/bower_components/**/*.less',
+        'vendor/bower_components/**/*.css',
         'src/less/*.less'
       ],
       lessWatch: ['src/less/**/*.less']
@@ -163,7 +166,8 @@ module.exports = function(grunt) {
           'vendor/bootstrap-datepicker/js/bootstrap-datepicker.js',
           'vendor/helper/datepicker-helper.js',
           'vendor/helper/test.js',
-          'vendor/bootstrap-slider/bootstrap-slider.js'
+          'vendor/bootstrap-slider/bootstrap-slider.js',
+          'vendor/bower_components/**/*.js'
         ],
         dest: '<%= distdir %>/libs.js'
       }
